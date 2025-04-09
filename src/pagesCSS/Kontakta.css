@@ -1,0 +1,87 @@
+.kontakt-form{
+    border: 10px solid white;
+    border: 8px solid transparent;
+    border-inline-color:#fba723;
+    margin: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.kontakt{
+    font-size: 4rem;
+    color: #fba723;
+    font-weight: 1600;
+    font-family: "Tourney", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+   
+}
+.kontakt-text{
+    margin: auto;
+    padding: 10px;
+    color: #d11b1b;
+    font-weight: 1600;
+    font-family: "Tourney", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+.texten{
+    color: white;
+    font-family: "Aleo", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    width: 550px;
+    margin: auto;
+    padding:20px;
+}
+.inputfield textarea {
+    width: 50%;
+    height: 150px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical;
+    margin-top: 10px;
+    font-family: "Aleo", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+.inputfield input { 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: "Aleo", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+.kontakt-text{
+    margin: auto;
+    padding: 10px;
+    
+    
+}
+.skicka{
+    margin: auto;
+    padding: 10px;
+    padding-top: 10px;
+    border-radius: 4px;
+}
+.labelText {
+    text-align: left; 
+    font-size: large;
+    margin-bottom: 5px;
+    margin: 20px;
+    color: #fba723;
+    font-family: "Aleo", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}

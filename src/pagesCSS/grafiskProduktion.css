@@ -1,0 +1,27 @@
+
+.description-container {
+    padding: 20px;
+    text-align: center;
+    color: #d11b1b;
+  }
+  
+  .sub-titel-description {
+    text-align: left;
+    width: 550px;
+    padding: 10px;
+    margin: 20px auto;
+    display: none; 
+  }
+  
+  .sub-titel-description.active {
+    display: block;
+  }
+
+  
+  .image-gallery img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 38px;
+  }
+ 

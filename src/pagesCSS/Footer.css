@@ -1,0 +1,22 @@
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    align-content: flex-end ; 
+    color: white;
+    margin:auto;
+    padding: 20px;
+    font-weight: 1600;
+    font-family: "Tourney", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+.footer-container a:hover {
+  color: #fba723;
+  font-size: 18px;
+  transition: all 0.4s ease-in-out;
+  
+}
