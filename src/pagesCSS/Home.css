@@ -1,4 +1,4 @@
-/* 📌 Centra el contenido en la pantalla */
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
     
 }
 
-/* 📌 Estilos del texto "Namn" */
+
 .home-container .Namn {
     font-family: "Funnel Display", sans-serif;
     font-optical-sizing: auto;
@@ -28,7 +28,7 @@
 
 }
 
-/* 🔹 Animación de cambio de color (solo una vez) */
+
 .home-container .Namn:hover {
     animation: changeColor 2.5s forwards;
     color: #fba723;
@@ -42,15 +42,15 @@
     }
 }
 
-/* 📌 Animación de movimiento constante para la imagen .good */
+
 .good {
     animation: moveSide 5s infinite alternate ease-in-out;
-    width: 367px; /* Ajusta el tamaño de la imagen */
+    width: 367px; 
     height: 367px;
 
 }
 
-/* 🔹 Movimiento de la imagen de izquierda a derecha */
+
 @keyframes moveSide {
     0% {
         transform: translateX(0);
