@@ -1,11 +1,10 @@
 .footer-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-evenly;
-  align-content: flex-end;
+  align-items: center;
+  justify-content: space-around;
   color: white;
-  margin: auto;
+  margin: 20px auto;
   padding: 20px;
   font-family: "Tourney", sans-serif;
   font-weight: 400;
@@ -15,10 +14,9 @@
 
 .footer-container a:hover {
   color: #fba723;
-  font-size: 18px;
+  font-size: 1.1rem;
   transition: all 0.4s ease-in-out;
 }
-
 
 .description-container li {
   display: flex;
@@ -26,39 +24,42 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease-in-out;
-  margin: auto;
+  margin: 10px auto;
 }
 
 .titel-big {
   color: #fba723;
-  line-height: 2.1;
+  line-height: 1.5;
   text-align: center;
   font-weight: 700;
   padding: 10px;
   border: 8px solid transparent;
   border-inline-color: #f93827;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: "Tourney", sans-serif;
 }
 
 .sub-titel {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #f93827;
-  margin: auto;
+  margin: 10px auto;
   font-weight: 500;
   font-family: "Funnel Display", sans-serif;
+  text-align: center;
 }
 
 .sub-titel-description {
   text-align: left;
-  width: 100%;
+  width: 90%;
   max-width: 550px;
   display: none;
+  margin: 10px auto;
 }
 
 .sub-titel-period {
-  margin: auto;
+  margin: 10px auto;
   font-family: "Funnel Display", sans-serif;
+  text-align: center;
 }
 
 .experience-link {
@@ -69,15 +70,16 @@
 }
 
 .toggle-button {
-  margin-top: 10px;
+  margin: 10px auto;
   padding: 8px 16px;
-  font-size: 16px;
+  font-size: 1rem;
   border: none;
   background-color: #fba723;
   color: white;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  display: block;
 }
 
 .toggle-button:hover {
@@ -86,18 +88,21 @@
 
 .experience-description {
   color: white;
-  font-size: 20px;
+  font-size: 1.2rem;
   padding: 10px;
-  width: 100%;
+  width: 90%;
   max-width: 800px;
   font-family: "Aleo", serif;
+  margin: 10px auto;
+  text-align: center;
 }
 
 .image-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 15px;
   justify-content: center;
+  padding: 10px;
 }
 
 .image-gallery img {
@@ -111,70 +116,58 @@
 }
 
 .image-gallery img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .Hola {
-  padding: 5px 10px;
-  margin-top: 10px;
-  font-size: 16px;
+  padding: 8px 16px;
+  margin: 10px auto;
+  font-size: 1rem;
   color: white;
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
   background-color: #fba723;
   border: none;
+  display: block;
+  width: fit-content;
 }
 
 .link-section {
   margin-top: 20px;
   padding: 10px;
+  text-align: center;
 }
 
 .link-section ul {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+.link-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.link-section ul li a:hover {
+  color: #fba723;
+}
 
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: row;
     align-items: center;
     font-size: 0.9rem;
+    padding: 15px;
+    justify-content: space-between;
   }
 
   .titel-big {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-
-  .sub-titel {
     font-size: 2.2rem;
-    text-align: center;
-  }
-
-  .experience-description {
-    font-size: 18px;
-    width: 90%;
-  }
-
-  .image-gallery {
-    gap: 15px;
-  }
-
-  .image-gallery img {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .titel-big {
-    font-size: 2rem;
   }
 
   .sub-titel {
@@ -182,24 +175,64 @@
   }
 
   .experience-description {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
-  .footer-container {
-    font-size: 0.8rem;
+  .image-gallery {
+    gap: 10px;
   }
 
   .image-gallery img {
-    max-width: 50%;
+    border-radius: 20px;
   }
 
-  .Hola {
-    width: 25%;
-    font-size: 14px;
-  }
-
+  .Hola,
   .toggle-button {
-    font-size: 14px;
-    width: 50%;
+    font-size: 0.9rem;
+  }
+
+  .link-section ul {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  .titel-big {
+    font-size: 1.8rem;
+  }
+
+  .sub-titel {
+    font-size: 1.5rem;
+  }
+
+  .experience-description {
+    font-size: 0.9rem;
+  }
+
+  .image-gallery {
+    gap: 8px;
+  }
+
+  .image-gallery img {
+    border-radius: 15px;
+  }
+
+  .Hola,
+  .toggle-button {
+    font-size: 0.8rem;
+    width: 80%;
+  }
+
+  .link-section ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 }
