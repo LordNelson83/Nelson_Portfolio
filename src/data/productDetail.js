@@ -1,3 +1,26 @@
+import indesign from "../assets/images2/indesign.png";
+import photoshop from "../assets/images2/photoshop.png";
+import ilustrator from "../assets/images2/ilustrator.png";
+import acrobat from "../assets/images2/acrobat.png";
+
+import produktion1 from "../assets/images/produktion1.png";
+import produktion2 from "../assets/images/produktion2.png";
+import produktion from "../assets/images/produktion.png";
+import printing3 from "../assets/images/printing3.png";
+import produktion3 from "../assets/images/produktion3.png";
+
+import casett3d from "../assets/images/casett3d.png";
+import dprint1 from "../assets/images/3dprint1.png";
+import dprint2 from "../assets/images/3dprint2.png";
+import dprint3 from "../assets/images/3dprint3.png";
+import dprint5 from "../assets/images/3dprint5.png";
+import dprint4 from "../assets/images/3dprint4.png";
+
+import ux3 from "../assets/images/ux3.png";
+import ux1 from "../assets/images/ux1.png";
+import ux2 from "../assets/images/ux2.png";
+import ux5 from "../assets/images/ux5.png";
+
 const productDetail = [
   {
     id: 1,
@@ -10,12 +33,7 @@ const productDetail = [
           "På folkhögskolan lärde jag grundläggande och fördjupning kunskaper i grafisk form och kommunikation bland annat med att skapa affischer, broschyrer, illustration med Adobe Photoshop, Indesign och Illustrator. Under två års studier på Fridhems folkhögskola har jag utvecklat mitt grafiska hantverk genom både praktiskt och teoretiskt arbete. Jag har lärt mig grunderna i klassisk teckning och digital design, fördjupat mina kunskaper inom typografi, layout, illustration och visuell berättarteknik. Utbildningen gav mig möjlighet att analysera, utveckla och förverkliga idéer både enskilt och i grupp, vilket stärkte min kreativitet och konstnärliga uttryck. Genom arbete med branschstandardprogram som Photoshop, Illustrator och InDesign byggde jag en solid teknisk grund. Det tvärkonstnärliga samarbetet med andra kulturlinjer berikade min lärandeupplevelse och utvecklade mitt kritiska perspektiv på visuell kommunikation. Utbildningen fungerade som en språngbräda för vidare studier och arbete, och jag känner mig väl rustad för framtida utmaningar.",
       },
     ],
-    images: [
-      "../assets/images2/indesign.png",
-      "../assets/images2/photoshop.png",
-      "../assets/images2/ilustrator.png",
-      "../assets/images2/acrobat.png",
-    ],
+    images: [indesign, photoshop, ilustrator, acrobat],
   },
   {
     id: 2,
@@ -40,13 +58,7 @@ const productDetail = [
           "Med ett års erfarenhet av administration och kundservice på ett tryckeri ansvarade jag för fakturering, uppdatering av kundens lager för trycksaker och bildredigering med Acrobat. Jag hanterade även vårt web-to-print & MIS-system, HaiKom – ett SaaS-system som tar hand om serverunderhåll, backup, uppdateringar och full användarsupport, vilket minskar kundens behov av egen IT-miljö. I rollen assisterade jag kunder med IT-administration och projektledning, vilket bidrog till effektiva arbetsflöden. Vidare använde jag Mailchimp för e-postmarknadsföring och att underlätta kommunikationen. Genom att koordinera interna processer, systemuppdateringar och kundärenden utvecklade jag en bred kompetens inom tryckeriets administrativa funktioner och bidrog till en hög kundnöjdhet.",
       },
     ],
-    images: [
-      "../assets/images/produktion1.png",
-      "../assets/images/produktion2.png",
-      "../assets/images/produktion.png",
-      "../assets/images/printing3.png",
-      "../assets/images/produktion3.png",
-    ],
+    images: [produktion1, produktion2, produktion, printing3, produktion3],
   },
   {
     id: 3,
@@ -61,16 +73,9 @@ const productDetail = [
     ],
     links: [
       { label: "Pinterest", url: "https://es.pinterest.com/NP3Design/3d-design-3dprint/" },
-      { label: "Facebook", url: "https://www.facebook.com/search/top?q=np3design/" }
+      { label: "Facebook", url: "https://www.facebook.com/search/top?q=np3design/" },
     ],
-    images: [
-      "../assets/images/casett3d.png",
-      "../assets/images/3dprint1.JPG",
-      "../assets/images/3dprint2.JPG",
-      "../assets/images/3dprint3.JPG",
-      "../assets/images/3dprint5.png",
-      "../assets/images/3dprint4.png",
-    ],
+    images: [casett3d, dprint1, dprint2, dprint3, dprint5, dprint4],
   },
   {
     id: 4,
@@ -86,19 +91,14 @@ const productDetail = [
         year: "",
         school: "Fronted",
         description:
-          "Kodning handlar om mer än bara programmering – det är ett sätt att kommunicera genom färg, rörelse och interaktion mellan människa och maskin. Jag har lärt mig att kombinera logiskt tänkande med kreativ design för att skapa funktionella och visuellt tilltalande webbupplevelser. Genom att arbeta med HTML, CSS och JavaScript bygger jag responsiva webbplatser och fördjupar mig i client-server-arkitektur, API:er och CMS-system. Jag har även utvecklat en förståelse för webbtillgänglighet och säkerhet, vilket säkerställer att digitala tjänster blir både användarvänliga och hållbara. Utöver tekniska färdigheter har jag erfarenhet av automatiseringsverktyg för att effektivisera utvecklingsprocessen. Min utbildning kombinerar teori och praktik, vilket ger mig en stark grund inom frontendutveckling och förbereder mig för att skapa moderna och dynamiska webbapplikationer",
+          "Kodning handlar om mer än bara programmering – det är ett sätt att kommunicera genom färg, rörelse och interaktion mellan människa och maskin. Jag har lärt mig att kombinera logiskt tänkande med kreativ design för att skapa funktionella och visuellt tilltalande webbupplevelser. Genom att arbeta med HTML, CSS och JavaScript bygger jag responsiva webbplatser och fördjupar mig i client-server-arkitektur, API:er och CMS-system. Jag har även utvecklat en förståelse för webbtillgänglighet och säkerhet, vilket säkerställer att digitala tjänster blir både användarvänliga och hållbara. Utöver tekniska färdigheter har jag erfarenhet av automatiseringsverktyg för att effektivisera utvecklingsprocessen. Min utbildning kombinerar teori och praktik, vilket ger mig en stark grund inom frontendutveckling och förbereder mig för att skapa moderna och dynamiska webbapplikationer.",
       },
     ],
     links: [
-      { label: "Github", url: "https://github.com/LordNelson83" },
-      { label: "Grupparbete", url: "https://solenia.netlify.app/" }
+      { label: "Github", url: "https://github.com/LordNelson83/Nelson_Portfolio" },
+      { label: "Grupparbete", url: "https://solenia.netlify.app/" },
     ],
-    images: [
-      "../assets/images/ux3.png",
-      "../assets/images/ux1.png",
-      "../assets/images/ux2.png",
-      "../assets/images/ux5.png",
-    ],
+    images: [ux3, ux1, ux2, ux5],
   },
 ];
 
