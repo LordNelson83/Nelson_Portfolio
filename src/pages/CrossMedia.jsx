@@ -11,7 +11,7 @@ const CrossMedia = () => {
       <div className="description-container">
         <h1 className="titel-big">{product.name}</h1>
 
-        {/* Si el producto tiene experiencias */}
+       
         {product.experiences ? (
           <ul className="ul">
             {product.experiences.map((exp, index) => (
@@ -24,7 +24,6 @@ const CrossMedia = () => {
           </ul>
         ) : null}
 
-        {/* Mostrar links si existen */}
         {product.links && product.links.length > 0 && (
           <div className="link-section">
             <h3 className="sub-titel">🌐 Länkar</h3>
@@ -45,7 +44,7 @@ const CrossMedia = () => {
           </div>
         )}
 
-        {/* Mostrar imágenes */}
+      
         {product.images && (
           <div className="image-gallery">
             {product.images.map((img, index) => (
