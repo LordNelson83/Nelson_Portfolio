@@ -11,10 +11,10 @@ const productDetail = [
       },
     ],
     images: [
-      "/images2/indesign.png",
-      "/images2/photoshop.png",
-      "/images2/ilustrator.png",
-      "/images2/acrobat.png",
+      "../assets/images2/indesign.png",
+      "../assets/images2/photoshop.png",
+      "../assets/images2/ilustrator.png",
+      "../assets/images2/acrobat.png",
     ],
   },
   {
@@ -41,11 +41,11 @@ const productDetail = [
       },
     ],
     images: [
-      "/images/produktion1.png",
-      "/images/produktion2.png",
-      "/images/produktion.png",
-      "/images/printing3.png",
-      "/images/produktion3.png",
+      "../assets/images/produktion1.png",
+      "../assets/images/produktion2.png",
+      "../assets/images/produktion.png",
+      "../assets/images/printing3.png",
+      "../assets/images/produktion3.png",
     ],
   },
   {
@@ -64,12 +64,12 @@ const productDetail = [
       { label: "Facebook", url: "https://www.facebook.com/search/top?q=np3design/" }
     ],
     images: [
-      "/images/casett3d.png",
-      "/images/3dprint1.JPG",
-      "/images/3dprint2.JPG",
-      "/images/3dprint3.JPG",
-      "/images/3dprint5.png",
-      "/images/3dprint4.png",
+      "../assets/images/casett3d.png",
+      "../assets/images/3dprint1.JPG",
+      "../assets/images/3dprint2.JPG",
+      "../assets/images/3dprint3.JPG",
+      "../assets/images/3dprint5.png",
+      "../assets/images/3dprint4.png",
     ],
   },
   {
@@ -94,10 +94,10 @@ const productDetail = [
       { label: "Grupparbete", url: "https://solenia.netlify.app/" }
     ],
     images: [
-      "/images/ux3.png",
-      "/images/ux1.png",
-      "/images/ux2.png",
-      "/images/ux5.png",
+      "../assets/images/ux3.png",
+      "../assets/images/ux1.png",
+      "../assets/images/ux2.png",
+      "../assets/images/ux5.png",
     ],
   },
 ];

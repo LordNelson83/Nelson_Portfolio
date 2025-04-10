@@ -20,13 +20,13 @@ const Kontakta = () => {
     event.preventDefault();
     
     if (!kontaktData.name || !kontaktData.email || !kontaktData.message) {
-      alert("Alla fält måste fyllas i!"); // Mensaje en sueco: "Todos los campos deben llenarse"
+      alert("Alla fält måste fyllas i!"); 
       return;
     }
 
     alert(`Submitted:\n\nName: ${kontaktData.name}\nEmail: ${kontaktData.email}\nMessage: ${kontaktData.message}`); 
 
-    // Limpiar los campos después del envío
+    
     setKontaktData({ name: "", email: "", message: "" });
   };
 

@@ -16,7 +16,7 @@ const GrafiskProduktion = () => {
             <li key={index}>
               <h2 className="sub-titel">{exp.school}</h2>
               <h3 className="sub-titel-period">{exp.year}</h3>
-              <p className="sub-titel-description">{exp.description}</p> {/* ✅ Mostrar descripción */}
+              <p className="sub-titel-description">{exp.description}</p> 
             </li>
           ))}
         </ul>
@@ -25,7 +25,7 @@ const GrafiskProduktion = () => {
           <div className="titel">
             <h2 className="sub-titel">{product.school}</h2>
             <h3 className="sub-titel-period">{product.year}</h3>
-            <p className="sub-titel-description">{product.description}</p> {/* ✅ Mostrar descripción */}
+            <p className="sub-titel-description">{product.description}</p> 
           </div>
         </>
       )}
