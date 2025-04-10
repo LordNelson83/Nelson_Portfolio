@@ -7,47 +7,77 @@
     padding: 20px;
     text-align: left;
     font-family: "Aleo", serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
+    font-weight: 400;
     font-size: 22px;
     color: white;
-}
-.background{   
-    height: 700px;
-    width: 640px; 
+  }
+  
+  .background {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
     display: flex;
     margin: auto;
     background-color: white;
     border-radius: 15px;
-    
-}
-
-.Namn {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  
+  .Namn {
     font-size: 4rem;
     color: #fba723;
-    font-weight: 1600;
+    font-weight: 800;
     font-family: "Tourney", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
+  }
   
-}
-
-.jobb {
+  .jobb {
     padding: 15px;
     border-radius: 8px;
     line-height: 1.6;
     box-shadow: 0 4px 6px white;
-} 
+  }
+  
 
-
-@media (max-width: 768px) {
-	body {
-		padding: 10px;
-	}
-
-	h1 {
-		font-size: 1.5rem;
-	}
-}
+  @media (max-width: 768px) {
+    .information {
+      padding: 15px;
+      font-size: 18px;
+    }
+  
+    .background {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .Namn {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  
+    .jobb {
+      font-size: 1rem;
+    }
+  }
+  
+ 
+  @media (max-width: 480px) {
+    .information {
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    .Namn {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .background {
+      padding: 10px;
+    }
+  
+    .jobb {
+      font-size: 0.95rem;
+    }
+  }
+  

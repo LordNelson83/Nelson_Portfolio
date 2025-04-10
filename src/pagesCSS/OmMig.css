@@ -2,76 +2,113 @@
     text-align: center;
     font-family: "Funnel Display", sans-serif;
     font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: 700;
     font-style: normal;
-    color:black;
+    color: black;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.8s ease-in-out;
-    color: black;
     margin: auto;
     padding: 30px;
-}
-
-.strong {
+    font-size: 3rem;
+  }
+  
+  .strong {
     display: inline-block;
     transition: color 0.8s ease-in-out;
-    animation: colorChange 1.8s infinite alternate, pulse 0.8s infinite alternate; 
-}
-
-.me {
+    animation: colorChange 1.8s infinite alternate, pulse 0.8s infinite alternate;
+  }
+  
+  .me {
     border-radius: 10px 100px / 120px;
     height: 400px;
     width: 325px;
-}
-
-.informationen {
+    max-width: 90%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .informationen {
     font-size: 22px;
     color: black;
     text-align: left;
     font-family: "Aleo", serif;
     font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: 400;
     font-style: normal;
-    color: black;
     padding: 25px;
     margin: auto;
-}
-
-.background {
+    max-width: 80%;
+  }
+  
+  .background {
     margin-top: 20px;
-    height: 1200px;
-    width: 1040px;
+    max-width: 1040px;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    text-align: left;
     align-items: center;
     background-color: white;
-    border: #fba723 4.5px solid ;
+    border: #fba723 4.5px solid;
     border-radius: 10px 100px / 120px;
-}
-
-@keyframes colorChange {
+    padding: 20px;
+  }
+  
+  @keyframes colorChange {
     0% { color: black; }
     25% { color: #d11b1b; }
     50% { color: #fba723; }
     75% { color: #bfc51a; }
     95% { color: #3c932f; }
     100% { color: #1509be; }
-}
-
-@keyframes pulse {
+  }
+  
+  @keyframes pulse {
     from { transform: scale(1); }
     to { transform: scale(1.1); }
-}
+  }
+  
+  
+  @media (max-width: 768px) {
+    .Namnet {
+      font-size: 2.2rem;
+      padding: 20px;
+    }
+  
+    .informationen {
+      font-size: 18px;
+      padding: 15px;
+    }
+  
+    .me {
+      height: 300px;
+      width: 250px;
+    }
+  
+    .background {
+      padding: 15px;
+    }
+  }
+  
 
-
-@media (max-width: 768px) {
-	body {
-		padding: 10px;
-	}
-
-	h1 {
-		font-size: 1.5rem;
-	}
-}
+  @media (max-width: 480px) {
+    .Namnet {
+      font-size: 1.8rem;
+      padding: 15px;
+    }
+  
+    .informationen {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    .me {
+      height: 240px;
+      width: 200px;
+    }
+  
+    .background {
+      padding: 10px;
+    }
+  }
+  

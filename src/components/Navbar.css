@@ -42,4 +42,36 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
-  
+@media (max-width: 768px) {
+  .navbar {
+    font-size: 1.6em;
+    padding: 10px;
+  }
+
+  .navbar a {
+    padding: 6px 30px;
+    font-size: 0.95rem;
+  }
+
+  .navbar ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    font-size: 1.2em;
+    flex-direction:row;
+    align-items: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar a {
+    padding: 6px 20px;
+    font-size: 0.9rem;
+  }
+}

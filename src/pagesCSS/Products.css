@@ -1,72 +1,153 @@
 .erfarenhet-container a {
-  text-align: center;
-  font-size: 22px;
-    text-align: left;
+    text-align: left; 
+    font-size: 22px;
     font-family: "Aleo", serif;
     font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: 400; 
     font-style: normal;
-    
-}
-
-.erfarenhet-title  {
+    text-decoration: none; 
+    color: inherit; 
+  }
+  
+  .erfarenhet-title {
     font-size: 45px;
     text-align: center;
     padding: 10px;
     color: #fba723;
     font-weight: 500;
-  font-family: "Funnel Display", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-    
-}
-
-.erfarenhet-title-box {
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; 
+    font-style: normal;
+  }
+  
+  .erfarenhet-title-box {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 60px;
-    padding: 0;
-}
-.erfarenhet-title-description a {
+    padding: 20px; 
+  }
+  
+  .erfarenhet-title-description a {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding-bottom: 10px;
-}
-.erfarenhet-title-description a:hover {
+  }
+  
+  .erfarenhet-title-description a:hover {
     transition: all 0.2s ease-in-out;
     color: #fba723;
-}
-
-.lista-description-text {
+  }
+  
+  .lista-description-text {
     font-size: 16px;
     width: 240px;
     height: 240px;
     padding: 10px;
     border-radius: 10px;
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;   
-}
-.productImage{
+    background-repeat: no-repeat;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+  }
+  
+  .productImage {
     width: 240px;
     height: 240px;
-    border: 4px solid ;
+    border: 4px solid; 
     border-radius: 5px;
     margin-top: 10px;
-    
-}
-
-@media (max-width: 768px) {
-	body {
-		padding: 10px;
-	}
-
-	h1 {
-		font-size: 1.5rem;
-	}
-}
+  }
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    .erfarenhet-title {
+      font-size: 36px; 
+    }
+  
+    .erfarenhet-title-box {
+      gap: 30px; 
+      padding: 15px;
+    }
+  
+    .lista-description-text,
+    .productImage {
+      width: 180px; 
+      height: 180px;
+    }
+  
+    .erfarenhet-container a {
+      font-size: 18px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .erfarenhet-title {
+      font-size: 28px; 
+    }
+  
+    .erfarenhet-title-box {
+      flex-direction: column; 
+      align-items: center; 
+      gap: 20px;
+      padding: 10px;
+    }
+  
+    .erfarenhet-title-description {
+      width: 100%; /
+    }
+  
+    .lista-description-text,
+    .productImage {
+      width: 100%; 
+      height: auto; 
+    }
+  
+    .erfarenhet-container a {
+      font-size: 16px; 
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .kontakt {
+      font-size: 2.5rem;
+    }
+  
+    .kontakt-form {
+      margin: 40px 20px;
+      padding: 15px;
+    }
+  
+    .texten {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 390px) {
+    .kontakt {
+      font-size: 2rem;
+    }
+  
+    .kontakt-form {
+      margin: 20px 10px;
+      padding: 10px;
+    }
+  
+    .labelText {
+      font-size: 1rem;
+    }
+  
+    .skicka {
+      width: 100%;
+    }
+  }

@@ -1,32 +1,205 @@
 .footer-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    align-content: flex-end ; 
-    color: white;
-    margin:auto;
-    padding: 20px;
-    font-weight: 1600;
-    font-family: "Tourney", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  align-content: flex-end;
+  color: white;
+  margin: auto;
+  padding: 20px;
+  font-family: "Tourney", sans-serif;
+  font-weight: 400;
+  flex-wrap: wrap;
+  text-align: center;
+}
 
 .footer-container a:hover {
   color: #fba723;
   font-size: 18px;
   transition: all 0.4s ease-in-out;
-  
 }
 
-@media (max-width: 768px) {
-	body {
-		padding: 10px;
-	}
 
-	h1 {
-		font-size: 1.5rem;
-	}
+.description-container li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+  margin: auto;
+}
+
+.titel-big {
+  color: #fba723;
+  line-height: 2.1;
+  text-align: center;
+  font-weight: 700;
+  padding: 10px;
+  border: 8px solid transparent;
+  border-inline-color: #f93827;
+  font-size: 4rem;
+  font-family: "Tourney", sans-serif;
+}
+
+.sub-titel {
+  font-size: 3rem;
+  color: #f93827;
+  margin: auto;
+  font-weight: 500;
+  font-family: "Funnel Display", sans-serif;
+}
+
+.sub-titel-description {
+  text-align: left;
+  width: 100%;
+  max-width: 550px;
+  display: none;
+}
+
+.sub-titel-period {
+  margin: auto;
+  font-family: "Funnel Display", sans-serif;
+}
+
+.experience-link {
+  color: #fba723;
+  text-decoration: none;
+  font-family: "Funnel Display", sans-serif;
+  font-weight: bold;
+}
+
+.toggle-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  background-color: #fba723;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #f93827;
+}
+
+.experience-description {
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
+  max-width: 800px;
+  font-family: "Aleo", serif;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.image-gallery img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: white 5px solid;
+  border-radius: 38px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.1);
+}
+
+.Hola {
+  padding: 5px 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #fba723;
+  border: none;
+}
+
+.link-section {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.link-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .titel-big {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .sub-titel {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .experience-description {
+    font-size: 18px;
+    width: 90%;
+  }
+
+  .image-gallery {
+    gap: 15px;
+  }
+
+  .image-gallery img {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .titel-big {
+    font-size: 2rem;
+  }
+
+  .sub-titel {
+    font-size: 1.8rem;
+  }
+
+  .experience-description {
+    font-size: 16px;
+  }
+
+  .footer-container {
+    font-size: 0.8rem;
+  }
+
+  .image-gallery img {
+    max-width: 50%;
+  }
+
+  .Hola {
+    width: 25%;
+    font-size: 14px;
+  }
+
+  .toggle-button {
+    font-size: 14px;
+    width: 50%;
+  }
 }
