@@ -3,7 +3,7 @@ import "../pagesCSS/Footer.css";
 const Footer = () => (
   <footer className="footer-container">
     <a
-      href="/assets/images2/Magasin.pdf"
+      href="../public/images2/Magasin.pdf"
       download="Magasin.pdf"
       type="application/pdf"
     >
@@ -19,7 +19,7 @@ const Footer = () => (
     </a>
 
     <a
-      href="/assets/images2/CV_Nelson_Pena.pdf"
+      href="../public/images2/CV_Nelson_Pena.pdf"
       download="CV_Nelson_Pena.pdf"
       type="application/pdf"
     >
