@@ -1,37 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Input from './Input';
 import "../pagesCSS/Kontakta.css";
 
 const Kontakta = () => {
-  const [kontaktData, setKontaktData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-
-  const handleChange = (event) => {
-    setKontaktData({
-      ...kontaktData,
-      [event.target.name]: event.target.value
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    
-    if (!kontaktData.name || !kontaktData.email || !kontaktData.message) {
-      alert("Alla fält måste fyllas i!"); 
-      return;
-    }
-
-    alert(`Submitted:\n\nName: ${kontaktData.name}\nEmail: ${kontaktData.email}\nMessage: ${kontaktData.message}`); 
-
-    
-    setKontaktData({ name: "", email: "", message: "" });
-  };
-
   return (
-    <form onSubmit={handleSubmit} className="kontakt-form">
+    <form
+      action="https://formsubmit.co/nelsonpenna83@hotmail.com"
+      method="POST"
+      className="kontakt-form"
+    >
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://tusitio.netlify.app/tack" />
+
       <h1 className="kontakt">Kontakta mig</h1>
       <h3 className="kontakt-text">
         Om du har några frågor, förslag eller om du bara vill hälsa, tveka inte att kontakta mig.
@@ -46,8 +26,7 @@ const Kontakta = () => {
         type="text"
         label="Namn"
         placeholder="Ditt namn"
-        value={kontaktData.name}
-        onChange={handleChange}
+        required
       />
 
       <Input
@@ -55,8 +34,7 @@ const Kontakta = () => {
         type="email"
         label="E-post"
         placeholder="Din e-post"
-        value={kontaktData.email}
-        onChange={handleChange}
+        required
       />
 
       <div className="inputfield">
@@ -64,8 +42,7 @@ const Kontakta = () => {
         <textarea
           name="message"
           placeholder="Skriv ditt meddelande här..."
-          value={kontaktData.message}
-          onChange={handleChange}
+          required
         />
       </div>
 
