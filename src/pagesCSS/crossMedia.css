@@ -8,7 +8,7 @@
   margin: auto;
 }
 
-.titel-big {
+.titel-big h1{
   color:#fba723;
   line-height: 2.1;
   text-align: left;
@@ -20,13 +20,13 @@
   border-inline-color: #f93827;
   font-size: 4rem;
   color: #fba723;
-  font-weight: 900; /* Maximum valid font-weight */
+  font-weight: 900; 
   font-family: "Tourney", sans-serif;
   font-optical-sizing: auto;
-  font-weight: normal; /* Default valid font-weight */
+  font-weight: normal; 
   font-style: normal;
 }
-.sub-titel {
+.sub-titel h2{
   font-size: 60px; 
   color: #f93827;
   margin: auto;
@@ -71,7 +71,7 @@
   transition: background-color 0.3s ease;
 }
 
-.experience-description {
+.experience-description p{
   color: white;
   text-align: left;
   font-size: 20px;
@@ -149,19 +149,63 @@
 }
 
 @media (max-width: 430px) {
-  .navbar {
-    font-size: 1.2em;
-    flex-direction:row;
+  .titel-big {
+    font-size: 2rem;
+    padding-right: 0;
+    text-align: center;
+    border-width: 4px;
+  }
+
+  .sub-titel {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .sub-titel-description {
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+    display: block; 
+  }
+
+  .sub-titel-period {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .experience-description p{
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .image-gallery {
+    flex-direction: column;
     align-items: center;
   }
 
-  .navbar ul {
+
+  .link-section ul {
     flex-direction: column;
     gap: 10px;
   }
 
-  .navbar a {
-    padding: 6px 20px;
-    font-size: 0.9rem;
+  .toggle-button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .Hola {
+    font-size: 1rem;
+    width: 50%;
+    text-align: center;
+  }
+
+  .description-container li {
+    padding: 10px;
+    margin: 0 auto;
   }
 }
