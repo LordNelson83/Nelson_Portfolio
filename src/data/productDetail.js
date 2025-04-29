@@ -1,8 +1,4 @@
-import indesign from "../assets/images2/indesign.png";
-import photoshop from "../assets/images2/photoshop.png";
-import ilustrator from "../assets/images2/ilustrator.png";
-import acrobat from "../assets/images2/acrobat.png";
-
+import programas from "../assets/images2/programas.png";
 import produktion1 from "../assets/images/produktion1.png";
 import produktion2 from "../assets/images/produktion2.png";
 import produktion from "../assets/images/produktion.png";
@@ -33,7 +29,7 @@ const productDetail = [
           "På folkhögskolan lärde jag grundläggande och fördjupning kunskaper i grafisk form och kommunikation bland annat med att skapa affischer, broschyrer, illustration med Adobe Photoshop, Indesign och Illustrator. Under två års studier på Fridhems folkhögskola har jag utvecklat mitt grafiska hantverk genom både praktiskt och teoretiskt arbete. Jag har lärt mig grunderna i klassisk teckning och digital design, fördjupat mina kunskaper inom typografi, layout, illustration och visuell berättarteknik. Utbildningen gav mig möjlighet att analysera, utveckla och förverkliga idéer både enskilt och i grupp, vilket stärkte min kreativitet och konstnärliga uttryck. Genom arbete med branschstandardprogram som Photoshop, Illustrator och InDesign byggde jag en solid teknisk grund. Det tvärkonstnärliga samarbetet med andra kulturlinjer berikade min lärandeupplevelse och utvecklade mitt kritiska perspektiv på visuell kommunikation. Utbildningen fungerade som en språngbräda för vidare studier och arbete, och jag känner mig väl rustad för framtida utmaningar.",
       },
     ],
-    images: [indesign, photoshop, ilustrator, acrobat],
+
   },
   {
     id: 2,
@@ -73,7 +69,7 @@ const productDetail = [
     ],
     links: [
       { label: "Pinterest", url: "https://es.pinterest.com/NP3Design/3d-design-3dprint/" },
-      { label: "Facebook", url: "https://www.facebook.com/search/top?q=np3design/" },
+      
     ],
     images: [casett3d, dprint1, dprint2, dprint3, dprint5, dprint4],
   },

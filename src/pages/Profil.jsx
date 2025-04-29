@@ -1,6 +1,7 @@
 import React from "react";
 import "../pagesCSS/profil.css";
 import Products from "./Products"; 
+import programas from "../assets/images2/programas.png";
 
 const Profil = () => {
   return (
@@ -12,7 +13,10 @@ När jag sökte nya utmaningar upptäckte jag 3D-printing och design,en väg dä
 Jag ser detta som en spännande möjlighet att kombinera mina intressen och skapa innovativa designlösningar.
 </p>
       <Products /> 
+      <h1>Program</h1>
+      <img className="programas" src={programas} alt="program"/>
     </div>
+
   );
 };
 

@@ -37,6 +37,10 @@
     line-height: 1.6;
     box-shadow: 0 4px 6px white;
   }
+  .programas{
+    background-color: #fba723;
+    border-radius:25px;
+  }
   
 
   @media (max-width: 768px) {
