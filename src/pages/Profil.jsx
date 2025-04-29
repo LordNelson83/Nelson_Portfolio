@@ -13,7 +13,7 @@ När jag sökte nya utmaningar upptäckte jag 3D-printing och design,en väg dä
 Jag ser detta som en spännande möjlighet att kombinera mina intressen och skapa innovativa designlösningar.
 </p>
       <Products /> 
-      <h1>Program</h1>
+      <h1>Mina Färdigheter</h1>
       <img className="programas" src={programas} alt="program"/>
     </div>
 
