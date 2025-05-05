@@ -1,153 +1,147 @@
-.erfarenhet-container a {
-    text-align: left; 
-    font-size: 22px;
-    font-family: "Aleo", serif;
-    font-optical-sizing: auto;
-    font-weight: 400; 
-    font-style: normal;
-    text-decoration: none; 
-    color: inherit; 
+.portfolio-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.portfolio-title,
+.portfolio-subtitle {
+  font-size: 4rem;
+  color: #fba723;
+  font-weight: 800;
+  font-family: "Tourney", sans-serif;
+  text-align: center;
+}
+
+.portfolio-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: left;
+  font-family: "Aleo", serif;
+  font-size: 22px;
+  color: white;
+}
+
+.portfolio-products {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  padding: 20px;
+}
+
+.product-image-utbildning {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.product-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Aleo", serif;
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-item a:hover {
+  color: #fba723;
+  transition: 0.2s ease-in-out;
+}
+
+.product-description {
+  font-size: 16px;
+  width: 240px;
+  height: 240px;
+  padding: 10px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.product-image {
+  width: 240px;
+  height: 240px;
+  margin-top: 10px;
+  border: 4px solid;
+  border-radius: 5px;
+}
+
+.bilder-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .portfolio-title,
+  .portfolio-subtitle {
+    font-size: 2.8rem;
   }
-  
-  .erfarenhet-title {
-    font-size: 45px;
-    text-align: center;
+
+  .portfolio-info {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .product-image,
+  .product-description {
+    width: 180px;
+    height: 180px;
+  }
+
+  .portfolio-products {
+    gap: 30px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .portfolio-title,
+  .portfolio-subtitle {
+    font-size: 2rem;
+  }
+
+  .portfolio-info {
+    font-size: 16px;
     padding: 10px;
-    color: #fba723;
-    font-weight: 500;
-    font-family: "Funnel Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400; 
-    font-style: normal;
   }
-  
-  .erfarenhet-title-box {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 60px;
-    padding: 20px; 
+
+  .product-item a {
+    font-size: 16px;
   }
-  
-  .erfarenhet-title-description a {
-    display: flex;
+
+  .product-image,
+  .product-description {
+    width: 100%;
+    height: auto;
+  }
+
+  .portfolio-products {
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding-bottom: 10px;
-  }
-  
-  .erfarenhet-title-description a:hover {
-    transition: all 0.2s ease-in-out;
-    color: #fba723;
-  }
-  
-  .lista-description-text {
-    font-size: 16px;
-    width: 240px;
-    height: 240px;
+    gap: 20px;
     padding: 10px;
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
   }
-  
-  .productImage {
-    width: 240px;
-    height: 240px;
-    border: 4px solid; 
-    border-radius: 5px;
-    margin-top: 10px;
+
+  .bilder-section {
+    flex-direction: column;
+    gap: 20px;
   }
-  
-  
-  
-  
-  @media (max-width: 768px) {
-    .erfarenhet-title {
-      font-size: 36px; 
-    }
-  
-    .erfarenhet-title-box {
-      gap: 30px; 
-      padding: 15px;
-    }
-  
-    .lista-description-text,
-    .productImage {
-      width: 180px; 
-      height: 180px;
-    }
-  
-    .erfarenhet-container a {
-      font-size: 18px; 
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .erfarenhet-title {
-      font-size: 28px; 
-    }
-  
-    .erfarenhet-title-box {
-      flex-direction: column; 
-      align-items: center; 
-      gap: 20px;
-      padding: 10px;
-    }
-  
-    .erfarenhet-title-description {
-      width: 100%; /
-    }
-  
-    .lista-description-text,
-    .productImage {
-      width: 100%; 
-      height: auto; 
-    }
-  
-    .erfarenhet-container a {
-      font-size: 16px; 
-    }
-  }
-  
-  
-  @media (max-width: 768px) {
-    .kontakt {
-      font-size: 2.5rem;
-    }
-  
-    .kontakt-form {
-      margin: 40px 20px;
-      padding: 15px;
-    }
-  
-    .texten {
-      padding: 15px;
-    }
-  }
-  
-  @media (max-width: 390px) {
-    .kontakt {
-      font-size: 2rem;
-    }
-  
-    .kontakt-form {
-      margin: 20px 10px;
-      padding: 10px;
-    }
-  
-    .labelText {
-      font-size: 1rem;
-    }
-  
-    .skicka {
-      width: 100%;
-    }
-  }
+}

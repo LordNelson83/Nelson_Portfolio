@@ -1,4 +1,4 @@
-import programas from "../assets/images2/programas.png";
+
 import produktion1 from "../assets/images/produktion1.png";
 import produktion2 from "../assets/images/produktion2.png";
 import produktion from "../assets/images/produktion.png";

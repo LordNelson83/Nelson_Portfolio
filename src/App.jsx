@@ -10,6 +10,7 @@ import CrossMedia from "./pages/CrossMedia";
 import GrafiskProduktion from "./pages/GrafiskProduktion";
 import ThreeDPrint from "./pages/ThreeDPrint";
 import UxUiDesign from "./pages/UxUiDesign";
+import Bilder from "./pages/Bilder";
 
 const App = () => {
   const routes = useRoutes([
@@ -22,6 +23,7 @@ const App = () => {
     { path: "/profil", element: <Profil /> },
     { path: "/kontakta", element: <Kontakta /> },
     { path: "/ommig", element: <OmMig /> },
+    { path: "/Bilder", element: <Bilder/> },
   ]);
 
   return (
