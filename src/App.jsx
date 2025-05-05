@@ -23,7 +23,7 @@ const App = () => {
     { path: "/profil", element: <Profil /> },
     { path: "/kontakta", element: <Kontakta /> },
     { path: "/ommig", element: <OmMig /> },
-    { path: "/Bilder", element: <Bilder/> },
+    { path: "/bilder", element: <Bilder/> },
   ]);
 
   return (
