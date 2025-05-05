@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { bilderId } from "../data/bilderId";
 import { productsId } from "../data/productsId";
-import "../pagesCSS/products.css"; 
+import "../pagesCSS/Products.css"; 
 
 const Products = () => {
   const [products, setProducts] = useState([]);
