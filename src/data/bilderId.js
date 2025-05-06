@@ -1,4 +1,4 @@
-import Microsoft from "../assets/images2/Microsoft.png";
+import Microsoft from "../assets/images2/microsoft_netlify.png";
 import Github from "../assets/images2/Github.png";
 import Photoshop from "../assets/images2/Photoshop.png";
 import Indesign from "../assets/images2/Indesign.png";
