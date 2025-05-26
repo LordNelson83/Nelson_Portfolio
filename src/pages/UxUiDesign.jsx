@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import productDetail from "../data/productDetail";
 import "../pagesCSS/crossMedia.css";
 
 const UxUiDesign = () => {
-  const { id } = useParams();
-  const product = productDetail.find((p) => p.id === Number(id));
+  const product = productDetail.find((p) => p.id === 4);
 
   return (
     <div className="description-container">

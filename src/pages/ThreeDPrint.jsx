@@ -1,11 +1,9 @@
-import React from "react";
 import { useParams, Link } from "react-router-dom";
 import productDetail from "../data/productDetail";
 import "../pagesCSS/ThreeDPrint.css";
 
 const ThreeDPrint = () => {
-  const { id } = useParams();
-  const product = productDetail.find((p) => p.id === Number(id));
+ const product = productDetail.find((p) => p.id === 3);
 
   return (
     <div className="description-container">

@@ -1,21 +1,14 @@
-
-import produktion1 from "../assets/images/produktion1.png";
-import produktion2 from "../assets/images/produktion2.png";
-import produktion from "../assets/images/produktion.png";
-import printing3 from "../assets/images/printing3.png";
-import produktion3 from "../assets/images/produktion3.png";
-
-import casett3d from "../assets/images/casett3d.png";
 import dprint1 from "../assets/images/3dprint1.png";
 import dprint2 from "../assets/images/3dprint2.png";
 import dprint3 from "../assets/images/3dprint3.png";
-import dprint5 from "../assets/images/3dprint5.png";
 import dprint4 from "../assets/images/3dprint4.png";
+import magasin from "../assets/images/magasin.png";
+import oak from "../assets/images/oak.png";
+import oakui from "../assets/images/oak-ui.png";
 
-import ux3 from "../assets/images/ux3.png";
-import ux1 from "../assets/images/ux1.png";
-import ux2 from "../assets/images/ux2.png";
-import ux5 from "../assets/images/ux5.png";
+
+
+
 
 const productDetail = [
   {
@@ -29,32 +22,44 @@ const productDetail = [
           "På folkhögskolan lärde jag grundläggande och fördjupning kunskaper i grafisk form och kommunikation bland annat med att skapa affischer, broschyrer, illustration med Adobe Photoshop, Indesign och Illustrator. Under två års studier på Fridhems folkhögskola har jag utvecklat mitt grafiska hantverk genom både praktiskt och teoretiskt arbete. Jag har lärt mig grunderna i klassisk teckning och digital design, fördjupat mina kunskaper inom typografi, layout, illustration och visuell berättarteknik. Utbildningen gav mig möjlighet att analysera, utveckla och förverkliga idéer både enskilt och i grupp, vilket stärkte min kreativitet och konstnärliga uttryck. Genom arbete med branschstandardprogram som Photoshop, Illustrator och InDesign byggde jag en solid teknisk grund. Det tvärkonstnärliga samarbetet med andra kulturlinjer berikade min lärandeupplevelse och utvecklade mitt kritiska perspektiv på visuell kommunikation. Utbildningen fungerade som en språngbräda för vidare studier och arbete, och jag känner mig väl rustad för framtida utmaningar.",
       },
     ],
-
   },
   {
     id: 2,
-    name: "Grafisk Produktion & IT-administration",
+    name: "Projekter",
     experiences: [
       {
-        year: "2010-2012",
-        school: "Xenter",
+        year: "Fridhems Folkhögskola",
+        school: "Tidningsmagasin",
         description:
-          "Under mina två år på Xenter har jag genomgått en intensiv utbildning i grafisk produktion. Jag lärde mig att skapa både fysiska och digitala kommunikationslösningar där originalidén och designen bevaras genom hela processen. Genom att arbeta med verktyg som InDesign, Photoshop, Illustrator, After Effects och Premiere Pro har jag utvecklat ett gediget tekniskt kunnande. Utbildningen kombinerade teori med praktik, där jag praktiserade fram tills vidare anställning. Denna erfarenhet har gett mig en djup förståelse för hur man säkerställer att resultatet håller hög kvalitet, med rätt färg och form, oavsett om det gäller trycksaker, förpackningar.",
+          " Tidningsmagasin, jag fördjupade mina kunskaper i grafisk form och visuell kommunikation genom både praktiskt och teoretiskt arbete och hjälpte andra med sina projekt. Mina uppgifter med affischer, broschyrer och illustrationer i Adobe Photoshop, Illustrator och InDesign, samt lärde mig grunderna i teckning, layout, typografi och digital design. Utbildningen stärkte min kreativitet, tekniska färdigheter och förmåga att arbeta både självständigt och i grupp. Det tvärkonstnärliga samarbetet gav nya perspektiv och breddade min förståelse för visuell kommunikation",
+       links: [{ label: "Magasin", url: "/Magasin.pdf" }],
+        images: [magasin], 
       },
       {
-        year: "2012-2023",
-        school: "Produktion & Logistik",
+        year: "Chas Academy",
+        school: "Gymplanerare",
         description:
-          "Med nästan 10 års erfarenhet inom grafisk produktion har jag arbetat med hela processen – från tryckproduktion till efterbehandling. Jag har specialiserat mig på detaljer som boklimning och wire‑o-bindning och övriga uppgiter inom produktion, där precision är avgörande för att bevara designens integritet. Min roll har inneburit att producera både fysiska och digitala trycksaker, med ansvar för efterarbete, korrigering och kvalitetskontroll. Utöver tryckningen har jag hanterat lagerarbete, logistik och kundservice, vilket inkluderar orderhantering och koordinering med externa leverantörer. Jag har även verkat i olika roller, från tryckoperatör till produktionsledare, där mitt tekniska kunnande och min noggrannhet säkerställer att varje projekt lever upp till höga kvalitetskrav.",
+          "Som UX-designer hade jag möjligheten att genomföra ett projekt tillsammans med mina skolkamrater, där målet var att hitta ett sätt att skapa empati med användaren. Vi fokuserade på att förstå användarens behov, hur vi kunde uppnå målet och tillgodose alla behov för att slutligen nå en lösning som var minimalistisk, enkel och effektiv. ",
+        links: [
+          { label: "oak-UX", url: "/OAK-UX.pdf" },
+          { label: "oak-UI", url: "/OAK-UI.pdf" }
+        ],
+        images: [oak, oakui],
       },
       {
-        year: "2023-2024",
-        school: "Administration & kundstjänst",
+        year: "Chas Academy",
+        school: "E-handelprojekt",
         description:
-          "Med ett års erfarenhet av administration och kundservice på ett tryckeri ansvarade jag för fakturering, uppdatering av kundens lager för trycksaker och bildredigering med Acrobat. Jag hanterade även vårt web-to-print & MIS-system, HaiKom – ett SaaS-system som tar hand om serverunderhåll, backup, uppdateringar och full användarsupport, vilket minskar kundens behov av egen IT-miljö. I rollen assisterade jag kunder med IT-administration och projektledning, vilket bidrog till effektiva arbetsflöden. Vidare använde jag Mailchimp för e-postmarknadsföring och att underlätta kommunikationen. Genom att koordinera interna processer, systemuppdateringar och kundärenden utvecklade jag en bred kompetens inom tryckeriets administrativa funktioner och bidrog till en hög kundnöjdhet.",
+          " Som frontendutvecklare har jag arbetat med projekt både självständigt och i grupp. Min erfarenhet av HTML, CSS och JavaScript väckte min nyfikenhet för kodspråk och viljan att lära mig mer inom området. Trots att det är ett omfattande ämne anser jag att kunskap i JavaScript och React är avgörande för att UI, UX och frontend ska kunna samverka och skapa en bättre förståelse för designprocessen. I vårt grupprojekt, som baserades på API och databaser, var det grundläggande att följa flera steg – från att skapa designen i Figma till att bygga komponenterna i React, med fokus på responsivitet och användarvänlighet. Användningen av GitHub var också avgörande för vårt e-handelsprojekt, eftersom det gjorde det möjligt för oss att samarbeta, justera och förbättra sidan kontinuerligt.",
       },
     ],
-    images: [produktion1, produktion2, produktion, printing3, produktion3],
+    links: [
+      { label: "Solenia", url: "https://solenia.netlify.app/" },
+      {
+        label: "Github",
+        url: "https://github.com/LordNelson83/Nelson_Portfolio",
+      },
+    ],
   },
   {
     id: 3,
@@ -68,11 +73,10 @@ const productDetail = [
       },
     ],
     links: [
-      { label: "Pinterest", url: "https://es.pinterest.com/NP3Design/3d-design-3dprint/" },
-      
-    ],
-    images: [casett3d, dprint1, dprint2, dprint3, dprint5, dprint4],
-  },
+    { label: "Pinterest", url: "https://es.pinterest.com/NP3Design/3d-design-3dprint/" },
+  ],
+  images: [dprint1, dprint2, dprint3, dprint4], 
+},
   {
     id: 4,
     name: "UX/UI Design & Frontend",
@@ -84,17 +88,12 @@ const productDetail = [
           "Jag studerar UX-design och frontendutveckling på Chas Academy, där jag utvecklar djupgående kunskaper i webbutveckling (JavaScript) och UX-design. Kombinationen av design, kodning och agila metoder ger mig insikt i hur en UX-designer skapar intuitiva och tillgängliga digitala lösningar. Jag brinner för att förstå användarnas behov och designa gränssnitt som förmedlar rätt känsla och guidar dem smidigt genom digitala miljöer. Under utbildningen har jag arbetat med tillgänglighet enligt EU-krav och utforskat hur AI kan effektivisera designprocesser. Genom projektledning och agila arbetsmetoder har jag fått erfarenhet av att leda team och driva projekt från idé till lansering. Efter utbildningen är jag redo för roller som frontendutvecklare eller UX-designer med teknisk kompetens – med målet att skapa engagerande och användarvänliga digitala produkter.",
       },
       {
-        year: "",
-        school: "Fronted",
+        year: "2024 -2026",
+        school: "Frontend",
         description:
           "Kodning handlar om mer än bara programmering – det är ett sätt att kommunicera genom färg, rörelse och interaktion mellan människa och maskin. Jag har lärt mig att kombinera logiskt tänkande med kreativ design för att skapa funktionella och visuellt tilltalande webbupplevelser. Genom att arbeta med HTML, CSS och JavaScript bygger jag responsiva webbplatser och fördjupar mig i client-server-arkitektur, API:er och CMS-system. Jag har även utvecklat en förståelse för webbtillgänglighet och säkerhet, vilket säkerställer att digitala tjänster blir både användarvänliga och hållbara. Utöver tekniska färdigheter har jag erfarenhet av automatiseringsverktyg för att effektivisera utvecklingsprocessen. Min utbildning kombinerar teori och praktik, vilket ger mig en stark grund inom frontendutveckling och förbereder mig för att skapa moderna och dynamiska webbapplikationer.",
       },
     ],
-    links: [
-      { label: "Github", url: "https://github.com/LordNelson83/Nelson_Portfolio" },
-      { label: "Grupparbete", url: "https://solenia.netlify.app/" },
-    ],
-    images: [ux3, ux1, ux2, ux5],
   },
 ];
 

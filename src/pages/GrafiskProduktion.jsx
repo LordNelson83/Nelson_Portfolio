@@ -39,7 +39,7 @@ const GrafiskProduktion = () => {
       )}
 
       <div>
-        <Link to="/products">
+        <Link to="/Profil">
           <button className="back-button">👈 Tillbaka</button>
         </Link>
       </div>

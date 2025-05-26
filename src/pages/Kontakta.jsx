@@ -1,53 +1,37 @@
-import React from 'react';
-import Input from './Input';
+
+import mustang2 from '../assets/images2/mustang2.png';
+import mustang1 from '../assets/images2/mustang1.png';
 import "../pagesCSS/Kontakta.css";
 
 const Kontakta = () => {
-  return (
-    <form
-      action="https://formsubmit.co/nelsonpenna83@hotmail.com"
-      method="POST"
-      className="kontakt-form"
-    >
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://tusitio.netlify.app/tack" />
+  return ( 
+    <>
+       
+       <h1 className="kontakt">Kontakt</h1>
+      
+       <img className="mustang1" src={mustang1} alt="car" />
+    <img className="mustang2" src={mustang2} alt="car" />
+    
+    <div className="contact-section-container">
+<div className="circle">
 
-      <h1 className="kontakt">Kontakta mig</h1>
       <h3 className="kontakt-text">
         Om du har några frågor, förslag eller om du bara vill hälsa, tveka inte att kontakta mig.
       </h3>
-      <p className="texten">
-        Ni är varmt välkomna att lämna era kommentarer på min portfölj. 
-        Era synpunkter är ovärderliga och hjälper mig att utvecklas vidare. Tack!
-      </p>
+       <a
+      href="https://www.linkedin.com/in/nelson-pe%C3%B1a-21881412a/"
+      target="_blank"
+      rel="noopener noreferrer">Linkedin</a>
 
-      <Input
-        name="name"
-        type="text"
-        label="Namn"
-        placeholder="Ditt namn"
-        required
-      />
+    <a href="/CV_Nelson_Pena.pdf" download="CV_Nelson_Pena.pdf" type="application/pdf">
+  Ladda ner CV
+</a>
 
-      <Input
-        name="email"
-        type="email"
-        label="E-post"
-        placeholder="Din e-post"
-        required
-      />
+      <p className="texten">nelsonpenna83@gmail.com</p>
 
-      <div className="inputfield">
-        <label className="labelText"></label>
-        <textarea
-          name="message"
-          placeholder="Skriv ditt meddelande här..."
-          required
-        />
-      </div>
-
-      <button className="skicka" type="submit">Skicka</button>
-    </form>
+    </div>
+   </div>
+   </>
   );
 };
 

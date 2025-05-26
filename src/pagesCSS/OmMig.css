@@ -1,112 +1,115 @@
-.Namnet {
-    text-align: center;
-    font-family: "Funnel Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.8s ease-in-out;
-    margin: auto;
-    padding: 30px;
-    font-size: 4rem;
-  }
-  
-  .strong {
-    display: inline-block;
-    transition: color 0.8s ease-in-out;
-    animation: colorChange 1.8s infinite alternate, pulse 0.8s infinite alternate;
-  }
-  
-  .me {
-    border-radius: 10px 100px / 120px;
-    height: 400px;
-    width: 325px;
-    max-width: 90%;
-    object-fit: cover;
-    margin-bottom: 20px;
-  }
-  
-  .informationen {
-    font-size: 22px;
-    color: white;
-    text-align: left;
-    font-family: "Aleo", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    padding: 25px;
-    margin: auto;
-    max-width: 60%;
-   
-    border-radius: 10px 100px / 90px;
-  }
-  
-  .background {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 9px 90px / 90px;
-    padding: 20px;
-  }
-  
-  @keyframes colorChange {
-    0% { color: black; }
-    25% { color: #d11b1b; }
-    50% { color: #fba723; }
-    75% { color: #bfc51a; }
-    95% { color: #3c932f; }
-    100% { color: #1509be; }
-  }
-  
-  @keyframes pulse {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
-  }
-  
-  
-  @media (max-width: 768px) {
-    .Namnet {
-      font-size: 2.2rem;
-      padding: 20px;
-    }
-  
-    .informationen {
-      font-size: 18px;
-      padding: 15px;
-    }
-  
-    .me {
-      height: 300px;
-      width: 250px;
-    }
-  
-    .background {
-      padding: 15px;
-    }
-  }
-  
+.background{ 
+  display: flex;
+  align-items:flex-start;
+  gap: 15%;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
 
-  @media (max-width: 480px) {
-    .Namnet {
-      font-size: 1.8rem;
-      padding: 15px;
-    }
+.left-section {
+  max-width: 50%;
+  text-align: left;
+  padding-left:80px ;
+  margin-top: 50px;
+}
+.titel{
+  font-family: "Playfair Display", serif;
+  color: #000;
+  font-size: 80px;
+  line-height: 1.2;
   
-    .informationen {
-      font-size: 16px;
-      padding: 10px;
-    }
-  
-    .me {
-      height: 240px;
-      width: 200px;
-    }
-  
-    .background {
-      padding: 10px;
-    }
+}
+.subtitel{
+font-family: "Montserrat", sans-serif; 
+font-size: 26px;
+font-weight: 400;
+color: #000;
+padding-bottom: 15px;
+}
+.information{
+font-family: "Montserrat", sans-serif; 
+font-size: 15px;
+color: #000;
+text-align: justify;
+font-size: 16px;
+font-weight: 400;
+line-height: normal;
+align-self: stretch;
+}
+.right-section {
+  position: relative;
+  background-color: #000;
+}
+
+.background-black{
+  background: black;
+  width: 471px;
+  height: 471px;
+  border-radius: 169px 0px;
+  box-shadow: 15px 8px 11px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.Cirle-orange{
+width: 371px;
+height: 371px;
+flex-shrink: 0;
+border-radius: 571px;
+background: var(--background_2, linear-gradient(180deg, #FFA205 -1.75%, #FDA414 16.35%, #FBA723 34.45%, #D59123 54.5%, #AF7A23 74.56%, #95681E 99.99%));
+}
+.me{
+width: 250px;
+height: 420px;
+margin-bottom: 0;
+margin-top: 0;
+
+}
+.skills-container {
+  width: 100%;
+  display: flex;
+  align-items:flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.skills img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s;
+  padding: 5px;
+  margin: 10px;
+ border-radius: 20px;
+}
+
+.skills img:hover {
+  transform: scale(1.1);
+}
+
+
+@keyframes scroll-skills {
+  0% {
+    transform: translateX(100vw);
   }
-  
+  100% {
+    transform: translateX(-100vw);
+  }
+}
