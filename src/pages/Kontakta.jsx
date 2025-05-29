@@ -22,10 +22,15 @@ const Kontakta = () => {
       href="https://www.linkedin.com/in/nelson-pe%C3%B1a-21881412a/"
       target="_blank"
       rel="noopener noreferrer">Linkedin</a>
+       <a
+      href="https://github.com/LordNelson83"
+      target="_blank"
+      rel="noopener noreferrer">Github</a>
 
     <a href="/CV_Nelson_Pena.pdf" download="CV_Nelson_Pena.pdf" type="application/pdf">
   Ladda ner CV
 </a>
+
 
       <p className="texten">nelsonpenna83@gmail.com</p>
 
