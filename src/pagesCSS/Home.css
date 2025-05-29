@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items:flex-start;
+  align-items: flex-start;
   margin-top: 0;
   padding-top: 50px;
   gap: 350px;
@@ -10,7 +10,6 @@
   width: 100vw;
   box-sizing: border-box;
 }
-
 
 .mustang1 {
   position: absolute;
@@ -24,7 +23,6 @@
   opacity: 0;
 }
 
-
 .Portfolj_namn {
   color: #000;
   font-size: 150px;
@@ -32,7 +30,7 @@
   font-weight: 600;
   line-height: normal;
   margin: 0;
-  font-family: "Playfair Display", serif; 
+  font-family: "Playfair Display", serif;
 }
 
 .Name {
@@ -42,7 +40,7 @@
   font-weight: 400;
   line-height: normal;
   margin: 0;
-  font-family: "Montserrat", sans-serif; 
+  font-family: "Montserrat", sans-serif;
 }
 
 .intro {
@@ -59,9 +57,9 @@
   display: flex;
   width: 439px;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
   padding: 25px;
-  gap: 10px; 
+  gap: 10px;
 }
 
 @keyframes slideInRight {
@@ -70,7 +68,71 @@
     opacity: 0;
   }
   100% {
-    transform: translateX(-100);
+    transform: translateX(0);
     opacity: 1;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .home-container {
+    gap: 100px;
+  }
+  .Portfolj_namn {
+    font-size: 90px;
+  }
+  .container {
+    width: 320px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 30px;
+  }
+  .mustang1 {
+    position: static;
+    width: 90vw;
+    left: 0;
+    top: 0;
+    margin-bottom: 20px;
+    animation: slideInRight 1.2s ease-out forwards;
+  }
+  .Portfolj_namn {
+    font-size: 60px;
+    text-align: center;
+  }
+  .container {
+    width: 90vw;
+    max-width: 400px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-container {
+    gap: 20px;
+    padding-top: 15px;
+  }
+  .Portfolj_namn {
+    font-size: 32px;
+  }
+  .Name {
+    font-size: 18px;
+  }
+  .intro {
+    font-size: 13px;
+  }
+  .container {
+    width: 98vw;
+    max-width: 100%;
+    padding: 5px;
+  }
+  .mustang1 {
+    width: 100vw;
   }
 }
