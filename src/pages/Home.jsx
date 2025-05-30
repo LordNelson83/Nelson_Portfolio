@@ -1,5 +1,5 @@
 import "../pagesCSS/Home.css";
-import mustang1 from '../assets/images2/mustang1.png';
+import mustang from '../assets/images2/mustang.png';
 
 const Home = () => (
   <div className="home-container">
@@ -11,7 +11,7 @@ const Home = () => (
       </h3>
     </div>
     <div className="ihop">
-      <img className="mustang1" src={mustang1} alt="car" />
+      <img className="mustang" src={mustang} alt="car" />
     </div>
   </div>
 );
