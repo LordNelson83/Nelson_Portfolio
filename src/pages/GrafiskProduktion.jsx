@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import productDetail from "../data/productDetail";
-import "../pagesCSS/grafiskProduktion.css";
+import "../pagesCSS/crossMedia.css";
 
 const GrafiskProduktion = () => {
   const product = productDetail.find((p) => p.id === 2);

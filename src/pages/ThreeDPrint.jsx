@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import productDetail from "../data/productDetail";
-import "../pagesCSS/ThreeDPrint.css";
+import "../pagesCSS/crossMedia.css";
 
 const ThreeDPrint = () => {
  const product = productDetail.find((p) => p.id === 3);
@@ -17,7 +17,7 @@ const ThreeDPrint = () => {
       <img src={product.images} alt={product.name} />
     </>
 )}
-      <Link to="/products">
+      <Link to="/Profil">
         <button className="Hola">👈 Tillbaka</button>
       </Link>
     </div>

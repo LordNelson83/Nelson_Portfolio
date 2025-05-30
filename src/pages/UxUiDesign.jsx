@@ -16,7 +16,7 @@ const UxUiDesign = () => {
 
       {product.images && <img src={product.images} alt={product.name} />}
 
-      <Link to="/products">
+      <Link to="/Profil">
         <button className="Hola">👈 Tillbaka</button>
       </Link>
     </div>
