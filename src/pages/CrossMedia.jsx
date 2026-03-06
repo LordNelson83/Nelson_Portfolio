@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import "../pagesCSS/CrossMedia.css";
+import "../pagesCSS/crossMedia.css";
 
 import imgMagasin from "../assets/images/magasin.png";
 
