@@ -1,104 +1,118 @@
-.good-small{
-  height:70px;
-  width: 220px;
-  padding-right: 50px;
-  animation: fadeIn 2s ease-in-out forwards;
-  margin-left: 15px;
-}
+/* ══════════════════════════════════════
+   NAVBAR  —  Figma: Nav (2:369)
+   Portafolio_UX2026 · guardia1983@gmail.com
+   1440 × 104px · px 72 py 28
+   ══════════════════════════════════════ */
+
 .navbar {
-    padding-right:5px ;
-    display: flex;
-    gap:45px;
-    margin: 25px;
-}
-  
-.navbar a {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    transition: all 0.4s ease-in-out;
-    animation: fadeIn 4s ease-in-out forwards;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    display: inline-flex;
-    align-items: center;
-    gap: 68px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Figma: px 72 py 28 */
+  padding: 28px 72px;
+  box-sizing: border-box;
+  z-index: 100;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* HOME: flota sobre el hero — Figma: Nav sobre Background */
+.navbar--dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+/* PÁGINAS INTERNAS: sticky con fondo claro */
+.navbar--light {
+  position: sticky;
+  top: 0;
+  background-color: #f5f4f0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* ── Logo — Figma: Link → Nelson Peña logo (2:371)
+   135.34 × 48px */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  animation: navFadeIn 1.5s ease-in-out both;
+}
+
+/* ── Links — Figma: Container (2:372)
+   gap 48px · 3 Component 5 */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  /* Figma: gap var(--item-spacing/l, 48px) */
+  gap: 48px;
+}
+
+/* Figma: Component 5 (2:374, 2:376, 2:378)
+   Montserrat SemiBold 13px · tracking 1.3px · uppercase
+   lh 19.5px */
+.nav-link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+  opacity: 0;
+  animation: navFadeIn 1s ease forwards;
+  line-height: 19.5px;
+}
+
+/* Figma: color var(--color/white/-75%, rgba(255,255,255,0.75)) */
+.nav-link--dark  { color: rgba(255, 255, 255, 0.75); }
+.nav-link--light { color: rgba(30, 30, 30, 0.65); }
+
+.nav-link--dark:hover  { color: #ffa205; }
+.nav-link--light:hover { color: #1e1e1e; }
+
+/* Active */
 .active-link {
-  color: #FFA205;
-  font-weight: bold;
-  text-shadow: 0px 0px 8px rgb(255, 163, 5);
-  background-color: transparent;
+  color: #ffa205 !important;
+  font-weight: 700;
 }
 
+/* ── Animación escalonada ── */
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
+.navbar-links .nav-link:nth-child(1) { animation-delay: 0.3s; }
+.navbar-links .nav-link:nth-child(2) { animation-delay: 0.5s; }
+.navbar-links .nav-link:nth-child(3) { animation-delay: 0.7s; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .navbar { padding: 28px 5vw; }
+}
 
 @media (max-width: 768px) {
-  .navbar {
-    font-size: 1.6em;
-    gap: 20px;
-  }
-
-  .navbar a {
-    padding: 6px 18px;
-    font-size: 0.95rem;
-    gap: 20px;
-  }
-
-  .navbar ul {
-    gap: 15px;
-  }
-}
-
-@media (max-width: 390px) {
-  .navbar {
-    font-size: 1em;
-    gap: 10px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar a {
-    padding: 6px 10px;
-    font-size: 0.85rem;
-    gap: 10px;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-@media (max-width: 768px) {
-  .navbar {
-    font-size: 1.6em;
-  }
-
-   .navbar a {
-    padding: 6px 30px;
-    font-size: 0.95rem;
-  } 
-
-  .navbar ul {
-    gap: 15px;
-  }
+  .navbar        { padding: 20px 5vw; }
+  .navbar-links  { gap: 28px; }
+  .nav-link      { font-size: 12px; }
+  .navbar-logo-img { height: 40px; }
 }
 
 @media (max-width: 480px) {
   .navbar {
-    font-size: 1.2em;
-    flex-direction:row;
-    align-items: center;
-  }
-
-  .navbar ul {
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 5vw;
   }
+  .navbar-links { gap: 20px; }
 }
