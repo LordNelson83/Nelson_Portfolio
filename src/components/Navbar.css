@@ -9,14 +9,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* Figma: px 72 py 28 */
   padding: 28px 72px;
   box-sizing: border-box;
-  z-index: 100;
+  z-index: 200;
   transition: background-color 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
 }
 
-/* HOME: flota sobre el hero — Figma: Nav sobre Background */
 .navbar--dark {
   position: absolute;
   top: 0;
@@ -24,7 +23,6 @@
   background: transparent;
 }
 
-/* PÁGINAS INTERNAS: sticky con fondo claro */
 .navbar--light {
   position: sticky;
   top: 0;
@@ -32,12 +30,13 @@
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 }
 
-/* ── Logo — Figma: Link → Nelson Peña logo (2:371)
-   135.34 × 48px */
+/* ── Logo ── */
 .navbar-logo {
   display: flex;
   align-items: center;
   text-decoration: none;
+  z-index: 210;
+  position: relative;
 }
 
 .navbar-logo-img {
@@ -47,18 +46,13 @@
   animation: navFadeIn 1.5s ease-in-out both;
 }
 
-/* ── Links — Figma: Container (2:372)
-   gap 48px · 3 Component 5 */
+/* ── Links desktop ── */
 .navbar-links {
   display: flex;
   align-items: center;
-  /* Figma: gap var(--item-spacing/l, 48px) */
   gap: 48px;
 }
 
-/* Figma: Component 5 (2:374, 2:376, 2:378)
-   Montserrat SemiBold 13px · tracking 1.3px · uppercase
-   lh 19.5px */
 .nav-link {
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
@@ -72,20 +66,16 @@
   line-height: 19.5px;
 }
 
-/* Figma: color var(--color/white/-75%, rgba(255,255,255,0.75)) */
 .nav-link--dark  { color: rgba(255, 255, 255, 0.75); }
 .nav-link--light { color: rgba(30, 30, 30, 0.65); }
-
 .nav-link--dark:hover  { color: #ffa205; }
 .nav-link--light:hover { color: #1e1e1e; }
 
-/* Active */
 .active-link {
   color: #ffa205 !important;
   font-weight: 700;
 }
 
-/* ── Animación escalonada ── */
 @keyframes navFadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -93,26 +83,106 @@
 
 .navbar-links .nav-link:nth-child(1) { animation-delay: 0.3s; }
 .navbar-links .nav-link:nth-child(2) { animation-delay: 0.5s; }
-.navbar-links .nav-link:nth-child(3) { animation-delay: 0.7s; }
 
-/* ── Responsive ── */
+/* ── Hamburguesa — oculta en desktop ── */
+.navbar-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 210;
+  position: relative;
+}
+
+.navbar-burger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+}
+
+.navbar-burger--dark span  { background-color: rgba(255, 255, 255, 0.85); }
+.navbar-burger--light span { background-color: rgba(30, 30, 30, 0.75); }
+
+/* Animación X al abrir */
+.navbar-burger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar-burger--open span:nth-child(2) { opacity: 0; width: 0; }
+.navbar-burger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Overlay oscuro detrás del menú mobile */
+.navbar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 150;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* ─────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────── */
 @media (max-width: 1024px) {
   .navbar { padding: 28px 5vw; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .navbar        { padding: 20px 5vw; }
-  .navbar-links  { gap: 28px; }
-  .nav-link      { font-size: 12px; }
   .navbar-logo-img { height: 40px; }
-}
 
-@media (max-width: 480px) {
-  .navbar {
+  /* Mostrar hamburguesa */
+  .navbar-burger { display: flex; }
+
+  /* Menú mobile — panel lateral derecho */
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(280px, 80vw);
+    height: 100dvh;
+    background-color: #1e1e1e;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    padding: 16px 5vw;
+    justify-content: center;
+    gap: 0;
+    padding: 80px 40px 60px;
+    z-index: 200;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.4);
   }
-  .navbar-links { gap: 20px; }
+
+  .navbar-links--open {
+    right: 0;
+  }
+
+  /* Links dentro del menú mobile */
+  .navbar-links .nav-link {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75) !important;
+    padding: 18px 0;
+    width: 100%;
+    border-bottom: 0.8px solid rgba(255, 255, 255, 0.08);
+    opacity: 1;
+    animation: none;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+  }
+
+  .navbar-links .nav-link:hover,
+  .navbar-links .active-link {
+    color: #ffa205 !important;
+  }
+
+  .navbar-links .nav-link:first-child {
+    border-top: 0.8px solid rgba(255, 255, 255, 0.08);
+  }
 }

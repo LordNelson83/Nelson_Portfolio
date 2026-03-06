@@ -733,7 +733,16 @@
 
 @media (max-width: 480px) {
   .hero-photo           { max-width: 100%; height: 52svh; }
-  .tile__link           { padding: 28px 24px; height: auto; }
-  .tile__label          { font-size: 28px; }
-  .home-work__cta       { align-self: stretch; text-align: center; }
+  .tile__link           { padding: 28px 5vw; height: auto; }
+  .tile__label          { font-size: 26px; }
+  .tile__sub            { font-size: 9px; }
+  /* Tile featured mobile */
+  .tile__link--featured { flex-direction: column; align-items: flex-start; padding: 28px 5vw; gap: 16px; }
+  .tile__featured-right { align-items: flex-start; }
+  .tile--featured .tile__label { font-size: 32px; }
+  /* Stats */
+  .home-work__grid { grid-template-columns: 1fr; }
+  /* Contact */
+  .home-contact__text { font-size: clamp(24px, 7vw, 36px); }
+  .home-contact__btn  { width: 100%; text-align: center; }
 }
