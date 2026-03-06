@@ -13,7 +13,15 @@ export const LangProvider = ({ children }) => {
     localStorage.setItem("lang", code);
   };
 
+  // t("section")         → devuelve el objeto completo de la sección
+  // t("section", "key")  → devuelve un valor individual
   const t = (section, key) => {
+    if (key === undefined) {
+      // Devuelve el objeto completo de la sección, con fallback a sv
+      return translations[lang]?.[section]
+        ?? translations["sv"]?.[section]
+        ?? {};
+    }
     return translations[lang]?.[section]?.[key]
       ?? translations["sv"]?.[section]?.[key]
       ?? key;

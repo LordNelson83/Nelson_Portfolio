@@ -100,17 +100,11 @@ export default function OmMig() {
 
           {/* Leyenda de estrellas */}
           <div className="om-legend">
-            <p className="om-legend__title">{t("about", "skillsTitle") || "Kunskapsnivå"}</p>
+            <p className="om-legend__title">{t("about", "legendTitle")}</p>
             <div className="om-legend__rows">
-              {[
-                [1, "Grundläggande kännedom"],
-                [2, "Lite erfarenhet"],
-                [3, "Arbetar självständigt"],
-                [4, "Avancerad nivå"],
-                [5, "Expert"],
-              ].map(([n, label]) => (
-                <div key={n} className="om-legend__row">
-                  <StarRating score={n} />
+              {(t("about", "legend") || []).map((label, i) => (
+                <div key={i} className="om-legend__row">
+                  <StarRating score={i + 1} />
                   <span className="om-legend__label">{label}</span>
                 </div>
               ))}
