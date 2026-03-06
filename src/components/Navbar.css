@@ -126,6 +126,104 @@
   -webkit-backdrop-filter: blur(2px);
 }
 
+/* ══════════════════════════════════════
+   LANGUAGE SWITCHER
+   ══════════════════════════════════════ */
+.lang-switcher {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  z-index: 220;
+}
+
+/* Desktop: visible al lado de los links */
+.lang-switcher--desktop { display: flex; }
+/* Mobile version dentro del panel: oculto por defecto */
+.lang-switcher--mobile  { display: none; }
+
+.lang-current {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.lang-switcher--dark .lang-current  { border: 0.8px solid rgba(255,255,255,0.18); }
+.lang-switcher--light .lang-current { border: 0.8px solid rgba(30,30,30,0.18); }
+
+.lang-switcher:hover .lang-current {
+  background: rgba(255,162,5,0.1);
+  border-color: rgba(255,162,5,0.5) !important;
+}
+
+.lang-flag { font-size: 18px; line-height: 1; }
+
+.lang-code {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.lang-switcher--dark  .lang-code { color: rgba(255,255,255,0.75); }
+.lang-switcher--light .lang-code { color: rgba(30,30,30,0.65); }
+
+.lang-arrow {
+  font-size: 8px;
+  opacity: 0.5;
+}
+
+.lang-switcher--dark  .lang-arrow { color: rgba(255,255,255,0.6); }
+.lang-switcher--light .lang-arrow { color: rgba(30,30,30,0.5); }
+
+/* Dropdown */
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  background: #1e1e1e;
+  border: 0.8px solid rgba(255,162,5,0.25);
+  min-width: 140px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  z-index: 300;
+  animation: langDropIn 0.18s ease both;
+}
+
+@keyframes langDropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.lang-option:hover { background: rgba(255,162,5,0.08); }
+
+.lang-option--active {
+  background: rgba(255,162,5,0.1);
+}
+
+.lang-option--active .lang-name { color: #ffa205 !important; }
+
+.lang-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.75);
+}
+
 /* ─────────────────────────────────────
    RESPONSIVE
    ───────────────────────────────────── */
@@ -185,4 +283,43 @@
   .navbar-links .nav-link:first-child {
     border-top: 0.8px solid rgba(255, 255, 255, 0.08);
   }
+
+  /* Selector de idioma en mobile: ocultar desktop, mostrar mobile */
+  .lang-switcher--desktop { display: none; }
+  .lang-switcher--mobile  {
+    display: flex;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 0.8px solid rgba(255,255,255,0.08);
+    width: 100%;
+  }
+
+  .lang-switcher--mobile .lang-current {
+    border-color: rgba(255,255,255,0.18);
+    padding: 10px 16px;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .lang-switcher--mobile .lang-flag { font-size: 22px; }
+  .lang-switcher--mobile .lang-code { font-size: 14px; color: rgba(255,255,255,0.75); }
+
+  .lang-switcher--mobile .lang-dropdown {
+    position: static;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 8px;
+    animation: none;
+  }
+
+  .lang-switcher--mobile .lang-option {
+    padding: 12px 4px;
+    border-bottom: 0.8px solid rgba(255,255,255,0.06);
+  }
+
+  .lang-switcher--mobile .lang-name { font-size: 14px; }
+  .lang-switcher--mobile .lang-flag { font-size: 20px; }
 }

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import "../pagesCSS/Kontakta.css";
+import { useLang } from "../i18n/LangContext";
 
 /* ══════════════════════════════════════════════════════════
    KONTAKTA — Figma: 14:86
@@ -8,27 +9,32 @@ import "../pagesCSS/Kontakta.css";
    Sin imágenes · máxima jerarquía editorial
    ══════════════════════════════════════════════════════════ */
 
-const LINKS = [
+/* LINKS se construye dentro del componente para poder traducir */
+
+export default function Kontakta() {
+  const { t } = useLang();
+
+  const LINKS = [
   {
     id: "linkedin",
-    label: "LinkedIn",
-    sub: "Professionellt nätverk",
+    label: t("contact", "linkedin"),
+    sub: t("contact", "linkedinSub"),
     href: "https://www.linkedin.com/in/nelson-pe%C3%B1a-21881412a/",
     external: true,
     icon: "↗",
   },
   {
     id: "github",
-    label: "GitHub",
-    sub: "Kod & projekt",
+    label: t("contact", "github"),
+    sub: t("contact", "githubSub"),
     href: "https://github.com/LordNelson83",
     external: true,
     icon: "↗",
   },
   {
     id: "cv",
-    label: "Ladda ner CV",
-    sub: "PDF · Nelson Peña",
+    label: t("contact", "cv"),
+    sub: t("contact", "cvSub"),
     href: "/CV_Nelson_Pena.pdf",
     external: false,
     download: "CV_Nelson_Pena.pdf",
@@ -36,7 +42,6 @@ const LINKS = [
   },
 ];
 
-export default function Kontakta() {
   const heroRef   = useRef(null);
   const shapeRef  = useRef(null);
   const linksRef  = useRef([]);
@@ -67,16 +72,9 @@ export default function Kontakta() {
           "Tack!" + subtítulo Montserrat Bold 20px
       ════════════════════════════════════════════ */}
       <header className="kt-hero" ref={heroRef}>
-        <p className="kt-hero__eyebrow">Kontakt &amp; Samarbete</p>
-
-        {/* Figma: Heading 1 — Playfair Bold 64px · lh 96px */}
-        <h1 className="kt-hero__h1">Tack!</h1>
-
-        {/* Figma: Heading 2 — Montserrat Bold 20px · lh 32px */}
-        <p className="kt-hero__sub">
-          Om du har några frågor, förslag eller om du bara vill hälsa,
-          tveka inte att kontakta mig.
-        </p>
+        <p className="kt-hero__eyebrow">{t("contact", "eyebrow")}</p>
+        <h1 className="kt-hero__h1">{t("contact", "h1")}</h1>
+        <p className="kt-hero__sub">{t("contact", "sub")}</p>
 
         <div className="kt-hero__line" aria-hidden="true" />
       </header>
@@ -111,10 +109,7 @@ export default function Kontakta() {
 
         {/* ── Columna izquierda — texto + links de lista ── */}
         <div className="kt-sidebar" ref={heroRef}>
-          <p className="kt-sidebar__intro">
-            Jag är alltid intresserad av nya möjligheter, spännande projekt
-            och meningsfulla samarbeten. Hör av dig!
-          </p>
+          <p className="kt-sidebar__intro">{t("contact", "intro")}</p>
 
           {/* Links en formato lista editorial */}
           <nav className="kt-links" aria-label="Kontaktlänkar">
@@ -165,14 +160,10 @@ export default function Kontakta() {
 
             {/* Contenido dentro de la forma */}
             <div className="kt-shape__content">
-              <p className="kt-shape__greeting">Hej!</p>
-              <p className="kt-shape__tagline">
-                Låt oss skapa något<br /><em>extraordinärt</em> tillsammans.
-              </p>
+              <p className="kt-shape__greeting">{t("contact", "shapeGreeting")}</p>
+              <p className="kt-shape__tagline">{t("contact", "shapeTagline")}</p>
               <div className="kt-shape__divider" />
-              <p className="kt-shape__note">
-                Svarar inom 24 timmar
-              </p>
+              <p className="kt-shape__note">{t("contact", "shapeNote")}</p>
             </div>
 
             {/* Decoración de número grande */}
@@ -190,13 +181,11 @@ export default function Kontakta() {
       ════════════════════════════════════════════ */}
       <section className="kt-cta">
         <div className="kt-cta__inner">
-          <p className="kt-cta__eyebrow">Redo att börja?</p>
+          <p className="kt-cta__eyebrow">{t("contact", "ctaEyebrow")}</p>
           <a href="mailto:nelsonpenna83@gmail.com" className="kt-cta__email">
             nelsonpenna83@gmail.com
           </a>
-          <p className="kt-cta__copy">
-            © 2025 Nelson Peña · UX/UI Designer &amp; Frontend Developer
-          </p>
+          <p className="kt-cta__copy">{t("contact", "copyright")}</p>
         </div>
       </section>
 

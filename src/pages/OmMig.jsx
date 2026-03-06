@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import "../pagesCSS/OmMig.css";
+import { useLang } from "../i18n/LangContext";
 
 /* ── Imágenes locales ── */
 import Acrobat      from "../assets/images2/Acrobat.png";
@@ -65,6 +66,7 @@ const SKILLS = [
 ];
 
 export default function OmMig() {
+  const { t } = useLang();
   const skillsRef = useRef([]);
 
   useEffect(() => {
@@ -84,33 +86,21 @@ export default function OmMig() {
         <div className="om-text-block">
 
           <h1 className="om-h1">
-            Hej!<br />
-            <span className="om-h1-accent">Jag är Nelson</span>
+            {t("about", "greeting") || "Hej!"}<br />
+            <span className="om-h1-accent">{t("about", "h1a")} Nelson</span>
           </h1>
 
           <h2 className="om-h2">
-            Multikompetent designer: Cross Media, 3D print,{" "}
-            UX/UI &amp; webbutvekling
+            {t("about", "sub")}
           </h2>
 
-          <p className="om-paragraph">
-            Det är en inblick i vem jag är, vad som driver mig och hur jag
-            arbetar. Genom åren har jag haft flera roller som format mig till
-            en flexibel, nyfiken och lösningsorienterad person. Jag älskar att
-            lära mig nytt och ser varje utmaning som en chans att växa — både
-            som yrkesperson och människa. Mitt engagemang märks inte bara i
-            arbetet. På fritiden håller jag mig aktiv, bland annat genom
-            simning, vilket hjälper mig att behålla fokus och energi. Mina
-            kollegor beskriver mig som social, hjälpsam och engagerad —
-            egenskaper jag värnar om i alla sammanhang. Familjen är min
-            största inspirationskälla och en ständig påminnelse om vad som är
-            viktigt i livet. Nu ser jag fram emot att skapa nya samarbeten,
-            anta nya utmaningar och göra skillnad.
-          </p>
+          <p className="om-paragraph">{t("about", "p1")}</p>
+          <p className="om-paragraph">{t("about", "p2")}</p>
+          <p className="om-paragraph">{t("about", "p3")}</p>
 
           {/* Leyenda de estrellas */}
           <div className="om-legend">
-            <p className="om-legend__title">Kunskapsnivå</p>
+            <p className="om-legend__title">{t("about", "skillsTitle") || "Kunskapsnivå"}</p>
             <div className="om-legend__rows">
               {[
                 [1, "Grundläggande kännedom"],
@@ -133,7 +123,7 @@ export default function OmMig() {
       <div className="om-right">
 
         {/* ── Design & Dev ── */}
-        <p className="om-skills-eyebrow">Verktyg &amp; teknologier</p>
+        <p className="om-skills-eyebrow">{t("about", "skillsTitle")}</p>
         <div className="om-skills-grid">
           {SKILLS.slice(0, 13).map((skill, i) => (
             <SkillCard
@@ -146,9 +136,7 @@ export default function OmMig() {
         </div>
 
         {/* ── Inteligencia Artificial ── */}
-        <p className="om-skills-eyebrow om-skills-eyebrow--ai">
-          IA
-        </p>
+        <p className="om-skills-eyebrow om-skills-eyebrow--ai">{t("about", "aiTitle")}</p>
         <div className="om-skills-grid om-skills-grid--ai">
           {SKILLS.slice(13).map((skill, i) => (
             <SkillCard

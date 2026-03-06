@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../pagesCSS/Home.css";
 import nelsonPhoto from "../assets/images2/me.png";
 import nptLogo    from "../assets/images2/npt.png";
+import { useLang } from "../i18n/LangContext";
 
 /* ─── Figma assets (válidos 7 días desde la sesión MCP) ─── */
 const FIGMA_PHOTO = "https://www.figma.com/api/mcp/asset/3f73d361-82e7-412f-b1c6-b922033f22c7";
@@ -17,6 +18,7 @@ const TILES = [
 ];
 
 export default function Home() {
+  const { t } = useLang();
   const heroRef  = useRef(null);
   const tilesRef = useRef([]);
 
@@ -129,7 +131,7 @@ export default function Home() {
         <div className="home-work__header">
           {/* Figma: "— Utvalda projekt" (2:297)
               Montserrat SemiBold 11px · #FFA205 · tracking 2.2px */}
-          <p className="home-work__eyebrow">— Utvalda projekt</p>
+          <p className="home-work__eyebrow">{t("home", "eyebrow")}</p>
 
           {/* Figma: Heading 2 (2:300)
               Playfair Display Bold 86.4px · lh 86.4px · tracking -1.728px */}
@@ -174,13 +176,10 @@ export default function Home() {
             Playfair Display Bold 50.4px · lh 60.48px · tracking -1.008px
             "extraordinary" → Bold Italic #FFA205 */}
         <p className="home-contact__text">
-          Redo att bygga något&nbsp;<em>extraordinary</em>?
+          {t("home", "contact")}&nbsp;<em>{t("home", "contactEm")}</em>?
         </p>
 
-        {/* Figma: Component 4 (2:367) "Kontakta mig"
-            bg #FFA205 · Montserrat Bold 12px · #1E1E1E · tracking 2.16px
-            py 16px px 44px */}
-        <Link to="/kontakta" className="home-contact__btn">Kontakta mig</Link>
+        <Link to="/kontakta" className="home-contact__btn">{t("home", "contactBtn")}</Link>
       </section>
     </>
   );
