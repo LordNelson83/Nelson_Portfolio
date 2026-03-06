@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import "../pagesCSS/Profil.css";
+import "../pagesCSS/UxUiDesign.css";
 
 /* ══════════════════════════════════════════════════════════
    UX/UI DESIGN — Figma: 8:57
