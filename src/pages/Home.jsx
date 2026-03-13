@@ -75,7 +75,7 @@ export default function Home() {
             "Senior Product & UX/UI Designer"
             Montserrat SemiBold 11px · rgba(255,255,255,0.40) · tracking 1.98px
             top 108px · right 72.89px */}
-        <p className="hero-role">Junior Product &amp; UX/UI Designer</p>
+        <p className="hero-role">Product & UX/UI Designer</p>
 
         {/* Figma: Nelson Peña (2:403·2:258)
             Playfair Display Bold 144px · lh 126.72px · tracking -0.8px
