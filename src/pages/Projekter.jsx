@@ -9,6 +9,13 @@ import magasinImg  from "../assets/images/magasin.png";
 
 const soleniaImg = "https://www.figma.com/api/mcp/asset/1615509d-8ea3-4333-beb2-f6e141da4b59";
 
+// AHR-Motor — Fortnox · Chas Academy examensarbete
+const AHR_SCREENS = [
+  { src: "https://www.figma.com/api/mcp/asset/dbf7bd46-92b1-4b2e-9f7f-c2c9dec38b66", alt: "AHR — Opportunity Solution Tree",   label: "Opportunity Solution Tree · Teresa Torres" },
+  { src: "https://www.figma.com/api/mcp/asset/e2592c2e-e2b0-4209-96d4-4f1d753d560c", alt: "AHR — Product Outcome & OST-karta",  label: "Product Outcome · OST-karta" },
+  { src: "https://www.figma.com/api/mcp/asset/4173d7ca-5874-4bc2-8561-0c256850760b", alt: "AHR — Användarsegment · Fortnox",    label: "Användarsegment · Fortnox-ekosystem" },
+];
+
 const OAK_SCREENS = [
   { src: "https://www.figma.com/api/mcp/asset/dcb14d52-1bb8-4aa5-bcb3-f9ac3f1e07b9", alt: "OAK Equipment — isometric gym",        label: "Isometrisk gym-visualisering" },
   { src: "https://www.figma.com/api/mcp/asset/47d48a99-89a7-4cee-aeea-d8347d8a5e26", alt: "OAK — mätverktyg för rum",              label: "Mätverktyg för rumsdimensioner" },
@@ -22,6 +29,13 @@ const PROJECT_IMAGES = [oakImg, soleniaImg, magasinImg];
 const PROJECT_COLORS = ["#90a590", "#ffa205", "#ffa205"];
 const PROJECT_IDS    = ["oak", "ehandel", "magasin"];
 
+// AHR IDs separados — renderizamos AHR aparte
+const AHR_ACCENT = "#00a6b4";
+
+const AHR_LINKS = [
+  { label: "Fortnox", url: "https://www.fortnox.se", external: true },
+];
+
 const PROJECT_LINKS = [
   [{ url: "/OAK-UX.pdf", external: false }, { url: "/OAK-UI.pdf", external: false }],
   [{ url: "https://solenia.netlify.app/", external: true },   { url: "https://github.com/LordNelson83/Nelson_Portfolio", external: true }],
@@ -32,18 +46,21 @@ export default function Projekter() {
   const { t } = useLang();
   const pk = t("projekter");
 
-  const heroRef  = useRef(null);
-  const statsRef = useRef([]);
-  const projRefs = useRef([]);
-  const [activeScreen, setActiveScreen] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const heroRef    = useRef(null);
+  const statsRef   = useRef([]);
+  const projRefs   = useRef([]);
+  const ahrRef     = useRef(null);
+  const [activeScreen, setActiveScreen]       = useState(0);
+  const [activeAhrScreen, setActiveAhrScreen] = useState(0);
+  const [isPaused, setIsPaused]               = useState(false);
+  const [isAhrPaused, setIsAhrPaused]         = useState(false);
 
   useEffect(() => {
     const obs = new IntersectionObserver(
       (e) => e.forEach(en => en.isIntersecting && en.target.classList.add("is-visible")),
       { threshold: 0.06 }
     );
-    [heroRef.current, ...statsRef.current, ...projRefs.current]
+    [heroRef.current, ahrRef.current, ...statsRef.current, ...projRefs.current]
       .filter(Boolean)
       .forEach(el => obs.observe(el));
     return () => obs.disconnect();
@@ -54,6 +71,12 @@ export default function Projekter() {
     const timer = setInterval(() => setActiveScreen(i => (i + 1) % OAK_SCREENS.length), 3800);
     return () => clearInterval(timer);
   }, [isPaused]);
+
+  useEffect(() => {
+    if (isAhrPaused) return;
+    const timer = setInterval(() => setActiveAhrScreen(i => (i + 1) % AHR_SCREENS.length), 4200);
+    return () => clearInterval(timer);
+  }, [isAhrPaused]);
 
   return (
     <div className="pk-page">
@@ -237,6 +260,112 @@ export default function Projekter() {
           );
         })}
       </div>
+
+      {/* ── AHR-MOTOR — Fortnox / Chas Academy ── */}
+      <section
+        className="pk-project pk-project--ahr"
+        ref={ahrRef}
+        style={{ "--accent": AHR_ACCENT }}
+      >
+        {/* Header */}
+        <div className="pk-project__header">
+          <span className="pk-project__num">04</span>
+          <div className="pk-project__meta">
+            <p className="pk-project__school">Fortnox · Chas Academy</p>
+            <h2 className="pk-project__title">AHR-Motor</h2>
+            <div className="pk-project__row">
+              <span className="pk-project__period">2025–2026</span>
+              <span className="pk-project__tag pk-project__tag--wip">⚙ En utveckling · Examensarbete</span>
+            </div>
+          </div>
+          <div className="pk-project__divider" aria-hidden="true" />
+        </div>
+
+        <p className="pk-project__lead">
+          Att koppla samman Fortnox Tid, Lön och Fakturering — och visa byråns lönsamhet i realtid.
+        </p>
+
+        <div className="pk-project__body pk-project__body--ahr">
+
+          {/* Gallery AHR */}
+          <div
+            className="pk-gallery"
+            onMouseEnter={() => setIsAhrPaused(true)}
+            onMouseLeave={() => setIsAhrPaused(false)}
+          >
+            <div className="pk-gallery__main">
+              {AHR_SCREENS.map((sc, i) => (
+                <div key={i} className={`pk-gallery__slide${i === activeAhrScreen ? " pk-gallery__slide--active" : ""}`}>
+                  <img src={sc.src} alt={sc.alt} className="pk-gallery__img" />
+                  <div className="pk-gallery__caption">{sc.label}</div>
+                </div>
+              ))}
+              <span className="pk-gallery__counter">
+                {String(activeAhrScreen + 1).padStart(2, "0")} / {String(AHR_SCREENS.length).padStart(2, "0")}
+              </span>
+              <button className="pk-gallery__nav pk-gallery__nav--prev"
+                onClick={() => setActiveAhrScreen(i => (i - 1 + AHR_SCREENS.length) % AHR_SCREENS.length)}
+                aria-label="Föregående">‹</button>
+              <button className="pk-gallery__nav pk-gallery__nav--next"
+                onClick={() => setActiveAhrScreen(i => (i + 1) % AHR_SCREENS.length)}
+                aria-label="Nästa">›</button>
+            </div>
+            <div className="pk-gallery__dots">
+              {AHR_SCREENS.map((_, i) => (
+                <button key={i}
+                  className={`pk-gallery__dot${i === activeAhrScreen ? " pk-gallery__dot--active" : ""}`}
+                  onClick={() => setActiveAhrScreen(i)}
+                  aria-label={`Bild ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Contenido AHR */}
+          <div className="pk-project__content">
+
+            {/* Objective */}
+            <div className="pk-ahr-block">
+              <p className="pk-ahr-block__label">— Objective</p>
+              <p className="pk-ahr-block__text">
+                Öka redovisningsbyråns genomsnittliga nettomarginal med 10–15 % jämfört med innevarande termin, inom de närmaste 6 månaderna.
+              </p>
+            </div>
+
+            {/* Bakgrund */}
+            <div className="pk-ahr-block">
+              <p className="pk-ahr-block__label">— Bakgrund</p>
+              <p className="pk-ahr-block__text">
+                Många redovisningsbyråer använder Fortnox produkter — Tid, Fakturering och Lön — men eftersom de är separata produkter kommunicerar de inte med varandra. Det tvingar byråchefer att arbeta i mörkret. När de upptäcker en förlust är det redan för sent att reagera.
+              </p>
+            </div>
+
+            {/* Förslag */}
+            <div className="pk-ahr-block">
+              <p className="pk-ahr-block__label">— Förslag</p>
+              <p className="pk-ahr-block__text">
+                AHR-motorn kopplar automatiskt samman dessa tre produkter för att visa byråns lönsamhet i realtid — utan Excel, utan att behöva vänta på revisorn. Systemet varnar automatiskt när ett projekt eller en kund går in i förlust, och ger chefen trygghet att byrån har tillräckligt med personal för att växa.
+              </p>
+            </div>
+
+            {/* Skills */}
+            <div className="pk-skills">
+              {["UX Research", "POM", "OST", "Figma", "Teresa Torres", "Marty Cagan", "Fortnox"].map(sk => (
+                <span key={sk} className="pk-skill">{sk}</span>
+              ))}
+            </div>
+
+            {/* Link */}
+            <div className="pk-links">
+              <a href="https://www.fortnox.se" target="_blank" rel="noopener noreferrer" className="pk-link">
+                <span className="pk-link__label">Fortnox</span>
+                <span className="pk-link__icon">↗</span>
+                <div className="pk-link__bar" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="pk-cta">

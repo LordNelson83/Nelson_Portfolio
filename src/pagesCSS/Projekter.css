@@ -771,6 +771,64 @@
   .pk-cta     { flex-direction: column; padding: 60px 5vw; align-items: flex-start; }
 }
 
+/* ══ AHR-Motor ────────────────────────────────────────── */
+.pk-project--ahr {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin-top: 32px;
+}
+
+.pk-project__tag--wip {
+  background: rgba(0, 166, 180, 0.15);
+  color: #00c8d8;
+  border: 1px solid rgba(0, 166, 180, 0.35);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 2px;
+  animation: wip-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes wip-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+.pk-project__body--ahr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  padding-left: 110px;
+  margin-top: 40px;
+}
+
+/* AHR text blocks — Objective / Bakgrund / Förslag */
+.pk-ahr-block {
+  margin-bottom: 28px;
+}
+
+.pk-ahr-block__label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, #00c8d8);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.pk-ahr-block__text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.72);
+  max-width: 520px;
+}
+
+@media (max-width: 1024px) {
+  .pk-project__body--ahr { grid-template-columns: 1fr; gap: 36px; padding-left: 0; }
+}
+
+/* ────────────────────────────────────────────────────── */
+
 @media (max-width: 480px) {
   .pk-stats              { grid-template-columns: 1fr; }
   .pk-stat               { padding: 24px 5vw; }
