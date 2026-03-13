@@ -24,10 +24,10 @@ export const translations = {
     about: {
       greeting:    "Hej!",
       h1a:         "Jag är",
-      sub:         "Multikompetent designer: Cross Media, 3D print, UX/UI & webbutveckling.",
+      sub:         "UX/UI-designer med produktvision och grundläggande React-färdigheter.",
       p1:          "Det är en inblick i vem jag är, vad som driver mig och hur jag arbetar. Genom åren har jag haft flera roller som format mig till en flexibel, nyfiken och lösningsorienterad person. Jag älskar att lära mig nytt och ser varje utmaning som en chans att växa — både som yrkesperson och människa.",
       p2:          "Jag kombinerar det bästa av två världar: hantverk och strategi. Jag designar med Figma, prototypar med precision och kodar i React — alltid med användaren i centrum.",
-      p3:          "Jag har även fördjupat mig i AI-verktyg som Claude, Gemini och Midjourney — inte bara som användare, utan som en designer som förstår hur AI förändrar arbetsflöden och kreativa processer.",
+      p3:          "Jag har även fördjupat mig i AI-verktyg som Claude, Gemini  — inte bara som användare, utan som en designer som förstår hur AI förändrar arbetsflöden och kreativa processer.",
       skillsTitle: "— Verktyg & Kompetenser",
       aiTitle:     "— AI & Framtidens verktyg",
       legendTitle: "Kunskapsnivå",

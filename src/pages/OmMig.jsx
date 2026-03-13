@@ -51,7 +51,7 @@ const SKILLS = [
   { src: Photoshop,   alt: "Photoshop",    bg: "#31A8FF", score: 3 },
   { src: Illustrator, alt: "Illustrator",  bg: "#FF9A00", score: 2 },
   /* Design / Dev */
-  { src: FigmaIcon,   alt: "Figma",        bg: "#1E1E1E", score: 3 },
+  { src: FigmaIcon,   alt: "Figma",        bg: "#1E1E1E", score: 4 },
   { src: CSS,         alt: "CSS3",         bg: "#1572B6", score: 3 },
   { src: Javascript,  alt: "JavaScript",   bg: "#F0C000", score: 2 },
   { src: HTML,        alt: "HTML5",        bg: "#E34F26", score: 3 },
