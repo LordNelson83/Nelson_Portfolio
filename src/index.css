@@ -1,25 +1,36 @@
+/* ── Reset global ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  color-scheme: light dark;
-  color: black;
- background: linear-gradient(180deg, #FFF 0%, #ad730e 100%);
-} 
+  line-height: 1.5;
+  color-scheme: dark;
+  color: #ffffff;
+  background-color: #1e1e1e;
+}
 
+body {
+  min-height: 100vh;
+  background-color: #1e1e1e;
+  overflow-x: hidden;
+}
+
+/* Links base — sin subrayado ni decoración extraña */
 a {
-  font-size: 25px;
-  font-weight: 600;
-  text-decoration: inherit;
-  display:flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  align-items: baseline; 
-  border-radius: 5px;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  display: inline;
+  border-radius: 0;
+}
 
-} 
- 
-  body {
-  height: 100%;
-  margin: 1.5px;;
-  text-align: center;
-} 
+/* Scrollbar discreta */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1e1e1e; }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
