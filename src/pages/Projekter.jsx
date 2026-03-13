@@ -7,6 +7,8 @@ import oakImg      from "../assets/images/oak.png";
 import oakUiImg    from "../assets/images/oak-ui.png";
 import magasinImg  from "../assets/images/magasin.png";
 
+const soleniaImg = "https://www.figma.com/api/mcp/asset/1615509d-8ea3-4333-beb2-f6e141da4b59";
+
 const OAK_SCREENS = [
   { src: "https://www.figma.com/api/mcp/asset/dcb14d52-1bb8-4aa5-bcb3-f9ac3f1e07b9", alt: "OAK Equipment — isometric gym",        label: "Isometrisk gym-visualisering" },
   { src: "https://www.figma.com/api/mcp/asset/47d48a99-89a7-4cee-aeea-d8347d8a5e26", alt: "OAK — mätverktyg för rum",              label: "Mätverktyg för rumsdimensioner" },
@@ -16,14 +18,14 @@ const OAK_SCREENS = [
   { src: "https://www.figma.com/api/mcp/asset/23b1252d-9785-4b0d-9ee8-3564625e10fe", alt: "OAK — Lo-Fi wireframe 2",               label: "Lo-Fi wireframe · v2" },
 ];
 
-const PROJECT_IMAGES = [magasinImg, oakImg, null];
-const PROJECT_COLORS = ["#ffa205", "#90a590", "#ffa205"];
-const PROJECT_IDS    = ["magasin", "oak", "ehandel"];
+const PROJECT_IMAGES = [oakImg, soleniaImg, magasinImg];
+const PROJECT_COLORS = ["#90a590", "#ffa205", "#ffa205"];
+const PROJECT_IDS    = ["oak", "ehandel", "magasin"];
 
 const PROJECT_LINKS = [
-  [{ url: "/Magasin.pdf",                                     external: false }],
   [{ url: "/OAK-UX.pdf", external: false }, { url: "/OAK-UI.pdf", external: false }],
   [{ url: "https://solenia.netlify.app/", external: true },   { url: "https://github.com/LordNelson83/Nelson_Portfolio", external: true }],
+  [{ url: "/Magasin.pdf", external: false }],
 ];
 
 export default function Projekter() {
@@ -203,9 +205,9 @@ export default function Projekter() {
                   {/* Skills */}
                   <div className="pk-skills">
                     {[
-                      ["Photoshop", "Illustrator", "InDesign", "Typografi", "Layout"],
                       ["Figma", "UX Research", "Lo-Fi", "HiFi", "Maze", "Personas"],
                       ["React", "JavaScript", "HTML", "CSS", "GitHub", "API", "Figma"],
+                      ["Photoshop", "Illustrator", "InDesign", "Typografi", "Layout"],
                     ][pi].map(sk => (
                       <span key={sk} className="pk-skill">{sk}</span>
                     ))}

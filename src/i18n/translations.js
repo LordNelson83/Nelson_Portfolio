@@ -177,12 +177,6 @@ export const translations = {
       ],
       projects: [
         {
-          school: "Fridhems Folkhögskola", title: "Tidningsmagasin", year: "2007–2009", tag: "Grafisk Produktion",
-          lead: "Design som berättar — layout, typografi och visuell kommunikation i praktiken.",
-          description: "Tidningsmagasin, jag fördjupade mina kunskaper i grafisk form och visuell kommunikation genom både praktiskt och teoretiskt arbete. Mina uppgifter med affischer, broschyrer och illustrationer i Adobe Photoshop, Illustrator och InDesign, samt lärde mig grunderna i teckning, layout, typografi och digital design.",
-          links: [{ label: "Se tidningsmagasinet", icon: "↗" }],
-        },
-        {
           school: "Chas Academy", title: "Gymplanerare · OAK Equipment", year: "2024–2025", tag: "UX/UI Design",
           lead: "Från problemformulering till HiFi-prototyp — ett UX/UI-projekt för ett riktigt företag.",
           description: "Som UX-designer hade jag möjligheten att genomföra ett projekt tillsammans med mina skolkamrater, där målet var att hitta ett sätt att skapa empati med användaren. Vi fokuserade på att förstå användarens behov — Oak behövde ett 3D-verktyg i desktop där kunden kan planera och se sitt gym i en tredimensionell miljö.",
@@ -203,6 +197,12 @@ export const translations = {
           lead: "Från Figma till React — ett e-handelsprojekt med fokus på responsivitet och samarbete.",
           description: "Som frontendutvecklare har jag arbetat med projektet både självständigt och i grupp. Min erfarenhet av HTML, CSS och JavaScript väckte min nyfikenhet för kodspråk. I grupprojektet, baserat på API och databaser, följde vi steg från Figma-design till React-komponenter, med fokus på responsivitet och användarvänlighet.",
           links: [{ label: "Se live — Solenia", icon: "↗" }, { label: "GitHub", icon: "↗" }],
+        },
+        {
+          school: "Fridhems Folkhögskola", title: "Tidningsmagasin", year: "2007–2009", tag: "Grafisk Produktion",
+          lead: "Design som berättar — layout, typografi och visuell kommunikation i praktiken.",
+          description: "Tidningsmagasin, jag fördjupade mina kunskaper i grafisk form och visuell kommunikation genom både praktiskt och teoretiskt arbete. Mina uppgifter med affischer, broschyrer och illustrationer i Adobe Photoshop, Illustrator och InDesign, samt lärde mig grunderna i teckning, layout, typografi och digital design.",
+          links: [{ label: "Se tidningsmagasinet", icon: "↗" }],
         },
       ],
     },
@@ -378,12 +378,6 @@ export const translations = {
         { value: "Adobe", label: "Graphic Production" },
       ],
       projects: [
-        {
-          school: "Fridhems Folkhögskola", title: "Magazine", year: "2007–2009", tag: "Graphic Production",
-          lead: "Design that tells stories — layout, typography and visual communication in practice.",
-          description: "Working on the magazine, I deepened my knowledge of graphic design and visual communication through both practical and theoretical work. I created posters, brochures and illustrations in Adobe Photoshop, Illustrator and InDesign, and learned the fundamentals of drawing, layout, typography and digital design.",
-          links: [{ label: "View the magazine", icon: "↗" }],
-        },
         {
           school: "Chas Academy", title: "Gym Planner · OAK Equipment", year: "2024–2025", tag: "UX/UI Design",
           lead: "From problem statement to HiFi prototype — a UX/UI project for a real company.",
@@ -581,12 +575,6 @@ export const translations = {
       ],
       projects: [
         {
-          school: "Fridhems Folkhögskola", title: "Revista", year: "2007–2009", tag: "Producción Gráfica",
-          lead: "Diseño que narra — maquetación, tipografía y comunicación visual en práctica.",
-          description: "Trabajando en la revista, profundicé en diseño gráfico y comunicación visual mediante trabajo práctico y teórico. Creé carteles, folletos e ilustraciones en Adobe Photoshop, Illustrator e InDesign, y aprendí los fundamentos del dibujo, la maquetación, la tipografía y el diseño digital.",
-          links: [{ label: "Ver la revista", icon: "↗" }],
-        },
-        {
           school: "Chas Academy", title: "Planificador de Gimnasio · OAK Equipment", year: "2024–2025", tag: "UX/UI Design",
           lead: "De la definición del problema al prototipo HiFi — un proyecto UX/UI para una empresa real.",
           description: "Como diseñador UX tuve la oportunidad de realizar un proyecto con mis compañeros de clase, con el objetivo de empatizar con el usuario. Nos centramos en entender sus necesidades — OAK necesitaba una herramienta 3D de escritorio donde el cliente pueda planificar y visualizar su gimnasio en un entorno tridimensional antes de invertir.",
@@ -607,6 +595,12 @@ export const translations = {
           lead: "De Figma a React — un proyecto de comercio electrónico centrado en la responsividad y la colaboración.",
           description: "Como desarrollador frontend trabajé en el proyecto tanto de forma independiente como en grupo. Mi experiencia con HTML, CSS y JavaScript despertó mi curiosidad por los lenguajes de programación. En el proyecto grupal, basado en APIs y bases de datos, seguimos cada paso desde el diseño en Figma hasta los componentes React, con foco en la responsividad y la usabilidad.",
           links: [{ label: "Ver en vivo — Solenia", icon: "↗" }, { label: "GitHub", icon: "↗" }],
+        },
+        {
+          school: "Fridhems Folkhögskola", title: "Revista", year: "2007–2009", tag: "Producción Gráfica",
+          lead: "Diseño que narra — maquetación, tipografía y comunicación visual en práctica.",
+          description: "Trabajando en la revista, profundicé en diseño gráfico y comunicación visual mediante trabajo práctico y teórico. Creé carteles, folletos e ilustraciones en Adobe Photoshop, Illustrator e InDesign, y aprendí los fundamentos del dibujo, la maquetación, la tipografía y el diseño digital.",
+          links: [{ label: "Ver la revista", icon: "↗" }],
         },
       ],
     },
