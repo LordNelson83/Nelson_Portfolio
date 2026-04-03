@@ -92,22 +92,18 @@ export default function Home() {
             flex-col · items-end · gap 12px */}
         <div className="hero-bio">
           {/* Figma: "Hej!" (2:267) — Montserrat Bold 11px · #FFA205 · tracking 2.2px */}
-          <span className="hero-bio__tag">Hej!</span>
+          <span className="hero-bio__tag">{t("home", "heroTag")}</span>
 
           {/* Figma: Description (2:271)
               Montserrat Regular 13px · lh 23.33px · rgba(255,255,255,0.72)
               text-right · pb 12.81px */}
-          <p>
-            Jag omvandlar komplexa idéer till intuitiva upplevelser
-            {" "}— med djup i research, precision i system och hjärta i
-            {" "}varje pixel.
-          </p>
+          <p>{t("home", "heroDesc")}</p>
 
           {/* Figma: Component 2 (2:276)
               border-bottom rgba(255,162,5,0.5) 0.8px · pb 3.4px
               Montserrat SemiBold 12px · white · tracking 1.44px */}
           <Link to="/ommig" className="hero-bio__cta">
-            Om mig <span aria-hidden="true">→</span>
+            {t("home", "heroCtaLabel")} <span aria-hidden="true">→</span>
           </Link>
         </div>
 

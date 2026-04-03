@@ -17,6 +17,9 @@ export const translations = {
     home: {
       eyebrow:    "— Utvalda projekt",
       title:      "360° Design",
+      heroTag:    "Hej!",
+      heroDesc:   "Jag omvandlar komplexa idéer till intuitiva upplevelser — med djup i research, precision i system och hjärta i varje pixel.",
+      heroCtaLabel: "Om mig",
       contact:    "Redo att bygga något",
       contactEm:  "extraordinary",
       contactBtn: "Kontakta mig",
@@ -219,6 +222,9 @@ export const translations = {
     home: {
       eyebrow:    "— Selected projects",
       title:      "360° Design",
+      heroTag:    "Hi!",
+      heroDesc:   "I transform complex ideas into intuitive experiences — with depth in research, precision in systems and heart in every pixel.",
+      heroCtaLabel: "About me",
       contact:    "Ready to build something",
       contactEm:  "extraordinary",
       contactBtn: "Contact me",
@@ -415,6 +421,9 @@ export const translations = {
     home: {
       eyebrow:    "— Proyectos destacados",
       title:      "360° Design",
+      heroTag:    "¡Hola!",
+      heroDesc:   "Transformo ideas complejas en experiencias intuitivas — con profundidad en la investigación, precisión en los sistemas y corazón en cada píxel.",
+      heroCtaLabel: "Sobre mí",
       contact:    "Listo para construir algo",
       contactEm:  "extraordinario",
       contactBtn: "Contáctame",
