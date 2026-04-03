@@ -48,6 +48,10 @@
   --scrollbar-track: #1e1e1e;
   --scrollbar-thumb: #444444;
 
+  /* RGB values para gradients */
+  --bg-primary-rgb: 30, 30, 30;
+  --bg-secondary-rgb: 17, 17, 17;
+
   /* Transitions */
   --theme-transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 
@@ -89,6 +93,10 @@
   /* Scrollbar */
   --scrollbar-track: #f5f4f0;
   --scrollbar-thumb: #bbbbbb;
+
+  /* RGB values para gradients */
+  --bg-primary-rgb: 245, 244, 240;
+  --bg-secondary-rgb: 235, 235, 235;
 
   color-scheme: light;
   color: var(--text-primary);

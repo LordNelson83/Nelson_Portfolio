@@ -26,8 +26,8 @@
 .navbar--light {
   position: sticky;
   top: 0;
-  background-color: #f5f4f0;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  background-color: var(--nav-bg-sticky);
+  box-shadow: var(--nav-shadow);
 }
 
 /* ── Logo ── */
@@ -66,10 +66,10 @@
   line-height: 19.5px;
 }
 
-.nav-link--dark  { color: rgba(255, 255, 255, 0.75); }
-.nav-link--light { color: rgba(30, 30, 30, 0.65); }
-.nav-link--dark:hover  { color: #ffa205; }
-.nav-link--light:hover { color: #1e1e1e; }
+.nav-link--dark  { color: var(--nav-link); }
+.nav-link--light { color: var(--nav-link); }
+.nav-link--dark:hover  { color: var(--accent); }
+.nav-link--light:hover { color: var(--nav-link-hover); }
 
 .active-link {
   color: #ffa205 !important;

@@ -1,28 +1,22 @@
 /* ══════════════════════════════════════════════════════════
-   APP SHELL — layout base del portafolio
-   Gestiona el cambio de contexto dark (Home) ↔ light (resto)
+   APP SHELL — usa variables CSS del ThemeContext
    ══════════════════════════════════════════════════════════ */
 
-/* Shell base */
 .app-shell {
   min-height: 100vh;
   position: relative;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
-/* Home: dark editorial */
-.app-shell--dark {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-/* Páginas internas: fondo claro */
+/* Mantenemos las clases por compatibilidad con Navbar isHome */
+.app-shell--dark,
 .app-shell--light {
-  background-color: #f5f4f0;
-  color: #1e1e1e;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
-/* Main content: permite que cada página controle su propio padding-top */
 .app-main {
   width: 100%;
 }

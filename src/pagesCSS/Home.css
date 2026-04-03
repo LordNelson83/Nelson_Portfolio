@@ -15,9 +15,8 @@
   width: 100%;
   height: 100vh;
   min-height: 600px;
-  background-color: #1e1e1e;
+  background-color: var(--bg-primary);
   overflow: hidden;
-  /* El hero es solo un contenedor de capas absolutas */
 }
 
 /* Foto — Figma: Nelson Peña_bild (2:233)
@@ -48,10 +47,10 @@
   z-index: 2;
   background: linear-gradient(
     99.99deg,
-    rgba(30, 30, 30, 0)    30%,
-    rgba(30, 30, 30, 0.55) 59.615%,
-    rgba(30, 30, 30, 0.92) 84.615%,
-    rgb(30, 30, 30)        100%
+    rgba(var(--bg-primary-rgb, 30,30,30), 0)    30%,
+    rgba(var(--bg-primary-rgb, 30,30,30), 0.55) 59.615%,
+    rgba(var(--bg-primary-rgb, 30,30,30), 0.92) 84.615%,
+    var(--bg-primary)                           100%
   );
   pointer-events: none;
 }
@@ -80,7 +79,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 1.98px;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-muted);
   text-transform: uppercase;
   animation: fadeUp 1s 0.4s both;
 }
@@ -97,7 +96,7 @@
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 1.98px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
   text-transform: uppercase;
   animation: fadeUp 1s 0.6s both;
 }
@@ -140,7 +139,7 @@
 
 /* Hereda font-size del padre .hero-name */
 .hero-name__first {
-  color: #ffffff;
+  color: var(--text-heading);
   animation: fadeUp 1s 0.5s both;
 }
 
@@ -187,7 +186,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--text-secondary);
   line-height: 23.33px;
   margin: 0;
   text-align: right;
@@ -207,7 +206,7 @@
   font-weight: 600;
   letter-spacing: 1.44px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--text-primary);
   text-decoration: none;
   border-bottom: 0.8px solid rgba(255, 162, 5, 0.5);
   padding-bottom: 3.4px;
@@ -263,7 +262,7 @@
    bg #1E1E1E · pt 100 pb 80 px 72 · gap 60px
    ──────────────────────────────────────── */
 .home-work {
-  background-color: #1e1e1e;
+  background-color: var(--bg-primary);
   padding: 100px 72px 80px;
   width: 100%;
   display: flex;
@@ -297,7 +296,7 @@
   font-family: "Playfair Display", serif;
   font-size: clamp(48px, 6vw, 86.4px);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   line-height: 86.4px;
   letter-spacing: -1.728px;
@@ -313,14 +312,14 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1px;
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--border);
+  border: 1px solid var(--border);
 }
 
 /* Tile — Figma: Item (2:307, 2:318, 2:330, 2:342)
    bg #1E1E1E · cada tile 646.7 × 194.9px */
 .tile {
-  background-color: #1e1e1e;
+  background-color: var(--bg-primary);
   opacity: 0;
   transform: translateY(24px);
   transition:
@@ -346,7 +345,7 @@
   gap: 8px 0;
   padding: 45px 35.8px;
   text-decoration: none;
-  color: #ffffff;
+  color: var(--text-primary);
   border: 1px solid transparent;
   transition: background-color 0.3s, border-color 0.3s;
   position: relative;
@@ -367,8 +366,8 @@
 }
 
 .tile__link:hover {
-  background-color: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--bg-surface-hover);
+  border-color: var(--border-strong);
 }
 
 .tile__link:hover::after {
@@ -393,7 +392,7 @@
 .tile__arrow {
   grid-area: arrow;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--text-muted);
   align-self: center;
   transition: color 0.3s, transform 0.3s;
   line-height: 27px;
@@ -412,7 +411,7 @@
   font-family: "Playfair Display", serif;
   font-size: 38px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-heading);
   line-height: 41.8px;
   letter-spacing: -0.38px;
   padding-top: 8px;
@@ -427,7 +426,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 1.1px;
-  color: rgba(255, 255, 255, 0.38);
+  color: var(--text-muted);
   text-transform: uppercase;
   padding-top: 4px;
   line-height: 16.5px;
@@ -463,8 +462,8 @@
    pt 79.9 pb 80 pl 72 pr 71.99 · flex row space-between
    ──────────────────────────────────────── */
 .home-contact {
-  background-color: #111111;
-  border-top: 0.8px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--bg-secondary);
+  border-top: 0.8px solid var(--border);
   padding: 80px 72px;
   display: flex;
   align-items: center;
@@ -479,7 +478,7 @@
   font-family: "Playfair Display", serif;
   font-size: clamp(28px, 3.5vw, 50.4px);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   line-height: 60.48px;
   letter-spacing: -1.008px;
