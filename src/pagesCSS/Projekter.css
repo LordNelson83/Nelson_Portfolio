@@ -9,7 +9,7 @@
    ──────────────────────────────────────── */
 .pk-page {
   position: relative;
-  background-color: #1e1e1e;
+  background-color: var(--bg-primary);
   min-height: 100vh;
   isolation: isolate;
   overflow-x: hidden;
@@ -41,7 +41,7 @@
   line-height: 1;
   letter-spacing: -0.04em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.028);
+  -webkit-text-stroke: 1px var(--border);
   white-space: nowrap;
 }
 
@@ -78,7 +78,7 @@
   font-size: clamp(56px, 9vw, 130px);
   font-weight: 700;
   line-height: 1.1;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   letter-spacing: -0.03em;
   animation: pkFadeUp 0.9s 0.3s both;
@@ -91,7 +91,7 @@
   font-size: clamp(13px, 1.1vw, 16px);
   font-weight: 400;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.50);
+  color: var(--text-muted);
   margin: 0;
   max-width: 540px;
   animation: pkFadeUp 0.8s 0.5s both;
@@ -113,14 +113,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background-color: rgba(255, 255, 255, 0.06);
-  border-top: 0.8px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 0.8px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--border);
+  border-top: 0.8px solid var(--border);
+  border-bottom: 0.8px solid var(--border);
   margin-bottom: 80px;
 }
 
 .pk-stat {
-  background-color: #1e1e1e;
+  background-color: var(--bg-primary);
   padding: 36px 48px;
   display: flex;
   flex-direction: column;
@@ -134,7 +134,7 @@
 }
 
 .pk-stat.is-visible { opacity: 1; transform: translateY(0); }
-.pk-stat:hover      { background-color: rgba(255,255,255,0.022); }
+.pk-stat:hover { background-color: var(--bg-surface-hover); }
 
 .pk-stat__value {
   font-family: "Playfair Display", serif;
@@ -151,7 +151,7 @@
   font-weight: 500;
   letter-spacing: 1.1px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.34);
+  color: var(--text-muted);
   line-height: 16.5px;
 }
 
@@ -168,7 +168,7 @@
 /* ── Proyecto individual ── */
 .pk-project {
   padding: 64px 0;
-  border-top: 0.8px solid rgba(255, 255, 255, 0.06);
+  border-top: 0.8px solid var(--border);
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s 0.05s ease, transform 0.7s 0.05s ease;
@@ -210,7 +210,7 @@
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-muted);
   margin: 0;
   line-height: 16.5px;
 }
@@ -220,7 +220,7 @@
   font-family: "Playfair Display", serif;
   font-size: clamp(24px, 3vw, 46px);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -239,7 +239,7 @@
   font-weight: 600;
   letter-spacing: 1.65px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.28);
+  color: var(--text-muted);
   line-height: 16.5px;
 }
 
@@ -271,11 +271,11 @@
   font-size: clamp(18px, 1.8vw, 26px);
   font-weight: 700;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--text-secondary);
   margin: 0 0 36px;
   line-height: 1.4;
   letter-spacing: -0.01em;
-  padding-left: 108px; /* alineado con el meta, saltando el número */
+  padding-left: 108px;
 }
 
 /* ── Body — 2 columnas visual + texto ── */
@@ -485,7 +485,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -527,7 +527,7 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(255,255,255,0.55);
+  color: var(--text-muted);
   padding-left: 14px;
   position: relative;
 }
@@ -552,7 +552,7 @@
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: var(--text-muted);
   margin: 0;
   line-height: 16px;
 }
@@ -604,8 +604,8 @@
   font-weight: 600;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.40);
-  border: 0.8px solid rgba(255, 255, 255, 0.10);
+  color: var(--text-muted);
+  border: 0.8px solid var(--border);
   padding: 5px 12px;
   line-height: 16px;
   transition: border-color 0.2s, color 0.2s;
@@ -630,13 +630,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
-  border-top: 0.8px solid rgba(255,255,255,0.07);
+  border-top: 0.8px solid var(--border);
   text-decoration: none;
   overflow: hidden;
   transition: padding-left 0.25s ease;
 }
 
-.pk-link:last-child { border-bottom: 0.8px solid rgba(255,255,255,0.07); }
+.pk-link:last-child { border-bottom: 0.8px solid var(--border); }
 
 .pk-link:hover { padding-left: 8px; }
 .pk-link:hover .pk-link__label { color: var(--accent, #ffa205); }
@@ -646,7 +646,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: clamp(13px, 1.1vw, 16px);
   font-weight: 600;
-  color: rgba(255,255,255,0.75);
+  color: var(--text-secondary);
   letter-spacing: 0.3px;
   transition: color 0.22s;
 }
@@ -675,8 +675,8 @@
    CTA FINAL — token home-contact
    ════════════════════════════════════════ */
 .pk-cta {
-  background-color: #111111;
-  border-top: 0.8px solid rgba(255,255,255,0.06);
+  background-color: var(--bg-secondary);
+  border-top: 0.8px solid var(--border);
   padding: 80px 72px;
   display: flex;
   align-items: center;
@@ -707,7 +707,7 @@
   font-family: "Playfair Display", serif;
   font-size: clamp(28px, 3.5vw, 50px);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -819,7 +819,7 @@
 .pk-ahr-block__text {
   font-size: 15px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.72);
+  color: var(--text-secondary);
   max-width: 520px;
 }
 

@@ -9,7 +9,7 @@
    ──────────────────────────────────────── */
 .cm-page {
   position: relative;
-  background-color: #1e1e1e;
+  background-color: var(--bg-primary);
   min-height: 100vh;
   isolation: isolate;
   overflow-x: hidden;
@@ -41,7 +41,7 @@
   line-height: 1;
   letter-spacing: -0.04em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.032);
+  -webkit-text-stroke: 1px var(--border);
   white-space: nowrap;
 }
 
@@ -78,7 +78,7 @@
   font-size: clamp(56px, 10.4vw, 150px);
   font-weight: 700;
   line-height: 1.5;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -114,7 +114,7 @@
   font-family: "Playfair Display", serif;
   font-size: clamp(20px, 2.8vw, 40px);
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.70);
+  color: var(--text-secondary);
   margin: 0;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -153,14 +153,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background-color: rgba(255, 255, 255, 0.06);
-  border-top: 0.8px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 0.8px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--border);
+  border-top: 0.8px solid var(--border);
+  border-bottom: 0.8px solid var(--border);
   margin-bottom: 0;
 }
 
 .cm-stat {
-  background-color: #1e1e1e;
+  background-color: var(--bg-primary);
   padding: 36px 48px;
   display: flex;
   flex-direction: column;
@@ -174,7 +174,7 @@
 }
 
 .cm-stat.is-visible { opacity: 1; transform: translateY(0); }
-.cm-stat:hover      { background-color: rgba(255, 255, 255, 0.022); }
+.cm-stat:hover { background-color: var(--bg-surface-hover); }
 
 .cm-stat__value {
   font-family: "Playfair Display", serif;
@@ -191,7 +191,7 @@
   font-weight: 500;
   letter-spacing: 1.1px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.34);
+  color: var(--text-muted);
   line-height: 16.5px;
 }
 
@@ -204,7 +204,7 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  border-bottom: 0.8px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 0.8px solid var(--border);
 }
 
 .cm-opening__text {
@@ -212,7 +212,7 @@
   font-size: clamp(40px, 6vw, 96px);
   font-weight: 700;
   font-style: italic;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -282,7 +282,7 @@
   font-family: "Playfair Display", serif;
   font-size: clamp(22px, 2.6vw, 40px);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -306,7 +306,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -323,7 +323,7 @@
   font-size: 15px;
   font-style: italic;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--text-secondary);
   margin: 0;
   line-height: 1.6;
   letter-spacing: -0.01em;
@@ -336,7 +336,7 @@
   font-weight: 500;
   font-style: italic;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.70);
+  color: var(--text-secondary);
   margin: 0;
   padding-top: 4px;
 }
@@ -354,8 +354,8 @@
   font-weight: 600;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.40);
-  border: 0.8px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  border: 0.8px solid var(--border);
   padding: 5px 12px;
   line-height: 16px;
   transition: border-color 0.2s, color 0.2s;
@@ -593,8 +593,8 @@
    CTA FINAL — token home-contact (2:356)
    ════════════════════════════════════════ */
 .cm-cta {
-  background-color: #111111;
-  border-top: 0.8px solid rgba(255, 255, 255, 0.06);
+  background-color: var(--bg-secondary);
+  border-top: 0.8px solid var(--border);
   padding: 80px 72px;
   display: flex;
   align-items: center;
@@ -624,7 +624,7 @@
   font-family: "Playfair Display", serif;
   font-size: clamp(28px, 3.5vw, 50.4px);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-heading);
   margin: 0;
   line-height: 1.2;
   letter-spacing: -0.02em;
