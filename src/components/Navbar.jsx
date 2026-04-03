@@ -6,9 +6,9 @@ import { useLang } from "../i18n/LangContext";
 
 /* Banderas como emoji + código */
 const LANGS = [
-  { code: "sv", flag: "U+1F1F8 U+1F1EA", label: "Svenska" },
-  { code: "en", flag: "U+1F1EC U+1F1E7", label: "English" },
-  { code: "es", flag: "U+1F1EA U+1F1F8", label: "Español" },
+  { code: "sv", flag: "🇸🇪", label: "Svenska" },
+  { code: "en", flag: "🇬🇧", label: "English" },
+  { code: "es", flag: "🇪🇸", label: "Español" },
 ];
 
 const Navbar = ({ isHome = false }) => {
