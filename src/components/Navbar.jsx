@@ -4,11 +4,36 @@ import "./Navbar.css";
 import nptLogo from "../assets/images2/npt.png";
 import { useLang } from "../i18n/LangContext";
 
-/* Banderas como emoji + código */
+/* Banderas como componentes SVG inline — compatibles con todos los navegadores */
+const FlagSE = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 15" width="22" height="16" style={{borderRadius:"2px",display:"block"}}>
+    <rect width="20" height="15" fill="#006AA7"/>
+    <rect x="5" width="3" height="15" fill="#FECC02"/>
+    <rect y="6" width="20" height="3" fill="#FECC02"/>
+  </svg>
+);
+
+const FlagGB = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="22" height="16" style={{borderRadius:"2px",display:"block"}}>
+    <rect width="60" height="30" fill="#012169"/>
+    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6"/>
+    <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4"/>
+    <path d="M30,0 V30 M0,15 H60" stroke="#fff" strokeWidth="10"/>
+    <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6"/>
+  </svg>
+);
+
+const FlagES = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" width="22" height="16" style={{borderRadius:"2px",display:"block"}}>
+    <rect width="3" height="2" fill="#c60b1e"/>
+    <rect y="0.5" width="3" height="1" fill="#ffc400"/>
+  </svg>
+);
+
 const LANGS = [
-  { code: "sv", flag: "🇸🇪", label: "Svenska" },
-  { code: "en", flag: "🇬🇧", label: "English" },
-  { code: "es", flag: "🇪🇸", label: "Español" },
+  { code: "sv", Flag: FlagSE, label: "Svenska" },
+  { code: "en", Flag: FlagGB, label: "English" },
+  { code: "es", Flag: FlagES, label: "Español" },
 ];
 
 const Navbar = ({ isHome = false }) => {
@@ -18,6 +43,7 @@ const Navbar = ({ isHome = false }) => {
   const { lang, switchLang, t }   = useLang();
 
   const currentLang = LANGS.find(l => l.code === lang) || LANGS[0];
+  const CurrentFlag = currentLang.Flag;
 
   /* Cierra menús al cambiar de ruta */
   useEffect(() => {
@@ -75,23 +101,25 @@ const Navbar = ({ isHome = false }) => {
           onClick={e => { e.stopPropagation(); setLangOpen(o => !o); }}
         >
           <span className="lang-current">
-            <span className="lang-flag">{currentLang.flag}</span>
-            <span className="lang-code">{currentLang.code.toUpperCase()}</span>
+            <CurrentFlag />
             <span className="lang-arrow">{langOpen ? "▲" : "▼"}</span>
           </span>
 
           {langOpen && (
             <ul className="lang-dropdown">
-              {LANGS.map(l => (
-                <li
-                  key={l.code}
-                  className={`lang-option ${l.code === lang ? "lang-option--active" : ""}`}
-                  onClick={() => { switchLang(l.code); setLangOpen(false); }}
-                >
-                  <span className="lang-flag">{l.flag}</span>
-                  <span className="lang-name">{l.label}</span>
-                </li>
-              ))}
+              {LANGS.map(l => {
+                const LFlag = l.Flag;
+                return (
+                  <li
+                    key={l.code}
+                    className={`lang-option ${l.code === lang ? "lang-option--active" : ""}`}
+                    onClick={() => { switchLang(l.code); setLangOpen(false); }}
+                  >
+                    <LFlag />
+                    <span className="lang-name">{l.label}</span>
+                  </li>
+                );
+              })}
             </ul>
           )}
         </div>
@@ -103,23 +131,25 @@ const Navbar = ({ isHome = false }) => {
         onClick={e => { e.stopPropagation(); setLangOpen(o => !o); }}
       >
         <span className="lang-current">
-          <span className="lang-flag">{currentLang.flag}</span>
-          <span className="lang-code">{currentLang.code.toUpperCase()}</span>
+          <CurrentFlag />
           <span className="lang-arrow">{langOpen ? "▲" : "▼"}</span>
         </span>
 
         {langOpen && (
           <ul className="lang-dropdown">
-            {LANGS.map(l => (
-              <li
-                key={l.code}
-                className={`lang-option ${l.code === lang ? "lang-option--active" : ""}`}
-                onClick={() => { switchLang(l.code); setLangOpen(false); }}
-              >
-                <span className="lang-flag">{l.flag}</span>
-                <span className="lang-name">{l.label}</span>
-              </li>
-            ))}
+            {LANGS.map(l => {
+              const LFlag = l.Flag;
+              return (
+                <li
+                  key={l.code}
+                  className={`lang-option ${l.code === lang ? "lang-option--active" : ""}`}
+                  onClick={() => { switchLang(l.code); setLangOpen(false); }}
+                >
+                  <LFlag />
+                  <span className="lang-name">{l.label}</span>
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>
