@@ -330,3 +330,33 @@
   .lang-switcher--mobile .lang-name { font-size: 14px; }
   .lang-switcher--mobile .lang-flag { font-size: 20px; }
 }
+
+/* ══ THEME TOGGLE BUTTON ══ */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.2s, transform 0.3s;
+  flex-shrink: 0;
+  z-index: 220;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,162,5,0.12);
+  transform: rotate(20deg);
+}
+
+.theme-toggle--dark  { color: rgba(255,255,255,0.75); border: 0.8px solid rgba(255,255,255,0.18); }
+.theme-toggle--light { color: rgba(30,30,30,0.65);    border: 0.8px solid rgba(30,30,30,0.18); }
+
+.theme-toggle--dark:hover,
+.theme-toggle--light:hover {
+  color: #ffa205;
+  border-color: rgba(255,162,5,0.5);
+}
