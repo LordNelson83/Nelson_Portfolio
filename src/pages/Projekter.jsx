@@ -39,11 +39,18 @@ const PROJECT_LINKS = [
 
 const AHR_ACCENT = "#00a6b4";
 
-// ── Contenido AHR hardcodeado (independiente de i18n para claridad) ────────
+// ── Contenido AHR ─────────────────────────────────────────────────────────
 const AHR_CONTENT = {
-  reto:     "Byråchefer förlorade pengar utan att veta varför — Fortnox Tid, Lön och Fakturering kommunicerade inte med varandra.",
+  utmaning: "Byråchefer förlorade pengar utan att veta varför — Fortnox Tid, Lön och Fakturering kommunicerade inte med varandra.",
   metod:    "6 användarintervjuer → Opportunity Solution Tree (Teresa Torres) → 3 hypoteser → teknisk feasibility med Fortnox-teamen Avengers & Raiders.",
   resultat: "Konceptet validerades som genomförbart. Målgrupp: byråer med upp till 20 konsulter. Nästa steg: interaktivt Hi-Fi-prototyp.",
+};
+
+// ── Contenido OAK ─────────────────────────────────────────────────────────
+const OAK_CONTENT = {
+  utmaning: "Kunder kunde inte föreställa sig hur gymmet skulle se ut innan köpet — OAK tappade affärer i offertfasen.",
+  metod:    "9 undersökningar (3 enkäter + 6 telefonintervjuer) → 2 beteendetyper → idéworkshop → Lo-Fi i Figma → observationstest + gerillatest på SATS Globen med 10 respondenter.",
+  resultat: "9/10 upplevde flödet som enkelt. Tre iterationer baserade på testinsikter: progressbar, nästa-knapp och översiktssida. Slutlig Hi-Fi levererad till beställaren.",
 };
 
 export default function Projekter() {
@@ -118,7 +125,7 @@ export default function Projekter() {
       <div className="pk-projects">
 
         {/* ══════════════════════════════════════════════════════════════
-            PROYECTO 01 — AHR-Motor · Fortnox / Chas Academy  (HERO)
+            01 — AHR-Motor · Fortnox / Chas Academy
         ══════════════════════════════════════════════════════════════ */}
         <section
           className="pk-project pk-project--ahr"
@@ -186,19 +193,16 @@ export default function Projekter() {
             {/* Contenido AHR */}
             <div className="pk-project__content">
 
-              {/* — Reto (NUEVO) */}
               <div className="pk-ahr-block">
-                <p className="pk-ahr-block__label">— Reto</p>
-                <p className="pk-ahr-block__text">{AHR_CONTENT.reto}</p>
+                <p className="pk-ahr-block__label">— Utmaning</p>
+                <p className="pk-ahr-block__text">{AHR_CONTENT.utmaning}</p>
               </div>
 
-              {/* — Metod (NUEVO) */}
               <div className="pk-ahr-block">
                 <p className="pk-ahr-block__label">— Metod</p>
                 <p className="pk-ahr-block__text">{AHR_CONTENT.metod}</p>
               </div>
 
-              {/* — Objective */}
               <div className="pk-ahr-block">
                 <p className="pk-ahr-block__label">— Objective</p>
                 <p className="pk-ahr-block__text">
@@ -206,7 +210,6 @@ export default function Projekter() {
                 </p>
               </div>
 
-              {/* — Bakgrund */}
               <div className="pk-ahr-block">
                 <p className="pk-ahr-block__label">— Bakgrund</p>
                 <p className="pk-ahr-block__text">
@@ -214,7 +217,6 @@ export default function Projekter() {
                 </p>
               </div>
 
-              {/* — Förslag */}
               <div className="pk-ahr-block">
                 <p className="pk-ahr-block__label">— Förslag</p>
                 <p className="pk-ahr-block__text">
@@ -222,20 +224,17 @@ export default function Projekter() {
                 </p>
               </div>
 
-              {/* — Resultat (NUEVO) */}
               <div className="pk-ahr-block">
                 <p className="pk-ahr-block__label">— Resultat</p>
                 <p className="pk-ahr-block__text">{AHR_CONTENT.resultat}</p>
               </div>
 
-              {/* Skills */}
               <div className="pk-skills">
                 {["UX Research", "POM", "OST", "Figma", "Teresa Torres", "Marty Cagan", "Fortnox"].map(sk => (
                   <span key={sk} className="pk-skill">{sk}</span>
                 ))}
               </div>
 
-              {/* Link */}
               <div className="pk-links">
                 <a href="https://www.fortnox.se" target="_blank" rel="noopener noreferrer" className="pk-link">
                   <span className="pk-link__label">Fortnox</span>
@@ -243,19 +242,19 @@ export default function Projekter() {
                   <div className="pk-link__bar" aria-hidden="true" />
                 </a>
               </div>
+
             </div>
           </div>
         </section>
 
         {/* ══════════════════════════════════════════════════════════════
-            PROYECTOS 02–04 — OAK, Solenia, Magasin
+            02–04 — OAK, Solenia, Magasin
         ══════════════════════════════════════════════════════════════ */}
         {pk.projects.map((proj, pi) => {
           const id    = PROJECT_IDS[pi];
           const color = PROJECT_COLORS[pi];
           const image = PROJECT_IMAGES[pi];
           const links = PROJECT_LINKS[pi];
-          // AHR ya es 01 — estos empiezan en 02
           const num   = String(pi + 2).padStart(2, "0");
 
           return (
@@ -338,6 +337,20 @@ export default function Projekter() {
                 <div className="pk-project__content">
                   <p className="pk-project__desc">{proj.description}</p>
 
+                  {/* Utmaning + Metod — solo OAK */}
+                  {id === "oak" && (
+                    <>
+                      <div className="pk-ahr-block">
+                        <p className="pk-ahr-block__label">— Utmaning</p>
+                        <p className="pk-ahr-block__text">{OAK_CONTENT.utmaning}</p>
+                      </div>
+                      <div className="pk-ahr-block">
+                        <p className="pk-ahr-block__label">— Metod</p>
+                        <p className="pk-ahr-block__text">{OAK_CONTENT.metod}</p>
+                      </div>
+                    </>
+                  )}
+
                   {/* Roles OAK */}
                   {proj.uxRole && (
                     <div className="pk-roles">
@@ -371,6 +384,14 @@ export default function Projekter() {
                     </div>
                   )}
 
+                  {/* Resultat test — solo OAK */}
+                  {id === "oak" && (
+                    <div className="pk-ahr-block">
+                      <p className="pk-ahr-block__label">— Resultat</p>
+                      <p className="pk-ahr-block__text">{OAK_CONTENT.resultat}</p>
+                    </div>
+                  )}
+
                   {/* Skills */}
                   <div className="pk-skills">
                     {[
@@ -400,6 +421,7 @@ export default function Projekter() {
                       ))}
                     </div>
                   )}
+
                 </div>
               </div>
             </section>
