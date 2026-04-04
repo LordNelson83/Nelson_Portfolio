@@ -11,6 +11,7 @@ import GrafiskProduktion from "./pages/GrafiskProduktion";
 import Projekter from "./pages/Projekter";
 import ThreeDPrint from "./pages/ThreeDPrint";
 import UxUiDesign from "./pages/UxUiDesign";
+import AhrMotorCase from "./pages/AhrMotorCase";
 
 /* ─── Scroll to top on route change ─────────────────────── */
 const ScrollToTop = () => {
@@ -30,6 +31,7 @@ const ROUTES = [
   { path: "/grafiskproduktion/:id",   element: <GrafiskProduktion /> },
   { path: "/threedprint/:id",         element: <ThreeDPrint /> },
   { path: "/uxuidesign/:id",          element: <UxUiDesign /> },
+  { path: "/ahr-motor",               element: <AhrMotorCase /> },
 ];
 
 /* ─── App ────────────────────────────────────────────────── */
@@ -43,7 +45,8 @@ const App = () => {
     || pathname.startsWith("/uxuidesign")
     || pathname.startsWith("/threedprint")
     || pathname.startsWith("/crossmedia")
-    || pathname === "/grafiskproduktion/1";
+    || pathname === "/grafiskproduktion/1"
+    || pathname === "/ahr-motor";
 
   return (
     <div className={`app-shell ${isHome ? "app-shell--dark" : "app-shell--light"}`}>
