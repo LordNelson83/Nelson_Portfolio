@@ -20,9 +20,9 @@ import oak5Img from "../assets/images/OAK_5.png";
 
 // ── AHR-Motor screens ──────────────────────────────────────────────────────
 const AHR_SCREENS = [
-  { src: ahr1Img, alt: "AHR — Opportunity Solution Tree",  label: "Opportunity Solution Tree · Teresa Torres" },
+  { src: ahr1Img, alt: "AHR — Användarsegment · Fortnox",  label: "Användarsegment · Fortnox-ekosystem" },
   { src: ahr2Img, alt: "AHR — Product Outcome & OST-karta", label: "Product Outcome · OST-karta" },
-  { src: ahr3Img, alt: "AHR — Användarsegment · Fortnox",   label: "Användarsegment · Fortnox-ekosystem" },
+  { src: ahr3Img, alt: "AHR — AHR — Opportunity Solution Tree",   label: "Opportunity Solution Tree · Teresa Torres" },
 ];
 
 // ── OAK screens ───────────────────────────────────────────────────────────
