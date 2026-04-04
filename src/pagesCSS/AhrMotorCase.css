@@ -49,33 +49,41 @@
 
 /* ── Nav ── */
 .cs-nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 4rem;
+  padding: 1rem 4rem;
   border-bottom: 1px solid var(--cs-border);
+  background: rgba(13, 13, 13, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .cs-back {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--cs-muted);
+  color: rgba(255,255,255,0.6);
   text-decoration: none;
   font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 6px 0;
   transition: color 0.2s;
 }
 
 .cs-back:hover { color: var(--cs-accent); }
 
 .cs-back__arrow {
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1;
   transition: transform 0.2s;
 }
 
-.cs-back:hover .cs-back__arrow { transform: translateX(-3px); }
+.cs-back:hover .cs-back__arrow { transform: translateX(-4px); }
 
 .cs-nav__tag {
   font-size: 11px;

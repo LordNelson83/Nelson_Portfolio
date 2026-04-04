@@ -76,7 +76,11 @@ const Navbar = ({ isHome = false }) => {
           className="navbar-logo-img"
           src={nptLogo}
           alt="Nelson Peña logo"
-          style={{ filter: isHome ? "brightness(0) invert(1)" : "none" }}
+          style={{ filter: isHome
+            ? "brightness(0) invert(1)"
+            : theme === "dark"
+              ? "brightness(0) invert(1)"
+              : "brightness(0)" }}
         />
       </Link>
 
