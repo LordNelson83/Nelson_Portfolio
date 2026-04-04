@@ -249,6 +249,11 @@ export default function Projekter() {
                   <span className="pk-link__icon">↗</span>
                   <div className="pk-link__bar" aria-hidden="true" />
                 </a>
+                <Link to="/ahr-motor" className="pk-link">
+                  <span className="pk-link__label">Läs case study — AHR-Motor</span>
+                  <span className="pk-link__icon">→</span>
+                  <div className="pk-link__bar" aria-hidden="true" />
+                </Link>
               </div>
 
             </div>
@@ -447,11 +452,6 @@ export default function Projekter() {
           </h2>
         </div>
         <Link to="/kontakta" className="pk-cta__btn">{pk.ctaBtn}</Link>
-        <Link to="/projekter/ahr-motor" className="pk-link">
-  <span className="pk-link__label">Läs case study</span>
-  <span className="pk-link__icon">→</span>
-  <div className="pk-link__bar" aria-hidden="true" />
-</Link>
       </section>
     </div>
   );
