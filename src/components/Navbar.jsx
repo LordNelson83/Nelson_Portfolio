@@ -68,7 +68,7 @@ const Navbar = ({ isHome = false }) => {
   }, [langOpen]);
 
   return (
-    <nav className={`navbar ${isHome ? "navbar--dark" : "navbar--light"}`}>
+    <nav className={`navbar ${isHome || theme === "dark" ? "navbar--dark" : "navbar--light"}`}>
 
       {/* Logo */}
       <Link to="/" className="navbar-logo">
@@ -94,7 +94,7 @@ const Navbar = ({ isHome = false }) => {
             key={to}
             to={to}
             className={({ isActive }) =>
-              `nav-link ${isHome ? "nav-link--dark" : "nav-link--light"} ${isActive ? "active-link" : ""}`
+              `nav-link nav-link--${isHome || theme === "dark" ? "dark" : "light"} ${isActive ? "active-link" : ""}`
             }
           >
             {label}
@@ -103,7 +103,7 @@ const Navbar = ({ isHome = false }) => {
 
         {/* Selector de idioma — visible también dentro del menú mobile */}
         <div
-          className={`lang-switcher lang-switcher--mobile ${isHome ? "lang-switcher--dark" : "lang-switcher--light"}`}
+          className={`lang-switcher lang-switcher--mobile ${isHome || theme === "dark" ? "lang-switcher--dark" : "lang-switcher--light"}`}
           onClick={e => { e.stopPropagation(); setLangOpen(o => !o); }}
         >
           <span className="lang-current">
@@ -133,7 +133,7 @@ const Navbar = ({ isHome = false }) => {
 
       {/* Botón Dark/Light toggle */}
       <button
-        className={`theme-toggle ${isHome ? "theme-toggle--dark" : "theme-toggle--light"}`}
+        className={`theme-toggle ${isHome || theme === "dark" ? "theme-toggle--dark" : "theme-toggle--light"}`}
         onClick={toggleTheme}
         aria-label={theme === "dark" ? "Aktivera ljust läge" : "Aktivera mörkt läge"}
         title={theme === "dark" ? "Light mode" : "Dark mode"}
@@ -161,7 +161,7 @@ const Navbar = ({ isHome = false }) => {
 
       {/* Selector de idioma desktop — fuera del menú mobile */}
       <div
-        className={`lang-switcher lang-switcher--desktop ${isHome ? "lang-switcher--dark" : "lang-switcher--light"}`}
+        className={`lang-switcher lang-switcher--desktop ${isHome || theme === "dark" ? "lang-switcher--dark" : "lang-switcher--light"}`}
         onClick={e => { e.stopPropagation(); setLangOpen(o => !o); }}
       >
         <span className="lang-current">
@@ -190,7 +190,7 @@ const Navbar = ({ isHome = false }) => {
 
       {/* Botón hamburguesa — solo mobile */}
       <button
-        className={`navbar-burger ${menuOpen ? "navbar-burger--open" : ""} ${isHome ? "navbar-burger--dark" : "navbar-burger--light"}`}
+        className={`navbar-burger ${menuOpen ? "navbar-burger--open" : ""} ${isHome || theme === "dark" ? "navbar-burger--dark" : "navbar-burger--light"}`}
         onClick={() => setMenuOpen(o => !o)}
         aria-label={menuOpen ? "Stäng meny" : "Öppna meny"}
         aria-expanded={menuOpen}

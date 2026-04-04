@@ -23,6 +23,14 @@
   background: transparent;
 }
 
+/* Dark mode en páginas internas — sticky con fondo oscuro */
+:root[data-theme="dark"] .navbar--dark:not([style*="position: absolute"]) {
+  position: sticky;
+  top: 0;
+  background-color: #1e1e1e;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
 .navbar--light {
   position: sticky;
   top: 0;
@@ -70,6 +78,14 @@
 .nav-link--light { color: var(--nav-link); }
 .nav-link--dark:hover  { color: var(--accent); }
 .nav-link--light:hover { color: var(--nav-link-hover); }
+
+/* Forzar visibilidad en light mode */
+:root[data-theme="light"] .nav-link--light {
+  color: rgba(20,20,20,0.75);
+}
+:root[data-theme="light"] .nav-link--dark {
+  color: rgba(20,20,20,0.75);
+}
 
 .active-link {
   color: #ffa205 !important;
