@@ -3,7 +3,6 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import nptLogo    from "../assets/images2/npt.png";
 import { useLang } from "../i18n/LangContext";
-import { useTheme } from "../i18n/ThemeContext";
 
 /* ── Banderas SVG inline ─────────────────────────────────── */
 const FlagSE = () => (
@@ -40,17 +39,17 @@ const Navbar = ({ isHome = false }) => {
   const [langOpen, setLangOpen] = useState(false);
   const location                = useLocation();
   const { lang, switchLang, t } = useLang();
-  const { theme, toggleTheme }  = useTheme();
 
-  const isDark = theme === "dark";
   const currentLang = LANGS.find(l => l.code === lang) || LANGS[0];
   const CurrentFlag = currentLang.Flag;
 
   useEffect(() => { setMenuOpen(false); setLangOpen(false); }, [location]);
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
+
   useEffect(() => {
     if (!langOpen) return;
     const close = () => setLangOpen(false);
@@ -58,21 +57,8 @@ const Navbar = ({ isHome = false }) => {
     return () => document.removeEventListener("click", close);
   }, [langOpen]);
 
-  /* 
-    Hay 3 variantes de navbar:
-    - "hero"    → Home hero, transparente con texto blanco
-    - "dark"    → páginas internas en dark mode, sticky fondo oscuro
-    - "light"   → páginas internas en light mode, sticky fondo crema
-  */
-  const variant = isHome ? "hero" : isDark ? "dark" : "light";
-
-  /* Filtro del logo según variante */
-  const logoFilter = variant === "light"
-    ? "brightness(0)"               /* negro sobre crema */
-    : "brightness(0) invert(1)";    /* blanco sobre oscuro */
-
   return (
-    <nav className={`navbar navbar--${variant}`}>
+    <nav className={`navbar ${isHome ? "navbar--dark" : "navbar--light"}`}>
 
       {/* Logo */}
       <Link to="/" className="navbar-logo">
@@ -80,7 +66,7 @@ const Navbar = ({ isHome = false }) => {
           className="navbar-logo-img"
           src={nptLogo}
           alt="Nelson Peña logo"
-          style={{ filter: logoFilter }}
+          style={{ filter: "brightness(0) invert(1)" }}
         />
       </Link>
 
@@ -94,7 +80,7 @@ const Navbar = ({ isHome = false }) => {
             key={to}
             to={to}
             className={({ isActive }) =>
-              `nav-link nav-link--${variant} ${isActive ? "active-link" : ""}`
+              `nav-link nav-link--dark ${isActive ? "active-link" : ""}`
             }
           >
             {label}
@@ -103,7 +89,7 @@ const Navbar = ({ isHome = false }) => {
 
         {/* Selector idioma mobile */}
         <div
-          className={`lang-switcher lang-switcher--mobile lang-switcher--${variant}`}
+          className="lang-switcher lang-switcher--mobile lang-switcher--dark"
           onClick={e => { e.stopPropagation(); setLangOpen(o => !o); }}
         >
           <span className="lang-current">
@@ -129,31 +115,9 @@ const Navbar = ({ isHome = false }) => {
         </div>
       </div>
 
-      {/* Toggle dark/light */}
-      <button
-        className={`theme-toggle theme-toggle--${variant}`}
-        onClick={toggleTheme}
-        aria-label={isDark ? "Aktivera ljust läge" : "Aktivera mörkt läge"}
-        title={isDark ? "Light mode" : "Dark mode"}
-      >
-        {isDark ? (
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-        ) : (
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-        )}
-      </button>
-
       {/* Selector idioma desktop */}
       <div
-        className={`lang-switcher lang-switcher--desktop lang-switcher--${variant}`}
+        className="lang-switcher lang-switcher--desktop lang-switcher--dark"
         onClick={e => { e.stopPropagation(); setLangOpen(o => !o); }}
       >
         <span className="lang-current">
@@ -180,7 +144,7 @@ const Navbar = ({ isHome = false }) => {
 
       {/* Hamburguesa mobile */}
       <button
-        className={`navbar-burger ${menuOpen ? "navbar-burger--open" : ""} navbar-burger--${variant}`}
+        className={`navbar-burger ${menuOpen ? "navbar-burger--open" : ""} navbar-burger--dark`}
         onClick={() => setMenuOpen(o => !o)}
         aria-label={menuOpen ? "Stäng meny" : "Öppna meny"}
         aria-expanded={menuOpen}

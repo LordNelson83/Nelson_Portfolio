@@ -1,11 +1,7 @@
 /* ══════════════════════════════════════
-   NAVBAR — 3 variantes:
-   hero  → Home, transparente, texto blanco
-   dark  → páginas internas dark mode, sticky fondo oscuro
-   light → páginas internas light mode, sticky fondo crema
+   NAVBAR — solo dark mode
    ══════════════════════════════════════ */
 
-/* ── Base ── */
 .navbar {
   width: 100%;
   display: flex;
@@ -14,31 +10,22 @@
   padding: 28px 72px;
   box-sizing: border-box;
   z-index: 200;
-  transition: background-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
 }
 
-/* ── Variante HERO (Home) — transparente, texto blanco ── */
-.navbar--hero {
+/* Home — transparente sobre el hero */
+.navbar--dark {
   position: absolute;
   top: 0;
   left: 0;
   background: transparent;
 }
 
-/* ── Variante DARK (páginas internas dark mode) ── */
-.navbar--dark {
+/* Páginas internas — sticky con fondo oscuro */
+.navbar--light {
   position: sticky;
   top: 0;
   background-color: #1e1e1e;
   box-shadow: 0 1px 0 rgba(255,255,255,0.06);
-}
-
-/* ── Variante LIGHT (páginas internas light mode) ── */
-.navbar--light {
-  position: sticky;
-  top: 0;
-  background-color: #f5f4f0;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
 }
 
 /* ── Logo ── */
@@ -55,7 +42,6 @@
   width: auto;
   object-fit: contain;
   animation: navFadeIn 1.5s ease-in-out both;
-  transition: filter 0.35s ease;
 }
 
 /* ── Links desktop ── */
@@ -78,14 +64,8 @@
   line-height: 19.5px;
 }
 
-/* Colores por variante */
-.nav-link--hero  { color: rgba(255,255,255,0.80); }
-.nav-link--dark  { color: rgba(255,255,255,0.80); }
-.nav-link--light { color: rgba(20,20,20,0.75); }
-
-.nav-link--hero:hover,
-.nav-link--dark:hover  { color: #ffa205; }
-.nav-link--light:hover { color: #111111; }
+.nav-link--dark       { color: rgba(255,255,255,0.75); }
+.nav-link--dark:hover { color: #ffa205; }
 
 .active-link { color: #ffa205 !important; font-weight: 700; }
 
@@ -118,12 +98,9 @@
   height: 2px;
   width: 100%;
   border-radius: 2px;
+  background-color: rgba(255,255,255,0.85);
   transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
 }
-
-.navbar-burger--hero span,
-.navbar-burger--dark span  { background-color: rgba(255,255,255,0.85); }
-.navbar-burger--light span { background-color: rgba(20,20,20,0.75); }
 
 .navbar-burger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .navbar-burger--open span:nth-child(2) { opacity: 0; width: 0; }
@@ -155,22 +132,20 @@
   gap: 4px;
   padding: 4px 8px;
   border-radius: 6px;
+  border: 0.8px solid rgba(255,255,255,0.22);
   transition: background 0.2s;
 }
 
-.lang-switcher--hero .lang-current,
-.lang-switcher--dark .lang-current  { border: 0.8px solid rgba(255,255,255,0.22); }
-.lang-switcher--light .lang-current { border: 1px solid rgba(20,20,20,0.30); }
-
 .lang-switcher:hover .lang-current {
   background: rgba(255,162,5,0.1);
-  border-color: rgba(255,162,5,0.5) !important;
+  border-color: rgba(255,162,5,0.5);
 }
 
-.lang-arrow { font-size: 8px; opacity: 0.5; }
-.lang-switcher--hero .lang-arrow,
-.lang-switcher--dark .lang-arrow  { color: rgba(255,255,255,0.6); }
-.lang-switcher--light .lang-arrow { color: rgba(20,20,20,0.5); }
+.lang-arrow {
+  font-size: 8px;
+  opacity: 0.5;
+  color: rgba(255,255,255,0.6);
+}
 
 .lang-code { display: none; }
 
@@ -222,45 +197,6 @@
   font-weight: 600;
   letter-spacing: 0.5px;
   color: rgba(255,255,255,0.75);
-}
-
-/* ══ THEME TOGGLE ══ */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  background: transparent;
-  transition: background 0.2s, transform 0.3s;
-  flex-shrink: 0;
-  z-index: 220;
-}
-
-.theme-toggle:hover {
-  background: rgba(255,162,5,0.12);
-  transform: rotate(20deg);
-}
-
-.theme-toggle--hero,
-.theme-toggle--dark  {
-  color: rgba(255,255,255,0.85);
-  border: 0.8px solid rgba(255,255,255,0.25);
-}
-.theme-toggle--light {
-  color: #1a1a1a;
-  border: 1.5px solid rgba(20,20,20,0.55);
-  background: rgba(20,20,20,0.05);
-}
-
-.theme-toggle--hero:hover,
-.theme-toggle--dark:hover,
-.theme-toggle--light:hover {
-  color: #ffa205;
-  border-color: rgba(255,162,5,0.6);
-  background: rgba(255,162,5,0.10);
 }
 
 /* ─────────────────────────────────────
@@ -322,7 +258,6 @@
   }
 
   .lang-switcher--mobile .lang-current {
-    border-color: rgba(255,255,255,0.18);
     padding: 10px 16px;
     gap: 10px;
     width: 100%;

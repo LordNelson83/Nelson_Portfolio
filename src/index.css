@@ -5,112 +5,52 @@
   padding: 0;
 }
 
-/* ══ DESIGN TOKENS — Dark Mode (default) ══ */
+/* ══ TOKENS — Solo dark mode, valores fijos ══ */
 :root {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.5;
-
-  /* Backgrounds */
-  --bg-primary:      #1e1e1e;
-  --bg-secondary:    #111111;
-  --bg-surface:      rgba(255,255,255,0.04);
-  --bg-surface-hover:rgba(255,255,255,0.07);
-
-  /* Text */
-  --text-primary:    #ffffff;
-  --text-secondary:  rgba(255,255,255,0.72);
-  --text-muted:      rgba(255,255,255,0.35);
-  --text-heading:    #ffffff;
-
-  /* Accent — siempre igual en ambos modos */
-  --accent:          #ffa205;
-  --accent-hover:    #ffb733;
-  --accent-subtle:   rgba(255,162,5,0.12);
-
-  /* Borders */
-  --border:          rgba(255,255,255,0.08);
-  --border-strong:   rgba(255,255,255,0.18);
-
-  /* Navbar */
-  --nav-bg:          transparent;
-  --nav-bg-sticky:   #1e1e1e;
-  --nav-shadow:      none;
-  --nav-link:        rgba(255,255,255,0.75);
-  --nav-link-hover:  #ffa205;
-
-  /* Cards / tiles */
-  --tile-bg:         rgba(255,255,255,0.04);
-  --tile-border:     rgba(255,255,255,0.06);
-  --tile-text:       rgba(255,255,255,0.75);
-
-  /* Scrollbar */
-  --scrollbar-track: #1e1e1e;
-  --scrollbar-thumb: #444444;
-
-  /* RGB values para gradients */
-  --bg-primary-rgb: 30, 30, 30;
-  --bg-secondary-rgb: 17, 17, 17;
-
-  /* Transitions */
-  --theme-transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
-
   color-scheme: dark;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-}
+  color: #ffffff;
+  background-color: #1e1e1e;
 
-/* ══ DESIGN TOKENS — Light Mode ══ */
-:root[data-theme="light"] {
   /* Backgrounds */
-  --bg-primary:      #f5f4f0;
-  --bg-secondary:    #e8e7e3;
-  --bg-surface:      rgba(0,0,0,0.04);
-  --bg-surface-hover:rgba(0,0,0,0.08);
+  --bg-primary:       #1e1e1e;
+  --bg-secondary:     #111111;
+  --bg-surface:       rgba(255,255,255,0.04);
+  --bg-surface-hover: rgba(255,255,255,0.07);
 
   /* Text */
-  --text-primary:    #1a1a1a;
-  --text-secondary:  rgba(20,20,20,0.78);
-  --text-muted:      rgba(20,20,20,0.58);
-  --text-heading:    #111111;
+  --text-primary:   #ffffff;
+  --text-heading:   #ffffff;
+  --text-secondary: rgba(255,255,255,0.72);
+  --text-muted:     rgba(255,255,255,0.40);
+
+  /* Accent */
+  --accent:         #ffa205;
+  --accent-hover:   #ffb733;
 
   /* Borders */
-  --border:          rgba(20,20,20,0.12);
-  --border-strong:   rgba(20,20,20,0.28);
+  --border:         rgba(255,255,255,0.08);
+  --border-strong:  rgba(255,255,255,0.18);
 
   /* Navbar */
-  --nav-bg:          transparent;
-  --nav-bg-sticky:   #f5f4f0;
-  --nav-shadow:      0 1px 0 rgba(0,0,0,0.10);
-  --nav-link:        rgba(20,20,20,0.70);
-  --nav-link-hover:  #111111;
+  --nav-bg-sticky:  #1e1e1e;
+  --nav-shadow:     0 1px 0 rgba(255,255,255,0.06);
+  --nav-link:       rgba(255,255,255,0.75);
+  --nav-link-hover: #ffa205;
 
-  /* Cards / tiles */
-  --tile-bg:         rgba(0,0,0,0.04);
-  --tile-border:     rgba(0,0,0,0.08);
-  --tile-text:       rgba(20,20,20,0.78);
-
-  /* Scrollbar */
-  --scrollbar-track: #f5f4f0;
-  --scrollbar-thumb: #aaaaaa;
-
-  /* RGB values para gradients */
-  --bg-primary-rgb: 245, 244, 240;
-  --bg-secondary-rgb: 232, 231, 227;
-
-  color-scheme: light;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
+  /* RGB para gradients */
+  --bg-primary-rgb:   30, 30, 30;
+  --bg-secondary-rgb: 17, 17, 17;
 }
 
 body {
   min-height: 100vh;
-  background-color: var(--bg-primary);
+  background-color: #1e1e1e;
   overflow-x: hidden;
-  transition: var(--theme-transition);
 }
 
-/* Links base */
 a {
   text-decoration: none;
   color: inherit;
@@ -120,7 +60,6 @@ a {
   border-radius: 0;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--scrollbar-track); }
-::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+::-webkit-scrollbar-track { background: #1e1e1e; }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }

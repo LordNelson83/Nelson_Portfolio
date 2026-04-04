@@ -1,22 +1,15 @@
 /* ══════════════════════════════════════════════════════════
-   APP SHELL — usa variables CSS del ThemeContext
+   APP SHELL
    ══════════════════════════════════════════════════════════ */
 
 .app-shell {
   min-height: 100vh;
   position: relative;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.35s ease, color 0.35s ease;
+  background-color: #1e1e1e;
+  color: #ffffff;
 }
 
-/* Mantenemos las clases por compatibilidad con Navbar isHome */
-.app-shell--dark,
-.app-shell--light {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
+.app-shell--dark  { background-color: #1e1e1e; color: #ffffff; }
+.app-shell--light { background-color: #f5f4f0; color: #1e1e1e; }
 
-.app-main {
-  width: 100%;
-}
+.app-main { width: 100%; }
