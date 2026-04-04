@@ -6,24 +6,32 @@ import { useLang } from "../i18n/LangContext";
 import oakImg     from "../assets/images/oak.png";
 import oakUiImg   from "../assets/images/oak-ui.png";
 import magasinImg from "../assets/images/magasin.png";
+import soleniaImg from "../assets/images/Solenia.png";
 
-const soleniaImg = "https://www.figma.com/api/mcp/asset/1615509d-8ea3-4333-beb2-f6e141da4b59";
+import ahr1Img from "../assets/images/AHR_1.png";
+import ahr2Img from "../assets/images/AHR_2.png";
+import ahr3Img from "../assets/images/AHR_3.png";
+
+import oak1Img from "../assets/images/OAK_1.png";
+import oak2Img from "../assets/images/OAK_2.png";
+import oak3Img from "../assets/images/OAK_3.png";
+import oak4Img from "../assets/images/OAK_4.png";
+import oak5Img from "../assets/images/OAK_5.png";
 
 // ── AHR-Motor screens ──────────────────────────────────────────────────────
 const AHR_SCREENS = [
-  { src: "https://www.figma.com/api/mcp/asset/dbf7bd46-92b1-4b2e-9f7f-c2c9dec38b66", alt: "AHR — Opportunity Solution Tree",  label: "Opportunity Solution Tree · Teresa Torres" },
-  { src: "https://www.figma.com/api/mcp/asset/e2592c2e-e2b0-4209-96d4-4f1d753d560c", alt: "AHR — Product Outcome & OST-karta", label: "Product Outcome · OST-karta" },
-  { src: "https://www.figma.com/api/mcp/asset/4173d7ca-5874-4bc2-8561-0c256850760b", alt: "AHR — Användarsegment · Fortnox",   label: "Användarsegment · Fortnox-ekosystem" },
+  { src: ahr1Img, alt: "AHR — Opportunity Solution Tree",  label: "Opportunity Solution Tree · Teresa Torres" },
+  { src: ahr2Img, alt: "AHR — Product Outcome & OST-karta", label: "Product Outcome · OST-karta" },
+  { src: ahr3Img, alt: "AHR — Användarsegment · Fortnox",   label: "Användarsegment · Fortnox-ekosystem" },
 ];
 
 // ── OAK screens ───────────────────────────────────────────────────────────
 const OAK_SCREENS = [
-  { src: "https://www.figma.com/api/mcp/asset/dcb14d52-1bb8-4aa5-bcb3-f9ac3f1e07b9", alt: "OAK Equipment — isometric gym",    label: "Isometrisk gym-visualisering" },
-  { src: "https://www.figma.com/api/mcp/asset/47d48a99-89a7-4cee-aeea-d8347d8a5e26", alt: "OAK — mätverktyg för rum",          label: "Mätverktyg för rumsdimensioner" },
-  { src: "https://www.figma.com/api/mcp/asset/186baae4-b792-44d6-b4da-0a107eda1d42", alt: "OAK — träningsredskap katalog",     label: "Produktkatalog & träningsredskap" },
-  { src: "https://www.figma.com/api/mcp/asset/c555957a-4a06-4025-a54f-afcaef4595de", alt: "OAK — fri rörelse i rummet",        label: "3D-navigering · Zooma & rotera" },
-  { src: "https://www.figma.com/api/mcp/asset/063dc115-4d04-4bca-bbeb-9622583ee307", alt: "OAK — Lo-Fi wireframe 1",           label: "Lo-Fi wireframe · v1" },
-  { src: "https://www.figma.com/api/mcp/asset/23b1252d-9785-4b0d-9ee8-3564625e10fe", alt: "OAK — Lo-Fi wireframe 2",           label: "Lo-Fi wireframe · v2" },
+  { src: oak1Img, alt: "OAK Equipment — isometric gym",    label: "Isometrisk gym-visualisering" },
+  { src: oak2Img, alt: "OAK — mätverktyg för rum",          label: "Mätverktyg för rumsdimensioner" },
+  { src: oak3Img, alt: "OAK — träningsredskap katalog",     label: "Produktkatalog & träningsredskap" },
+  { src: oak4Img, alt: "OAK — fri rörelse i rummet",        label: "3D-navigering · Zooma & rotera" },
+  { src: oak5Img, alt: "OAK — Lo-Fi wireframe 1",           label: "Lo-Fi wireframe · v1" },
 ];
 
 // ── Proyectos 02–04 (OAK, Solenia, Magasin) ──────────────────────────────
