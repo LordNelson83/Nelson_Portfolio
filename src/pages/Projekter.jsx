@@ -8,16 +8,15 @@ import oakUiImg   from "../assets/images/oak-ui.png";
 import magasinImg from "../assets/images/magasin.png";
 import soleniaImg from "../assets/images/solenia.png";
 
-import ahr1Img from "../assets/images/AHR_1.png";
-import ahr2Img from "../assets/images/AHR_2.png";
-import ahr3Img from "../assets/images/AHR_3.png";
+import ahr1Img from "../assets/images/ahr_1.png";
+import ahr2Img from "../assets/images/ahr_2.png";
+import ahr3Img from "../assets/images/ahr_3.png";
 
-import oak1Img from "../assets/images/OAK_1.png";
-import oak2Img from "../assets/images/OAK_2.png";
-import oak3Img from "../assets/images/OAK_3.png";
-import oak4Img from "../assets/images/OAK_4.png";
-import oak5Img from "../assets/images/OAK_5.png";
-import { Link } from "react-router-dom";
+import oak1Img from "../assets/images/oak_1.png";
+import oak2Img from "../assets/images/oak_2.png";
+import oak3Img from "../assets/images/oak_3.png";
+import oak4Img from "../assets/images/oak_4.png";
+import oak5Img from "../assets/images/oak_5.png";
 
 // ── AHR-Motor screens ──────────────────────────────────────────────────────
 const AHR_SCREENS = [
