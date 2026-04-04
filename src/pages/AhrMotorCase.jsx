@@ -25,14 +25,10 @@ export default function AhrMotorCase() {
     <div className="cs-page">
       <div className="cs-grain" aria-hidden="true" />
 
-      {/* NAV */}
-      <nav className="cs-nav">
-        <Link to="/grafiskproduktion/1" className="cs-back">
-          <span className="cs-back__arrow">←</span>
-          Tillbaka till projekt
-        </Link>
+      {/* NAV secundario — solo tag */}
+      <div className="cs-nav">
         <span className="cs-nav__tag">⚙ En utveckling · 2025–2026</span>
-      </nav>
+      </div>
 
       {/* HERO */}
       <header className="cs-hero" ref={ref(0)}>
@@ -292,9 +288,15 @@ export default function AhrMotorCase() {
       {/* CTA */}
       <div className="cs-cta" ref={ref(10)}>
         <p className="cs-cta__text">Vill du veta mer om projektet?</p>
-        <Link to="/kontakta" className="cs-cta__btn">
-          Kontakta mig →
-        </Link>
+        <div style={{display:"flex", gap:"16px", alignItems:"center", flexWrap:"wrap"}}>
+          <Link to="/grafiskproduktion/1" className="cs-back" style={{opacity:0.7}}>
+            <span className="cs-back__arrow">←</span>
+            Tillbaka till projekt
+          </Link>
+          <Link to="/kontakta" className="cs-cta__btn">
+            Kontakta mig →
+          </Link>
+        </div>
       </div>
     </div>
   );
