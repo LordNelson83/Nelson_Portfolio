@@ -64,39 +64,39 @@
 :root[data-theme="light"] {
   /* Backgrounds */
   --bg-primary:      #f5f4f0;
-  --bg-secondary:    #ebebeb;
-  --bg-surface:      rgba(0,0,0,0.03);
-  --bg-surface-hover:rgba(0,0,0,0.06);
+  --bg-secondary:    #e8e7e3;
+  --bg-surface:      rgba(0,0,0,0.04);
+  --bg-surface-hover:rgba(0,0,0,0.08);
 
   /* Text */
-  --text-primary:    #1e1e1e;
-  --text-secondary:  rgba(30,30,30,0.72);
-  --text-muted:      rgba(30,30,30,0.40);
-  --text-heading:    #1e1e1e;
+  --text-primary:    #1a1a1a;
+  --text-secondary:  rgba(20,20,20,0.78);
+  --text-muted:      rgba(20,20,20,0.58);
+  --text-heading:    #111111;
 
   /* Borders */
-  --border:          rgba(30,30,30,0.08);
-  --border-strong:   rgba(30,30,30,0.18);
+  --border:          rgba(20,20,20,0.12);
+  --border-strong:   rgba(20,20,20,0.28);
 
   /* Navbar */
   --nav-bg:          transparent;
   --nav-bg-sticky:   #f5f4f0;
-  --nav-shadow:      0 1px 0 rgba(0,0,0,0.08);
-  --nav-link:        rgba(30,30,30,0.65);
-  --nav-link-hover:  #1e1e1e;
+  --nav-shadow:      0 1px 0 rgba(0,0,0,0.10);
+  --nav-link:        rgba(20,20,20,0.70);
+  --nav-link-hover:  #111111;
 
   /* Cards / tiles */
-  --tile-bg:         rgba(0,0,0,0.03);
-  --tile-border:     rgba(0,0,0,0.06);
-  --tile-text:       rgba(30,30,30,0.75);
+  --tile-bg:         rgba(0,0,0,0.04);
+  --tile-border:     rgba(0,0,0,0.08);
+  --tile-text:       rgba(20,20,20,0.78);
 
   /* Scrollbar */
   --scrollbar-track: #f5f4f0;
-  --scrollbar-thumb: #bbbbbb;
+  --scrollbar-thumb: #aaaaaa;
 
   /* RGB values para gradients */
   --bg-primary-rgb: 245, 244, 240;
-  --bg-secondary-rgb: 235, 235, 235;
+  --bg-secondary-rgb: 232, 231, 227;
 
   color-scheme: light;
   color: var(--text-primary);

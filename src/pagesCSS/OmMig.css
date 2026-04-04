@@ -246,7 +246,7 @@
 
 /* Hover — ilumina todas las estrellas de la card */
 .om-skill-cell:hover .om-star--off path {
-  fill: rgba(255, 162, 5, 0.25);
+  fill: rgba(255, 162, 5, 0.35);
   transition: fill 0.2s ease;
 }
 
