@@ -111,11 +111,8 @@ const Navbar = ({ isHome = false }) => {
 
       {/* Links desktop */}
       <div
+        id="navbar-links"
         className={`navbar-links ${menuOpen ? "navbar-links--open" : ""}`}
-        /*
-         * WCAG Fix — cuando el menú está cerrado en mobile
-         * ocultamos los links del árbol de accesibilidad.
-         */
         aria-hidden={!menuOpen && undefined}
       >
         {[
