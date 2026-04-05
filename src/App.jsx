@@ -22,16 +22,16 @@ const ScrollToTop = () => {
 
 /* ─── Route map ──────────────────────────────────────────── */
 const ROUTES = [
-  { path: "/",                        element: <Home /> },
-  { path: "/ommig",                   element: <OmMig /> },
-  { path: "/profil",                  element: <Profil /> },
-  { path: "/kontakta",                element: <Kontakta /> },
-  { path: "/crossmedia/:id",          element: <CrossMedia /> },
-  { path: "/grafiskproduktion/1",      element: <Projekter /> },
-  { path: "/grafiskproduktion/:id",   element: <GrafiskProduktion /> },
-  { path: "/threedprint/:id",         element: <ThreeDPrint /> },
-  { path: "/uxuidesign/:id",          element: <UxUiDesign /> },
-  { path: "/ahr-motor",               element: <AhrMotorCase /> },
+  { path: "/",                       element: <Home /> },
+  { path: "/ommig",                  element: <OmMig /> },
+  { path: "/profil",                 element: <Profil /> },
+  { path: "/kontakta",               element: <Kontakta /> },
+  { path: "/crossmedia/:id",         element: <CrossMedia /> },
+  { path: "/grafiskproduktion/1",    element: <Projekter /> },
+  { path: "/grafiskproduktion/:id",  element: <GrafiskProduktion /> },
+  { path: "/threedprint/:id",        element: <ThreeDPrint /> },
+  { path: "/uxuidesign/:id",         element: <UxUiDesign /> },
+  { path: "/projekter/ahr-motor",    element: <AhrMotorCase /> },
 ];
 
 /* ─── App ────────────────────────────────────────────────── */
@@ -39,20 +39,36 @@ const App = () => {
   const { pathname } = useLocation();
   const routes = useRoutes(ROUTES);
 
-  /* Dark shell: Home + todas las páginas con bg #1E1E1E */
   const DARK_ROUTES = ["/", "/ommig", "/profil", "/kontakta"];
-  const isHome = DARK_ROUTES.includes(pathname)
-    || pathname.startsWith("/uxuidesign")
-    || pathname.startsWith("/threedprint")
-    || pathname.startsWith("/crossmedia")
-    || pathname === "/grafiskproduktion/1"
-    || pathname === "/ahr-motor";
+  const isHome =
+    DARK_ROUTES.includes(pathname) ||
+    pathname.startsWith("/uxuidesign") ||
+    pathname.startsWith("/threedprint") ||
+    pathname.startsWith("/crossmedia") ||
+    pathname === "/grafiskproduktion/1";
 
   return (
+    /*
+     * WCAG fix — Error 3 & 4:
+     * <main> se eliminó de aquí. Cada página es responsable
+     * de su propio <main> para que el landmark sea correcto
+     * y no incluya la Navbar ni elementos repetidos.
+     *
+     * app-shell es ahora un <div> neutro.
+     */
     <div className={`app-shell ${isHome ? "app-shell--dark" : "app-shell--light"}`}>
       <ScrollToTop />
+      {/* skip-link: WCAG 2.4.1 — permite saltar al contenido principal */}
+      <a href="#main-content" className="skip-link">
+        Hoppa till huvudinnehåll
+      </a>
       <Navbar isHome={isHome} />
-      <main className="app-main">{routes}</main>
+      {/*
+       * El <main> ya NO está aquí.
+       * Cada página (Home, OmMig, Projekter, etc.) tiene su propio <main>.
+       * Este div solo actúa como contenedor de layout.
+       */}
+      <div className="app-content">{routes}</div>
     </div>
   );
 };
