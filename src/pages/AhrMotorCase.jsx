@@ -2,9 +2,9 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../pagesCSS/AhrMotorCase.css";
 
-import ahr1Img from "../assets/images/AHR_1.png";
-import ahr2Img from "../assets/images/AHR_2.png";
-import ahr3Img from "../assets/images/AHR_3.png";
+import ahr1Img from "../assets/images/ahr_1.png";
+import ahr2Img from "../assets/images/ahr_2.png";
+import ahr3Img from "../assets/images/ahr_3.png";
 
 // ── Data ──────────────────────────────────────────────────────────────────
 
