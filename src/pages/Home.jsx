@@ -44,6 +44,7 @@ export default function Home() {
      * lo que hacía que el landmark fuera incorrecto.
      * Ahora cada página es responsable de su propio <main>.
      */
+    <>
     <main id="main-content" className="home-page">
 
       {/* ══════════════════════════════════════════
@@ -132,15 +133,17 @@ export default function Home() {
           para información global al final de la página.
           Cambiado a <footer> — semánticamente correcto.
       ══════════════════════════════════════════ */}
-      <footer className="home-contact" aria-label="Kontakt">
-        <p className="home-contact__text">
-          {t("home", "contact")}&nbsp;<em>{t("home", "contactEm")}</em>?
-        </p>
-        <Link to="/kontakta" className="home-contact__btn">
-          {t("home", "contactBtn")}
-        </Link>
-      </footer>
-
     </main>
+
+    <footer className="home-contact" aria-label="Kontakt">
+      <p className="home-contact__text">
+        {t("home", "contact")}&nbsp;<em>{t("home", "contactEm")}</em>?
+      </p>
+      <Link to="/kontakta" className="home-contact__btn">
+        {t("home", "contactBtn")}
+      </Link>
+    </footer>
+
+    </>
   );
 }
