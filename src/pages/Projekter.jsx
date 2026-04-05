@@ -18,43 +18,24 @@ import oak3Img from "../assets/images/oak_3.png";
 import oak4Img from "../assets/images/oak_4.png";
 import oak5Img from "../assets/images/oak_5.png";
 
-const AHR_SCREENS = [
-  { src: ahr1Img, alt: "AHR — Användarsegment · Fortnox",        label: "Användarsegment · Fortnox-ekosystem" },
-  { src: ahr2Img, alt: "AHR — Product Outcome & OST-karta",       label: "Product Outcome · OST-karta" },
-  { src: ahr3Img, alt: "AHR — Opportunity Solution Tree",         label: "Opportunity Solution Tree · Teresa Torres" },
-];
+const AHR_IMGS = [ahr1Img, ahr2Img, ahr3Img];
+const OAK_IMGS = [oak1Img, oak2Img, oak3Img, oak4Img, oak5Img];
 
-const OAK_SCREENS = [
-  { src: oak1Img, alt: "OAK Equipment — isometrisk gym-visualisering",   label: "Isometrisk gym-visualisering" },
-  { src: oak2Img, alt: "OAK — mätverktyg för rumsdimensioner",            label: "Mätverktyg för rumsdimensioner" },
-  { src: oak3Img, alt: "OAK — produktkatalog och träningsredskap",        label: "Produktkatalog & träningsredskap" },
-  { src: oak4Img, alt: "OAK — 3D-navigering, zooma och rotera i rummet",  label: "3D-navigering · Zooma & rotera" },
-  { src: oak5Img, alt: "OAK — Lo-Fi wireframe version 1",                 label: "Lo-Fi wireframe · v1" },
-];
-
-const PROJECT_IMAGES = [oakImg, soleniaImg, magasinImg];
-const PROJECT_COLORS = ["#90a590", "#ffa205", "#ffa205"];
-const PROJECT_IDS    = ["oak", "ehandel", "magasin"];
-
-const PROJECT_LINKS = [
+const PROJECT_IMAGES  = [oakImg, soleniaImg, magasinImg];
+const PROJECT_COLORS  = ["#90a590", "#ffa205", "#ffa205"];
+const PROJECT_IDS     = ["oak", "ehandel", "magasin"];
+const PROJECT_LINKS   = [
   [{ url: "/OAK-UX.pdf", external: false }, { url: "/OAK-UI.pdf", external: false }],
   [{ url: "https://solenia.netlify.app/", external: true }, { url: "https://github.com/LordNelson83/Nelson_Portfolio", external: true }],
   [{ url: "/Magasin.pdf", external: false }],
 ];
+const PROJECT_SKILLS  = [
+  ["Figma", "UX Research", "Lo-Fi", "HiFi", "Maze", "Personas"],
+  ["React", "JavaScript", "HTML", "CSS", "GitHub", "API", "Figma"],
+  ["Photoshop", "Illustrator", "InDesign", "Typografi", "Layout"],
+];
 
 const AHR_ACCENT = "#00a6b4";
-
-const AHR_CONTENT = {
-  utmaning: "Byråchefer förlorade pengar utan att veta varför — Fortnox Tid, Lön och Fakturering kommunicerade inte med varandra.",
-  metod:    "6 användarintervjuer → Opportunity Solution Tree (Teresa Torres) → 3 hypoteser → teknisk feasibility med Fortnox-teamen Avengers & Raiders.",
-  resultat: "Konceptet validerades som genomförbart. Målgrupp: byråer med upp till 20 konsulter. Nästa steg: interaktivt Hi-Fi-prototyp.",
-};
-
-const OAK_CONTENT = {
-  utmaning: "Kunder kunde inte föreställa sig hur gymmet skulle se ut innan köpet — OAK tappade affärer i offertfasen.",
-  metod:    "9 undersökningar (3 enkäter + 6 telefonintervjuer) → 2 beteendetyper → idéworkshop → Lo-Fi i Figma → observationstest + gerillatest på SATS Globen med 10 respondenter.",
-  resultat: "9/10 upplevde flödet som enkelt. Tre iterationer baserade på testinsikter: progressbar, nästa-knapp och översiktssida. Slutlig Hi-Fi levererad till beställaren.",
-};
 
 export default function Projekter() {
   const { t } = useLang();
@@ -70,6 +51,12 @@ export default function Projekter() {
   const [isPaused,        setIsPaused]        = useState(false);
   const [isAhrPaused,     setIsAhrPaused]     = useState(false);
 
+  const ahrScreens = pk.ahrScreens || [];
+  const oakScreens = pk.oakScreens || [];
+  const lbl        = pk.labels     || {};
+  const ahr        = pk.ahr        || {};
+  const oak        = pk.oak        || {};
+
   useEffect(() => {
     const obs = new IntersectionObserver(
       (e) => e.forEach(en => en.isIntersecting && en.target.classList.add("is-visible")),
@@ -83,13 +70,13 @@ export default function Projekter() {
 
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(() => setActiveScreen(i => (i + 1) % OAK_SCREENS.length), 3800);
+    const timer = setInterval(() => setActiveScreen(i => (i + 1) % OAK_IMGS.length), 3800);
     return () => clearInterval(timer);
   }, [isPaused]);
 
   useEffect(() => {
     if (isAhrPaused) return;
-    const timer = setInterval(() => setActiveAhrScreen(i => (i + 1) % AHR_SCREENS.length), 4200);
+    const timer = setInterval(() => setActiveAhrScreen(i => (i + 1) % AHR_IMGS.length), 4200);
     return () => clearInterval(timer);
   }, [isAhrPaused]);
 
@@ -106,7 +93,7 @@ export default function Projekter() {
         <div className="pk-hero__line" aria-hidden="true" />
       </header>
 
-      <div className="pk-stats" role="list" aria-label="Projektstatistik">
+      <div className="pk-stats" role="list" aria-label={pk.statsLabel}>
         {pk.stats.map((s, i) => (
           <div key={s.value} className="pk-stat" role="listitem"
             ref={el => statsRef.current[i] = el}
@@ -132,47 +119,45 @@ export default function Projekter() {
               <div className="pk-project__row">
                 <span className="pk-project__period">2025–2026</span>
                 <span className="pk-project__tag pk-project__tag--wip">
-                  <span aria-hidden="true">⚙</span> En utveckling · Examensarbete
+                  <span aria-hidden="true">⚙</span> {pk.ahrWip}
                 </span>
               </div>
             </div>
             <div className="pk-project__divider" aria-hidden="true" />
           </div>
 
-          <p className="pk-project__lead">
-            Att koppla samman Fortnox Tid, Lön och Fakturering — och visa byråns lönsamhet i realtid.
-          </p>
+          <p className="pk-project__lead">{pk.ahrLead}</p>
 
           <div className="pk-project__body pk-project__body--ahr">
 
-            <div className="pk-gallery" aria-label="Bildgalleri — AHR-Motor"
+            <div className="pk-gallery" aria-label={pk.galleryAhr}
               onMouseEnter={() => setIsAhrPaused(true)}
               onMouseLeave={() => setIsAhrPaused(false)}>
               <div className="pk-gallery__main" aria-live="polite" aria-atomic="true">
-                {AHR_SCREENS.map((sc, i) => (
+                {AHR_IMGS.map((src, i) => (
                   <div key={i}
                     className={`pk-gallery__slide${i === activeAhrScreen ? " pk-gallery__slide--active" : ""}`}
                     aria-hidden={i !== activeAhrScreen}>
-                    <img src={sc.src} alt={sc.alt} className="pk-gallery__img" />
-                    <div className="pk-gallery__caption" aria-hidden="true">{sc.label}</div>
+                    <img src={src} alt={ahrScreens[i]?.alt || ""} className="pk-gallery__img" />
+                    <div className="pk-gallery__caption" aria-hidden="true">{ahrScreens[i]?.label}</div>
                   </div>
                 ))}
                 <span className="pk-gallery__counter" aria-hidden="true">
-                  {String(activeAhrScreen + 1).padStart(2, "0")} / {String(AHR_SCREENS.length).padStart(2, "0")}
+                  {String(activeAhrScreen + 1).padStart(2, "0")} / {String(AHR_IMGS.length).padStart(2, "0")}
                 </span>
                 <button className="pk-gallery__nav pk-gallery__nav--prev"
-                  onClick={() => setActiveAhrScreen(i => (i - 1 + AHR_SCREENS.length) % AHR_SCREENS.length)}
-                  aria-label="Föregående bild"><span aria-hidden="true">‹</span></button>
+                  onClick={() => setActiveAhrScreen(i => (i - 1 + AHR_IMGS.length) % AHR_IMGS.length)}
+                  aria-label={pk.galleryPrev}><span aria-hidden="true">‹</span></button>
                 <button className="pk-gallery__nav pk-gallery__nav--next"
-                  onClick={() => setActiveAhrScreen(i => (i + 1) % AHR_SCREENS.length)}
-                  aria-label="Nästa bild"><span aria-hidden="true">›</span></button>
+                  onClick={() => setActiveAhrScreen(i => (i + 1) % AHR_IMGS.length)}
+                  aria-label={pk.galleryNext}><span aria-hidden="true">›</span></button>
               </div>
-              <div className="pk-gallery__dots" role="tablist" aria-label="Välj bild">
-                {AHR_SCREENS.map((sc, i) => (
+              <div className="pk-gallery__dots" role="tablist" aria-label={pk.gallerySelect}>
+                {AHR_IMGS.map((_, i) => (
                   <button key={i} role="tab"
                     className={`pk-gallery__dot${i === activeAhrScreen ? " pk-gallery__dot--active" : ""}`}
                     onClick={() => setActiveAhrScreen(i)}
-                    aria-label={`Bild ${i + 1}: ${sc.alt}`}
+                    aria-label={`${i + 1}: ${ahrScreens[i]?.alt || ""}`}
                     aria-selected={i === activeAhrScreen} />
                 ))}
               </div>
@@ -180,37 +165,31 @@ export default function Projekter() {
 
             <div className="pk-project__content">
               <div className="pk-ahr-block">
-                <p className="pk-ahr-block__label">— Utmaning</p>
-                <p className="pk-ahr-block__text">{AHR_CONTENT.utmaning}</p>
+                <p className="pk-ahr-block__label">{lbl.utmaning}</p>
+                <p className="pk-ahr-block__text">{ahr.utmaning}</p>
               </div>
               <div className="pk-ahr-block">
-                <p className="pk-ahr-block__label">— Metod</p>
-                <p className="pk-ahr-block__text">{AHR_CONTENT.metod}</p>
+                <p className="pk-ahr-block__label">{lbl.metod}</p>
+                <p className="pk-ahr-block__text">{ahr.metod}</p>
               </div>
               <div className="pk-ahr-block">
-                <p className="pk-ahr-block__label">— Objective</p>
-                <p className="pk-ahr-block__text">
-                  Öka redovisningsbyråns genomsnittliga nettomarginal med 10–15 % jämfört med innevarande termin, inom de närmaste 6 månaderna.
-                </p>
+                <p className="pk-ahr-block__label">{lbl.objective}</p>
+                <p className="pk-ahr-block__text">{ahr.objective}</p>
               </div>
               <div className="pk-ahr-block">
-                <p className="pk-ahr-block__label">— Bakgrund</p>
-                <p className="pk-ahr-block__text">
-                  Många redovisningsbyråer använder Fortnox produkter — Tid, Fakturering och Lön — men eftersom de är separata produkter kommunicerar de inte med varandra. Det tvingar byråchefer att arbeta i mörkret. När de upptäcker en förlust är det redan för sent att reagera.
-                </p>
+                <p className="pk-ahr-block__label">{lbl.bakgrund}</p>
+                <p className="pk-ahr-block__text">{ahr.bakgrund}</p>
               </div>
               <div className="pk-ahr-block">
-                <p className="pk-ahr-block__label">— Förslag</p>
-                <p className="pk-ahr-block__text">
-                  AHR-motorn kopplar automatiskt samman dessa tre produkter för att visa byråns lönsamhet i realtid — utan Excel, utan att behöva vänta på revisorn. Systemet varnar automatiskt när ett projekt eller en kund går in i förlust, och ger chefen trygghet att byrån har tillräckligt med personal för att växa.
-                </p>
+                <p className="pk-ahr-block__label">{lbl.forslag}</p>
+                <p className="pk-ahr-block__text">{ahr.forslag}</p>
               </div>
               <div className="pk-ahr-block">
-                <p className="pk-ahr-block__label">— Resultat</p>
-                <p className="pk-ahr-block__text">{AHR_CONTENT.resultat}</p>
+                <p className="pk-ahr-block__label">{lbl.resultat}</p>
+                <p className="pk-ahr-block__text">{ahr.resultat}</p>
               </div>
 
-              <div className="pk-skills" role="list" aria-label="Verktyg och metoder">
+              <div className="pk-skills" role="list" aria-label={pk.skillsLabel}>
                 {["UX Research", "POM", "OST", "Figma", "Teresa Torres", "Marty Cagan", "Fortnox"].map(sk => (
                   <span key={sk} className="pk-skill" role="listitem">{sk}</span>
                 ))}
@@ -218,13 +197,13 @@ export default function Projekter() {
 
               <div className="pk-links">
                 <a href="https://www.fortnox.se" target="_blank" rel="noopener noreferrer"
-                  className="pk-link" aria-label="Fortnox webbplats (öppnas i ny flik)">
+                  className="pk-link" aria-label="Fortnox">
                   <span className="pk-link__label">Fortnox</span>
                   <span className="pk-link__icon" aria-hidden="true">↗</span>
                   <div className="pk-link__bar" aria-hidden="true" />
                 </a>
                 <Link to="/projekter/ahr-motor" className="pk-link">
-                  <span className="pk-link__label">Läs case study — AHR-Motor</span>
+                  <span className="pk-link__label">{pk.ahrCaseLink}</span>
                   <span className="pk-link__icon" aria-hidden="true">→</span>
                   <div className="pk-link__bar" aria-hidden="true" />
                 </Link>
@@ -265,34 +244,34 @@ export default function Projekter() {
               <div className={`pk-project__body${id === "oak" ? " pk-project__body--oak" : ""}`}>
 
                 {id === "oak" ? (
-                  <div className="pk-gallery" aria-label="Bildgalleri — OAK Equipment"
+                  <div className="pk-gallery" aria-label={pk.galleryOak}
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}>
                     <div className="pk-gallery__main" aria-live="polite" aria-atomic="true">
-                      {OAK_SCREENS.map((sc, i) => (
+                      {OAK_IMGS.map((src, i) => (
                         <div key={i}
                           className={`pk-gallery__slide${i === activeScreen ? " pk-gallery__slide--active" : ""}`}
                           aria-hidden={i !== activeScreen}>
-                          <img src={sc.src} alt={sc.alt} className="pk-gallery__img" />
-                          <div className="pk-gallery__caption" aria-hidden="true">{sc.label}</div>
+                          <img src={src} alt={oakScreens[i]?.alt || ""} className="pk-gallery__img" />
+                          <div className="pk-gallery__caption" aria-hidden="true">{oakScreens[i]?.label}</div>
                         </div>
                       ))}
                       <span className="pk-gallery__counter" aria-hidden="true">
-                        {String(activeScreen + 1).padStart(2, "0")} / {String(OAK_SCREENS.length).padStart(2, "0")}
+                        {String(activeScreen + 1).padStart(2, "0")} / {String(OAK_IMGS.length).padStart(2, "0")}
                       </span>
                       <button className="pk-gallery__nav pk-gallery__nav--prev"
-                        onClick={() => setActiveScreen(i => (i - 1 + OAK_SCREENS.length) % OAK_SCREENS.length)}
-                        aria-label="Föregående bild"><span aria-hidden="true">‹</span></button>
+                        onClick={() => setActiveScreen(i => (i - 1 + OAK_IMGS.length) % OAK_IMGS.length)}
+                        aria-label={pk.galleryPrev}><span aria-hidden="true">‹</span></button>
                       <button className="pk-gallery__nav pk-gallery__nav--next"
-                        onClick={() => setActiveScreen(i => (i + 1) % OAK_SCREENS.length)}
-                        aria-label="Nästa bild"><span aria-hidden="true">›</span></button>
+                        onClick={() => setActiveScreen(i => (i + 1) % OAK_IMGS.length)}
+                        aria-label={pk.galleryNext}><span aria-hidden="true">›</span></button>
                     </div>
-                    <div className="pk-gallery__dots" role="tablist" aria-label="Välj bild">
-                      {OAK_SCREENS.map((sc, i) => (
+                    <div className="pk-gallery__dots" role="tablist" aria-label={pk.gallerySelect}>
+                      {OAK_IMGS.map((_, i) => (
                         <button key={i} role="tab"
                           className={`pk-gallery__dot${i === activeScreen ? " pk-gallery__dot--active" : ""}`}
                           onClick={() => setActiveScreen(i)}
-                          aria-label={`Bild ${i + 1}: ${sc.alt}`}
+                          aria-label={`${i + 1}: ${oakScreens[i]?.alt || ""}`}
                           aria-selected={i === activeScreen} />
                       ))}
                     </div>
@@ -315,12 +294,12 @@ export default function Projekter() {
                   {id === "oak" && (
                     <>
                       <div className="pk-ahr-block">
-                        <p className="pk-ahr-block__label">— Utmaning</p>
-                        <p className="pk-ahr-block__text">{OAK_CONTENT.utmaning}</p>
+                        <p className="pk-ahr-block__label">{lbl.utmaning}</p>
+                        <p className="pk-ahr-block__text">{oak.utmaning}</p>
                       </div>
                       <div className="pk-ahr-block">
-                        <p className="pk-ahr-block__label">— Metod</p>
-                        <p className="pk-ahr-block__text">{OAK_CONTENT.metod}</p>
+                        <p className="pk-ahr-block__label">{lbl.metod}</p>
+                        <p className="pk-ahr-block__text">{oak.metod}</p>
                       </div>
                     </>
                   )}
@@ -358,17 +337,13 @@ export default function Projekter() {
 
                   {id === "oak" && (
                     <div className="pk-ahr-block">
-                      <p className="pk-ahr-block__label">— Resultat</p>
-                      <p className="pk-ahr-block__text">{OAK_CONTENT.resultat}</p>
+                      <p className="pk-ahr-block__label">{lbl.resultat}</p>
+                      <p className="pk-ahr-block__text">{oak.resultat}</p>
                     </div>
                   )}
 
-                  <div className="pk-skills" role="list" aria-label="Verktyg och metoder">
-                    {[
-                      ["Figma", "UX Research", "Lo-Fi", "HiFi", "Maze", "Personas"],
-                      ["React", "JavaScript", "HTML", "CSS", "GitHub", "API", "Figma"],
-                      ["Photoshop", "Illustrator", "InDesign", "Typografi", "Layout"],
-                    ][pi].map(sk => (
+                  <div className="pk-skills" role="list" aria-label={pk.skillsLabel}>
+                    {PROJECT_SKILLS[pi].map(sk => (
                       <span key={sk} className="pk-skill" role="listitem">{sk}</span>
                     ))}
                   </div>
@@ -380,7 +355,7 @@ export default function Projekter() {
                           target={links[li]?.external ? "_blank" : undefined}
                           rel={links[li]?.external ? "noopener noreferrer" : undefined}
                           className="pk-link"
-                          aria-label={links[li]?.external ? `${lnk.label} (öppnas i ny flik)` : lnk.label}>
+                          aria-label={lnk.label}>
                           <span className="pk-link__label">{lnk.label}</span>
                           <span className="pk-link__icon" aria-hidden="true">{lnk.icon}</span>
                           <div className="pk-link__bar" aria-hidden="true" />
