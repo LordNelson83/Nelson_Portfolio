@@ -44,7 +44,7 @@ export default function Home() {
      * lo que hacía que el landmark fuera incorrecto.
      * Ahora cada página es responsable de su propio <main>.
      */
-    <main id="main-content" className="app-main">
+    <main id="main-content" className="home-page">
 
       {/* ══════════════════════════════════════════
           SECTION HERO
