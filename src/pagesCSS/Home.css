@@ -638,7 +638,7 @@
   font-weight: 700;
   letter-spacing: 2.2px;
   text-transform: uppercase;
-  color: rgba(255, 162, 5, 0.55);
+  color: #ffa205; /* WCAG 1.4.3: 7.6:1 sobre #1e1e1e — era rgba(255,162,5,0.55) → 3.4:1 ❌ */
   border: 0.8px solid rgba(255, 162, 5, 0.22);
   padding: 4px 14px;
   line-height: 16px;
@@ -650,13 +650,11 @@
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--text-primary);
-  opacity: 0.45;
-  transition: opacity 0.22s ease, letter-spacing 0.22s ease;
+  color: var(--text-muted); /* WCAG 1.4.3: ~5.3:1 — era opacity:0.45 sobre white → 4.0:1 ❌ */
+  transition: color 0.22s ease, letter-spacing 0.22s ease;
 }
 
 .tile--featured:hover .tile__featured-cta {
-  opacity: 1;
   letter-spacing: 2.8px;
   color: #ffa205;
 }
