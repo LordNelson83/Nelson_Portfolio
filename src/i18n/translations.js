@@ -540,6 +540,12 @@ export const translations = {
           description: "As a frontend developer I worked on the project both independently and in a group. My experience with HTML, CSS and JavaScript sparked my curiosity for programming languages. In the group project, based on APIs and databases, we followed each step from Figma design to React components, with a focus on responsiveness and usability.",
           links: [{ label: "View live — Solenia", icon: "↗" }, { label: "GitHub", icon: "↗" }],
         },
+        {
+          school: "Fridhems Folkhögskola", title: "Magazine", year: "2007–2009", tag: "Graphic Production",
+          lead: "Design that tells a story — layout, typography and visual communication in practice.",
+          description: "Working on the magazine, I deepened my knowledge of graphic design and visual communication through both practical and theoretical work. I created posters, brochures and illustrations in Adobe Photoshop, Illustrator and InDesign, and learned the fundamentals of drawing, layout, typography and digital design.",
+          links: [{ label: "View the magazine", icon: "↗" }],
+        },
       ],
       ahrWip:       "⚙ Work in progress · Thesis",
       ahrLead:      "Connecting Fortnox Time, Payroll and Invoicing — and showing the agency's profitability in real time.",
