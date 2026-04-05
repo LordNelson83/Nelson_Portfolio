@@ -209,6 +209,27 @@ export const translations = {
         },
       ],
     },
+    grafiskProduktion: {
+      title: "Projekter",
+      back:  "← Tillbaka",
+      experiences: [
+        {
+          school: "Tidningsmagasin",
+          year:   "Fridhems Folkhögskola",
+          description: "Tidningsmagasin — jag fördjupade mina kunskaper i grafisk form och visuell kommunikation genom både praktiskt och teoretiskt arbete och hjälpte andra med sina projekt. Mina uppgifter med affischer, broschyrer och illustrationer i Adobe Photoshop, Illustrator och InDesign, samt lärde mig grunderna i teckning, layout, typografi och digital design. Utbildningen stärkte min kreativitet, tekniska färdigheter och förmåga att arbeta både självständigt och i grupp. Det tvärkonstnärliga samarbetet gav nya perspektiv och breddade min förståelse för visuell kommunikation.",
+        },
+        {
+          school: "Gymplanerare",
+          year:   "Chas Academy",
+          description: "Som UX-designer hade jag möjligheten att genomföra ett projekt tillsammans med mina skolkamrater, där målet var att hitta ett sätt att skapa empati med användaren. Vi fokuserade på att förstå användarens behov, hur vi kunde uppnå målet och tillgodose alla behov för att slutligen nå en lösning som var minimalistisk, enkel och effektiv.",
+        },
+        {
+          school: "E-handelsprojekt",
+          year:   "Chas Academy",
+          description: "Som frontendutvecklare har jag arbetat med projekt både självständigt och i grupp. Min erfarenhet av HTML, CSS och JavaScript väckte min nyfikenhet för kodspråk och viljan att lära mig mer inom området. I vårt grupprojekt, som baserades på API och databaser, var det grundläggande att följa flera steg – från att skapa designen i Figma till att bygga komponenterna i React, med fokus på responsivitet och användarvänlighet.",
+        },
+      ],
+    },
     ahrMotor: {
       back:         "Tillbaka till projekt",
       navTag:       "⚙ Under arbete · Examensarbete 2025–2026",
@@ -475,6 +496,27 @@ export const translations = {
           lead: "From Figma to React — an e-commerce project focused on responsiveness and collaboration.",
           description: "As a frontend developer I worked on the project both independently and in a group. My experience with HTML, CSS and JavaScript sparked my curiosity for programming languages. In the group project, based on APIs and databases, we followed each step from Figma design to React components, with a focus on responsiveness and usability.",
           links: [{ label: "View live — Solenia", icon: "↗" }, { label: "GitHub", icon: "↗" }],
+        },
+      ],
+    },
+    grafiskProduktion: {
+      title: "Projects",
+      back:  "← Back",
+      experiences: [
+        {
+          school: "Magazine",
+          year:   "Fridhems Folkhögskola",
+          description: "Working on the magazine, I deepened my knowledge of graphic design and visual communication through both practical and theoretical work, while also helping others with their projects. My tasks included creating posters, brochures and illustrations in Adobe Photoshop, Illustrator and InDesign. I also learned the fundamentals of drawing, layout, typography and digital design. The programme strengthened my creativity, technical skills and ability to work both independently and in a team. The cross-disciplinary collaboration gave me new perspectives and broadened my understanding of visual communication.",
+        },
+        {
+          school: "Gym Planner",
+          year:   "Chas Academy",
+          description: "As a UX designer I had the opportunity to carry out a project with my classmates, with the goal of finding a way to empathise with the user. We focused on understanding user needs, how we could meet those needs, and ultimately reach a solution that was minimalist, simple and effective.",
+        },
+        {
+          school: "E-commerce project",
+          year:   "Chas Academy",
+          description: "As a frontend developer I have worked on projects both independently and in a group. My experience with HTML, CSS and JavaScript sparked my curiosity for programming languages and my desire to learn more. In our group project, based on APIs and databases, we followed each step from creating the design in Figma to building the components in React, with a focus on responsiveness and usability.",
         },
       ],
     },
@@ -750,6 +792,27 @@ export const translations = {
           lead: "Diseño que narra — maquetación, tipografía y comunicación visual en práctica.",
           description: "Trabajando en la revista, profundicé en diseño gráfico y comunicación visual mediante trabajo práctico y teórico. Creé carteles, folletos e ilustraciones en Adobe Photoshop, Illustrator e InDesign, y aprendí los fundamentos del dibujo, la maquetación, la tipografía y el diseño digital.",
           links: [{ label: "Ver la revista", icon: "↗" }],
+        },
+      ],
+    },
+    grafiskProduktion: {
+      title: "Proyectos",
+      back:  "← Volver",
+      experiences: [
+        {
+          school: "Revista",
+          year:   "Fridhems Folkhögskola",
+          description: "Trabajando en la revista, profundicé mis conocimientos en diseño gráfico y comunicación visual mediante trabajo práctico y teórico, ayudando también a otros con sus proyectos. Mis tareas incluían crear carteles, folletos e ilustraciones en Adobe Photoshop, Illustrator e InDesign. También aprendí los fundamentos del dibujo, la maquetación, la tipografía y el diseño digital. El programa fortaleció mi creatividad, mis habilidades técnicas y mi capacidad para trabajar de forma independiente y en equipo. La colaboración interdisciplinar me dio nuevas perspectivas y amplió mi comprensión de la comunicación visual.",
+        },
+        {
+          school: "Planificador de Gimnasio",
+          year:   "Chas Academy",
+          description: "Como diseñador UX tuve la oportunidad de llevar a cabo un proyecto con mis compañeros de clase, con el objetivo de empatizar con el usuario. Nos centramos en entender las necesidades del usuario, cómo podíamos alcanzar el objetivo y satisfacer todas las necesidades para llegar finalmente a una solución minimalista, sencilla y eficaz.",
+        },
+        {
+          school: "Proyecto de comercio electrónico",
+          year:   "Chas Academy",
+          description: "Como desarrollador frontend he trabajado en proyectos tanto de forma independiente como en grupo. Mi experiencia con HTML, CSS y JavaScript despertó mi curiosidad por los lenguajes de programación y mi deseo de aprender más. En nuestro proyecto grupal, basado en APIs y bases de datos, seguimos cada paso desde la creación del diseño en Figma hasta la construcción de los componentes en React, con foco en la responsividad y la usabilidad.",
         },
       ],
     },
