@@ -97,7 +97,6 @@ function DiplomModal({ onClose }) {
             src={`${DIPLOM_PDF}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
             title="Diplom — Digital tillgänglighet & inkluderande design"
             className="om-diplom-frame"
-            sandbox="allow-scripts allow-same-origin"
           />
           {/* capa transparente: bloquea clic derecho y arrastre sin ocultar el contenido */}
           <div
