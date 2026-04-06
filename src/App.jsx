@@ -12,6 +12,7 @@ import Projekter from "./pages/Projekter";
 import ThreeDPrint from "./pages/ThreeDPrint";
 import UxUiDesign from "./pages/UxUiDesign";
 import AhrMotorCase from "./pages/AhrMotorCase";
+import OakCase from "./pages/OakCase";
 
 /* ─── Scroll to top on route change ─────────────────────── */
 const ScrollToTop = () => {
@@ -32,6 +33,7 @@ const ROUTES = [
   { path: "/threedprint/:id",        element: <ThreeDPrint /> },
   { path: "/uxuidesign/:id",         element: <UxUiDesign /> },
   { path: "/projekter/ahr-motor",    element: <AhrMotorCase /> },
+  { path: "/projekter/oak-case",     element: <OakCase /> },
 ];
 
 /* ─── App ────────────────────────────────────────────────── */
@@ -45,7 +47,8 @@ const App = () => {
     pathname.startsWith("/uxuidesign") ||
     pathname.startsWith("/threedprint") ||
     pathname.startsWith("/crossmedia") ||
-    pathname === "/grafiskproduktion/1";
+    pathname === "/grafiskproduktion/1" ||
+    pathname.startsWith("/projekter");
 
   return (
     /*
