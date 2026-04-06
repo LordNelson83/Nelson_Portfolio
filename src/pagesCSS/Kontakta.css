@@ -176,7 +176,7 @@
 .kt-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 28px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.65s 0.1s ease, transform 0.65s 0.1s ease;
@@ -192,6 +192,174 @@
   color: var(--text-muted);
   margin: 0;
 }
+
+/* ════════════════════════════════════════
+   PITCH — propuesta de valor
+   ════════════════════════════════════════ */
+.kt-pitch {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.kt-pitch__label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #ffa205;
+  margin: 0;
+}
+
+.kt-pitch__title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.kt-pitch__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kt-pitch__item {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  padding-left: 18px;
+  position: relative;
+}
+
+.kt-pitch__item::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #ffa205;
+  font-size: 12px;
+  top: 3px;
+}
+
+/* ════════════════════════════════════════
+   AVAIL — disponibilidad + rol
+   ════════════════════════════════════════ */
+.kt-avail {
+  display: flex;
+  gap: 0;
+  border: 0.8px solid var(--border);
+  background: rgba(255,255,255,0.02);
+}
+
+.kt-avail__block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+}
+
+.kt-avail__sep {
+  width: 0.8px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.kt-avail__label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255,162,5,0.7);
+}
+
+.kt-avail__date {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.kt-avail__note {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ════════════════════════════════════════
+   CV BUTTON — CTA principal
+   ════════════════════════════════════════ */
+.kt-cv-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #ffa205;
+  text-decoration: none;
+  overflow: hidden;
+  transition: background 0.22s ease;
+}
+
+.kt-cv-btn:hover { background: #e8920a; }
+
+.kt-cv-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.kt-cv-btn__icon {
+  font-size: 22px;
+  color: #1e1e1e;
+  line-height: 1;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.kt-cv-btn__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kt-cv-btn__label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e1e1e;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.kt-cv-btn__sub {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(30,30,30,0.6);
+  letter-spacing: 0.5px;
+}
+
+/* barra blanca animada en hover */
+.kt-cv-btn__bar {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: rgba(30,30,30,0.3);
+  transition: width 0.3s ease;
+}
+
+.kt-cv-btn:hover .kt-cv-btn__bar { width: 100%; }
 
 /* ── Links editoriales ── */
 .kt-links {
@@ -556,4 +724,7 @@
   .kt-body { padding: 0 5vw 48px; gap: 40px; }
   .kt-stats { margin-bottom: 48px; }
   .kt-email__address { font-size: 12px; }
+  .kt-avail { flex-direction: column; }
+  .kt-avail__sep { width: 100%; height: 0.8px; }
+  .kt-avail__date { font-size: 13px; }
 }

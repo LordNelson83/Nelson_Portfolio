@@ -2,48 +2,29 @@ import { useEffect, useRef } from "react";
 import "../pagesCSS/Kontakta.css";
 import { useLang } from "../i18n/LangContext";
 
-/* ══════════════════════════════════════════════════════════
-   KONTAKTA — Figma: 14:86
-   bg #1E1E1E · mismo sistema que Home (2:228)
-   "Tack!" · forma romboidal naranja · links + email
-   Sin imágenes · máxima jerarquía editorial
-   ══════════════════════════════════════════════════════════ */
-
-/* LINKS se construye dentro del componente para poder traducir */
-
-export default function Kontakta() {
-  const { t } = useLang();
-
-  const LINKS = [
+const SOCIAL = (t) => [
   {
     id: "linkedin",
     label: t("contact", "linkedin"),
-    sub: t("contact", "linkedinSub"),
-    href: "https://www.linkedin.com/in/nelson-pe%C3%B1a-21881412a/",
-    external: true,
-    icon: "↗",
+    sub:   t("contact", "linkedinSub"),
+    href:  "https://www.linkedin.com/in/nelson-pe%C3%B1a-21881412a/",
+    icon:  "↗",
   },
   {
     id: "github",
     label: t("contact", "github"),
-    sub: t("contact", "githubSub"),
-    href: "https://github.com/LordNelson83",
-    external: true,
-    icon: "↗",
-  },
-  {
-    id: "cv",
-    label: t("contact", "cv"),
-    sub: t("contact", "cvSub"),
-    href: "/CV_Nelson_Pena.pdf",
-    external: false,
-    download: "CV_Nelson_Pena.pdf",
-    icon: "↓",
+    sub:   t("contact", "githubSub"),
+    href:  "https://github.com/LordNelson83",
+    icon:  "↗",
   },
 ];
 
+export default function Kontakta() {
+  const { t } = useLang();
+
   const heroRef   = useRef(null);
   const shapeRef  = useRef(null);
+  const pitchRef  = useRef(null);
   const linksRef  = useRef([]);
   const statsRef  = useRef([]);
 
@@ -52,45 +33,35 @@ export default function Kontakta() {
       (e) => e.forEach(en => en.isIntersecting && en.target.classList.add("is-visible")),
       { threshold: 0.08 }
     );
-    [heroRef.current, shapeRef.current, ...linksRef.current, ...statsRef.current]
+    [heroRef.current, shapeRef.current, pitchRef.current, ...linksRef.current, ...statsRef.current]
       .filter(Boolean)
       .forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
+  const statsItems  = t("contact", "statsItems");
+  const pitchPoints = t("contact", "pitchPoints");
+  const socialLinks = SOCIAL(t);
+
   return (
     <div className="kt-page">
 
-      {/* Grain — idéntico al hero de Home */}
       <div className="kt-grain" aria-hidden="true" />
-
-      {/* Palabra de fondo muy baja opacidad */}
       <div className="kt-bg-word" aria-hidden="true">Tack</div>
 
-      {/* ════════════════════════════════════════════
-          HERO — Figma: 14:105 · Playfair Bold 64px
-          "Tack!" + subtítulo Montserrat Bold 20px
-      ════════════════════════════════════════════ */}
+      {/* ── HERO ── */}
       <header className="kt-hero" ref={heroRef}>
         <p className="kt-hero__eyebrow">{t("contact", "eyebrow")}</p>
         <h1 className="kt-hero__h1">{t("contact", "h1")}</h1>
         <p className="kt-hero__sub">{t("contact", "sub")}</p>
-
         <div className="kt-hero__line" aria-hidden="true" />
       </header>
 
-      {/* ════════════════════════════════════════════
-          STATS — datos de contacto en grid
-      ════════════════════════════════════════════ */}
+      {/* ── STATS ── */}
       <div className="kt-stats" role="list">
-        {[
-          { value: "Open",  label: "Tillgänglig för uppdrag" },
-          { value: "UX",    label: "Product & UI/UX Designer" },
-          { value: "Sthlm", label: "Stockholm · Sverige" },
-          { value: "2026",  label: "Chas Academy · Examen" },
-        ].map((s, i) => (
+        {statsItems.map((s, i) => (
           <div
-            key={s.value}
+            key={s.label}
             className="kt-stat"
             role="listitem"
             ref={el => statsRef.current[i] = el}
@@ -102,24 +73,60 @@ export default function Kontakta() {
         ))}
       </div>
 
-      {/* ════════════════════════════════════════════
-          BODY — forma central + columna lateral
-      ════════════════════════════════════════════ */}
+      {/* ── BODY ── */}
       <div className="kt-body">
 
-        {/* ── Columna izquierda — texto + links de lista ── */}
-        <div className="kt-sidebar" ref={heroRef}>
-          <p className="kt-sidebar__intro">{t("contact", "intro")}</p>
+        {/* ══ COLUMNA IZQUIERDA — propuesta de valor ══ */}
+        <div className="kt-sidebar" ref={pitchRef}>
 
-          {/* Links en formato lista editorial */}
-          <nav className="kt-links" aria-label="Kontaktlänkar">
-            {LINKS.map((lnk, i) => (
+          {/* Pitch */}
+          <div className="kt-pitch">
+            <p className="kt-pitch__label">{t("contact", "pitchLabel")}</p>
+            <h2 className="kt-pitch__title">{t("contact", "pitchTitle")}</h2>
+            <ul className="kt-pitch__list" aria-label={t("contact", "pitchTitle")}>
+              {pitchPoints.map((p, i) => (
+                <li key={i} className="kt-pitch__item">{p}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Disponibilidad + Rol buscado */}
+          <div className="kt-avail">
+            <div className="kt-avail__block">
+              <span className="kt-avail__label">{t("contact", "availLabel")}</span>
+              <span className="kt-avail__date">{t("contact", "availDate")}</span>
+              <span className="kt-avail__note">{t("contact", "availNote")}</span>
+            </div>
+            <div className="kt-avail__sep" aria-hidden="true" />
+            <div className="kt-avail__block">
+              <span className="kt-avail__label">{t("contact", "roleLabel")}</span>
+              <span className="kt-avail__date">{t("contact", "roleText")}</span>
+            </div>
+          </div>
+
+          {/* CTA principal — descargar CV */}
+          <a
+            href="/CV_Nelson_Pena.pdf"
+            download="CV_Nelson_Pena.pdf"
+            className="kt-cv-btn"
+            aria-label={t("contact", "cvBtn")}
+          >
+            <span className="kt-cv-btn__icon" aria-hidden="true">↓</span>
+            <div className="kt-cv-btn__texts">
+              <span className="kt-cv-btn__label">{t("contact", "cvBtn")}</span>
+              <span className="kt-cv-btn__sub">{t("contact", "cvBtnSub")}</span>
+            </div>
+            <div className="kt-cv-btn__bar" aria-hidden="true" />
+          </a>
+
+          {/* Links sociales */}
+          <nav className="kt-links" aria-label="Sociala länkar">
+            {socialLinks.map((lnk, i) => (
               <a
                 key={lnk.id}
                 href={lnk.href}
-                target={lnk.external ? "_blank" : undefined}
-                rel={lnk.external ? "noopener noreferrer" : undefined}
-                download={lnk.download}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="kt-link"
                 ref={el => linksRef.current[i] = el}
                 style={{ "--delay": `${0.1 + i * 0.12}s` }}
@@ -132,13 +139,12 @@ export default function Kontakta() {
                   </div>
                 </div>
                 <span className="kt-link__icon" aria-hidden="true">{lnk.icon}</span>
-                {/* Barra animada en hover */}
                 <div className="kt-link__bar" aria-hidden="true" />
               </a>
             ))}
           </nav>
 
-          {/* Email destacado */}
+          {/* Email */}
           <a
             href="mailto:nelsonpenna83@gmail.com"
             className="kt-email"
@@ -148,37 +154,26 @@ export default function Kontakta() {
             <span className="kt-email__address">nelsonpenna83@gmail.com</span>
             <span className="kt-email__arrow" aria-hidden="true">→</span>
           </a>
+
         </div>
 
-        {/* ── Forma romboidal naranja — Figma: 14:118 ──
-            Background+Shadow · gradiente naranja-dorado
-            border-radius: 269.5px 0 269.5px 0
-            box-shadow: 15px 8px 11px rgba(0,0,0,0.35)
-        ── */}
+        {/* ══ COLUMNA DERECHA — forma romboidal ══ */}
         <div className="kt-shape-wrap" ref={shapeRef}>
           <div className="kt-shape" aria-hidden="true">
-
-            {/* Contenido dentro de la forma */}
             <div className="kt-shape__content">
               <p className="kt-shape__greeting">{t("contact", "shapeGreeting")}</p>
               <p className="kt-shape__tagline">{t("contact", "shapeTagline")}</p>
               <div className="kt-shape__divider" />
               <p className="kt-shape__note">{t("contact", "shapeNote")}</p>
             </div>
-
-            {/* Decoración de número grande */}
             <span className="kt-shape__deco" aria-hidden="true">N</span>
           </div>
-
-          {/* Sombra del reflejo */}
           <div className="kt-shape__shadow" aria-hidden="true" />
         </div>
 
       </div>
 
-      {/* ════════════════════════════════════════════
-          CTA FINAL — email grande + firma
-      ════════════════════════════════════════════ */}
+      {/* ── CTA FINAL ── */}
       <section className="kt-cta">
         <div className="kt-cta__inner">
           <p className="kt-cta__eyebrow">{t("contact", "ctaEyebrow")}</p>
