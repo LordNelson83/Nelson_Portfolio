@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, forwardRef } from "react";
 import "../pagesCSS/OmMig.css";
 import { useLang } from "../i18n/LangContext";
 
@@ -16,14 +16,12 @@ import Github       from "../assets/images2/Github.png";
 import Mailchimp    from "../assets/images2/Mailchimp.png";
 import MsNetlify    from "../assets/images2/microsoft_netlify.png";
 import Shapr3d      from "../assets/images2/Shapr3d.png";
-/* ── Coloca Claude.png y Gemini.png en assets/images2/ ── */
 import ClaudeIcon   from "../assets/images2/Claude.png";
 import GeminiIcon   from "../assets/images2/Gemini.png";
 
-/* ── Componente de estrellas ──────────────────────────────
-   filled  = ★ naranja (#FFA205)
-   empty   = ☆ gris   (rgba(255,255,255,0.18))
-   ────────────────────────────────────────────────────────── */
+const DIPLOM_PDF = "/diplom-ixnfb-jnquj-295287-6380-xpc2.pdf";
+
+/* ── Componente de estrellas ── */
 const StarRating = ({ score }) => (
   <div className="om-stars" aria-label={`${score} av 5`}>
     {[1, 2, 3, 4, 5].map(n => (
@@ -40,10 +38,6 @@ const StarRating = ({ score }) => (
   </div>
 );
 
-/* ── Skills data ─────────────────────────────────────────
-   bg = color de marca para el badge
-   score = 1-5 (nivel de conocimiento)
-   ────────────────────────────────────────────────────────── */
 const SKILLS = [
   /* Adobe */
   { src: Acrobat,     alt: "Acrobat",      bg: "#FF0000", score: 3 },
@@ -65,9 +59,62 @@ const SKILLS = [
   { src: GeminiIcon,  alt: "Gemini",       bg: "#4285F4", score: 3 },
 ];
 
+/* ── Modal del diplom ── */
+function DiplomModal({ onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="om-diplom-backdrop"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Diplom — Digital tillgänglighet & inkluderande design"
+    >
+      <div
+        className="om-diplom-modal"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          className="om-diplom-close"
+          onClick={onClose}
+          aria-label="Stäng diplom"
+        >
+          ×
+        </button>
+
+        {/* iframe + capa de bloqueo de descarga */}
+        <div className="om-diplom-viewer">
+          <iframe
+            src={`${DIPLOM_PDF}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+            title="Diplom — Digital tillgänglighet & inkluderande design"
+            className="om-diplom-frame"
+            sandbox="allow-scripts allow-same-origin"
+          />
+          {/* capa transparente: bloquea clic derecho y arrastre sin ocultar el contenido */}
+          <div
+            className="om-diplom-shield"
+            onContextMenu={(e) => e.preventDefault()}
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function OmMig() {
   const { t } = useLang();
   const skillsRef = useRef([]);
+  const [showDiplom, setShowDiplom] = useState(false);
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -98,15 +145,20 @@ export default function OmMig() {
           <p className="om-paragraph">{t("about", "p2")}</p>
           <p className="om-paragraph">{t("about", "p3")}</p>
 
-          {/* Certificering */}
-          <div className="om-cert">
+          {/* Certificering — clic abre el diplom */}
+          <button
+            className="om-cert"
+            onClick={() => setShowDiplom(true)}
+            aria-label={`${t("about", "certLabel")} — visa diplom`}
+          >
             <span className="om-cert__icon" aria-hidden="true">✓</span>
             <div className="om-cert__body">
               <p className="om-cert__title">{t("about", "certTitle")}</p>
               <p className="om-cert__label">{t("about", "certLabel")}</p>
               <p className="om-cert__date">{t("about", "certDate")}</p>
             </div>
-          </div>
+            <span className="om-cert__cta" aria-hidden="true">Visa diplom →</span>
+          </button>
 
           {/* Leyenda de estrellas */}
           <div className="om-legend">
@@ -152,12 +204,15 @@ export default function OmMig() {
           ))}
         </div>
       </div>
+
+      {/* ════════════ Modal diplom ════════════ */}
+      {showDiplom && <DiplomModal onClose={() => setShowDiplom(false)} />}
+
     </main>
   );
 }
 
 /* ── SkillCard — badge + nombre + estrellas ── */
-import { forwardRef } from "react";
 const SkillCard = forwardRef(({ skill, delay }, ref) => (
   <div
     className="om-skill-cell"

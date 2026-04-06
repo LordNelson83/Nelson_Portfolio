@@ -28,13 +28,79 @@
 .om-star--off path { fill: rgba(255,255,255,0.18); }
 .om-skill-cell:hover .om-star--off path { fill: rgba(255,162,5,0.35); transition: fill 0.2s ease; }
 
-/* ── Certification badge ── */
-.om-cert { display: flex; align-items: flex-start; gap: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,162,5,0.22); border-radius: 10px; padding: 12px 14px; }
-.om-cert__icon { font-size: 14px; color: #ffa205; line-height: 1; margin-top: 1px; flex-shrink: 0; }
-.om-cert__body { display: flex; flex-direction: column; gap: 2px; }
+/* ── Certification badge (button) ── */
+.om-cert {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,162,5,0.22);
+  border-radius: 10px; padding: 12px 14px;
+  cursor: pointer; text-align: left; width: 100%;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.om-cert:hover { background: rgba(255,162,5,0.07); border-color: rgba(255,162,5,0.45); }
+.om-cert:focus-visible { outline: 2px solid #ffa205; outline-offset: 3px; }
+.om-cert__icon { font-size: 14px; color: #ffa205; line-height: 1; flex-shrink: 0; }
+.om-cert__body { display: flex; flex-direction: column; gap: 2px; flex: 1; }
 .om-cert__title { font-family: "Montserrat", sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #ffa205; margin: 0; }
 .om-cert__label { font-family: "Montserrat", sans-serif; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.82); margin: 0; }
 .om-cert__date { font-family: "Montserrat", sans-serif; font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.38); margin: 0; }
+.om-cert__cta { font-family: "Montserrat", sans-serif; font-size: 11px; font-weight: 500; color: rgba(255,162,5,0.6); white-space: nowrap; flex-shrink: 0; transition: color 0.2s ease; }
+.om-cert:hover .om-cert__cta { color: #ffa205; }
+
+/* ── Modal diplom ── */
+.om-diplom-backdrop {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.82);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+  animation: om-fade-in 0.2s ease;
+}
+@keyframes om-fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+.om-diplom-modal {
+  position: relative;
+  width: min(600px, 100%);
+  max-height: 90vh;
+  background: #1e1e1e;
+  border: 1px solid rgba(255,162,5,0.2);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  animation: om-slide-up 0.25s ease;
+}
+@keyframes om-slide-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.om-diplom-close {
+  position: absolute; top: 10px; right: 12px; z-index: 2;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  font-size: 20px; line-height: 1; color: rgba(255,255,255,0.7);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.om-diplom-close:hover { background: rgba(255,162,5,0.15); color: #ffa205; }
+.om-diplom-close:focus-visible { outline: 2px solid #ffa205; outline-offset: 2px; }
+
+.om-diplom-viewer {
+  position: relative;
+  width: 100%; flex: 1;
+  min-height: 520px;
+}
+.om-diplom-frame {
+  width: 100%; height: 100%;
+  min-height: 520px;
+  border: none; display: block;
+}
+/* capa que bloquea clic derecho / arrastre sin tapar la vista */
+.om-diplom-shield {
+  position: absolute; inset: 0;
+  background: transparent;
+  user-select: none;
+  -webkit-user-drag: none;
+}
 
 @media (max-width: 1300px) { .om-main { gap: 60px; padding: 80px 5vw 100px; } }
 @media (max-width: 1050px) { .om-main { flex-direction: column; gap: 60px; padding: 60px 5vw 80px; } .om-left { max-width: 100%; } .om-right { align-self: flex-start; width: 100%; } .om-skills-grid { grid-template-columns: repeat(5, 88px); } }
