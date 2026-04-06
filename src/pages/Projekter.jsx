@@ -25,7 +25,7 @@ const PROJECT_IMAGES  = [oakImg, soleniaImg, magasinImg];
 const PROJECT_COLORS  = ["#90a590", "#ffa205", "#ffa205"];
 const PROJECT_IDS     = ["oak", "ehandel", "magasin"];
 const PROJECT_LINKS   = [
-  [{ url: "/OAK-UX.pdf", external: false }, { url: "/OAK-UI.pdf", external: false }],
+  [{ url: "/OAK-UX.pdf", external: false }, { url: "/OAK-UI.pdf", external: false }, { url: "/projekter/oak-case", external: false, internal: true }],
   [{ url: "https://solenia.netlify.app/", external: true }, { url: "https://github.com/LordNelson83/Nelson_Portfolio", external: true }],
   [{ url: "/Magasin.pdf", external: false }],
 ];
@@ -350,17 +350,29 @@ export default function Projekter() {
 
                   {proj.links && (
                     <div className="pk-links">
-                      {proj.links.map((lnk, li) => (
-                        <a key={li} href={links[li]?.url || "#"}
-                          target={links[li]?.external ? "_blank" : undefined}
-                          rel={links[li]?.external ? "noopener noreferrer" : undefined}
-                          className="pk-link"
-                          aria-label={lnk.label}>
-                          <span className="pk-link__label">{lnk.label}</span>
-                          <span className="pk-link__icon" aria-hidden="true">{lnk.icon}</span>
-                          <div className="pk-link__bar" aria-hidden="true" />
-                        </a>
-                      ))}
+                      {proj.links.map((lnk, li) => {
+                        const lnkData = links[li];
+                        if (lnkData?.internal) {
+                          return (
+                            <Link key={li} to={lnkData.url} className="pk-link" aria-label={lnk.label}>
+                              <span className="pk-link__label">{lnk.label}</span>
+                              <span className="pk-link__icon" aria-hidden="true">{lnk.icon}</span>
+                              <div className="pk-link__bar" aria-hidden="true" />
+                            </Link>
+                          );
+                        }
+                        return (
+                          <a key={li} href={lnkData?.url || "#"}
+                            target={lnkData?.external ? "_blank" : undefined}
+                            rel={lnkData?.external ? "noopener noreferrer" : undefined}
+                            className="pk-link"
+                            aria-label={lnk.label}>
+                            <span className="pk-link__label">{lnk.label}</span>
+                            <span className="pk-link__icon" aria-hidden="true">{lnk.icon}</span>
+                            <div className="pk-link__bar" aria-hidden="true" />
+                          </a>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
