@@ -58,48 +58,65 @@
 }
 @keyframes om-fade-in { from { opacity: 0; } to { opacity: 1; } }
 
+/* ── Modal diplom — responsivo ── */
 .om-diplom-modal {
   position: relative;
-  width: min(520px, 100%);
-  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  width: min(560px, calc(100vw - 24px));
+  height: min(calc(min(560px, calc(100vw - 24px)) * 1.414), 92vh);
   background: #1e1e1e;
   border: 1px solid rgba(255,162,5,0.2);
   border-radius: 14px;
   overflow: hidden;
-  display: flex; flex-direction: column;
   animation: om-slide-up 0.25s ease;
 }
 @keyframes om-slide-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
+/* botón cerrar flotante */
 .om-diplom-close {
-  position: absolute; top: 10px; right: 12px; z-index: 2;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  position: absolute; top: 10px; right: 10px; z-index: 10;
+  background: rgba(20,20,20,0.8);
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: 50%;
-  width: 32px; height: 32px;
-  font-size: 20px; line-height: 1; color: rgba(255,255,255,0.7);
+  width: 34px; height: 34px;
+  font-size: 20px; line-height: 1; color: rgba(255,255,255,0.85);
   cursor: pointer; display: flex; align-items: center; justify-content: center;
   transition: background 0.18s ease, color 0.18s ease;
+  backdrop-filter: blur(6px);
 }
-.om-diplom-close:hover { background: rgba(255,162,5,0.15); color: #ffa205; }
+.om-diplom-close:hover { background: rgba(255,162,5,0.2); color: #ffa205; }
 .om-diplom-close:focus-visible { outline: 2px solid #ffa205; outline-offset: 2px; }
 
+/* viewer ocupa todo el espacio restante */
 .om-diplom-viewer {
-  position: relative;
-  width: 100%;
   flex: 1;
   min-height: 0;
+  width: 100%;
 }
+
+/* iframe llena el viewer — scroll habilitado */
 .om-diplom-frame {
-  width: 100%; height: 100%;
-  border: none; display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
-/* capa que bloquea clic derecho / arrastre sin tapar la vista */
-.om-diplom-shield {
-  position: absolute; inset: 0;
-  background: transparent;
-  user-select: none;
-  -webkit-user-drag: none;
+
+/* mobile portrait: casi pantalla completa */
+@media (max-width: 600px) {
+  .om-diplom-modal {
+    width: calc(100vw - 16px);
+    height: 90vh;
+    border-radius: 10px;
+  }
+}
+
+/* mobile landscape: altura limitada, scroll disponible */
+@media (max-height: 500px) {
+  .om-diplom-modal {
+    height: 96vh;
+  }
 }
 
 @media (max-width: 1300px) { .om-main { gap: 60px; padding: 80px 5vw 100px; } }

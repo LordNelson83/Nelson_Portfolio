@@ -91,18 +91,11 @@ function DiplomModal({ onClose }) {
           ×
         </button>
 
-        {/* iframe + capa de bloqueo de descarga */}
         <div className="om-diplom-viewer">
           <iframe
-            src={`${DIPLOM_PDF}#toolbar=0&navpanes=0&scrollbar=0&view=FitPage`}
+            src={`${DIPLOM_PDF}#toolbar=0&navpanes=0`}
             title="Diplom — Digital tillgänglighet & inkluderande design"
             className="om-diplom-frame"
-          />
-          {/* capa transparente: bloquea clic derecho y arrastre sin ocultar el contenido */}
-          <div
-            className="om-diplom-shield"
-            onContextMenu={(e) => e.preventDefault()}
-            aria-hidden="true"
           />
         </div>
       </div>
