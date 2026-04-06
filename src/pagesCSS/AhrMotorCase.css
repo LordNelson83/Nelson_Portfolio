@@ -19,6 +19,8 @@
   font-family: "DM Sans", "Helvetica Neue", sans-serif;
   position: relative;
   overflow-x: hidden;
+  /* WCAG — empuja el contenido bajo la Navbar absoluta (28+48+28 = 104px) */
+  padding-top: 104px;
 }
 
 .cs-grain {
@@ -618,6 +620,9 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  /* Navbar móvil: 20+40+20 = 80px */
+  .cs-page { padding-top: 80px; }
+
   .cs-nav,
   .cs-hero,
   .cs-section,
