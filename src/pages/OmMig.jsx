@@ -94,7 +94,7 @@ function DiplomModal({ onClose }) {
         {/* iframe + capa de bloqueo de descarga */}
         <div className="om-diplom-viewer">
           <iframe
-            src={`${DIPLOM_PDF}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+            src={`${DIPLOM_PDF}#toolbar=0&navpanes=0&scrollbar=0&view=FitPage`}
             title="Diplom — Digital tillgänglighet & inkluderande design"
             className="om-diplom-frame"
           />
