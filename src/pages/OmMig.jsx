@@ -98,6 +98,16 @@ export default function OmMig() {
           <p className="om-paragraph">{t("about", "p2")}</p>
           <p className="om-paragraph">{t("about", "p3")}</p>
 
+          {/* Certificering */}
+          <div className="om-cert">
+            <span className="om-cert__icon" aria-hidden="true">✓</span>
+            <div className="om-cert__body">
+              <p className="om-cert__title">{t("about", "certTitle")}</p>
+              <p className="om-cert__label">{t("about", "certLabel")}</p>
+              <p className="om-cert__date">{t("about", "certDate")}</p>
+            </div>
+          </div>
+
           {/* Leyenda de estrellas */}
           <div className="om-legend">
             <p className="om-legend__title">{t("about", "legendTitle")}</p>

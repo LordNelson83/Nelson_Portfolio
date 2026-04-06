@@ -565,6 +565,34 @@
   50% { box-shadow: 0 0 0 5px rgba(0, 166, 180, 0); }
 }
 
+/* ── Accessibility ── */
+.cs-a11y-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-a11y-item {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.68);
+  padding-left: 20px;
+  position: relative;
+}
+
+.cs-a11y-item::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--cs-accent);
+  font-size: 12px;
+  top: 3px;
+}
+
 /* ── Skills ── */
 .cs-skills {
   display: flex;

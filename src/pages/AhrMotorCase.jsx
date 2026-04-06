@@ -33,6 +33,7 @@ export default function AhrMotorCase() {
   const imgCaptions  = t("ahrMotor", "imgCaptions");
   const teams        = t("ahrMotor", "teams");
   const statusSteps  = t("ahrMotor", "statusSteps");
+  const a11yPoints   = t("ahrMotor", "a11yPoints");
   const skills       = t("ahrMotor", "skills");
 
   return (
@@ -201,8 +202,19 @@ export default function AhrMotorCase() {
         </div>
       </section>
 
-      {/* ── SKILLS ── */}
+      {/* ── ACCESSIBILITY ── */}
       <section className="cs-section" ref={el => addRef(el, 7)}>
+        <div className="cs-section__label">{t("ahrMotor", "a11yLabel")}</div>
+        <h2 className="cs-section__title">{t("ahrMotor", "a11yTitle")}</h2>
+        <ul className="cs-a11y-list" aria-label={t("ahrMotor", "a11yTitle")}>
+          {a11yPoints.map((point, i) => (
+            <li key={i} className="cs-a11y-item">{point}</li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ── SKILLS ── */}
+      <section className="cs-section" ref={el => addRef(el, 8)}>
         <div className="cs-skills">
           {skills.map(sk => (
             <span key={sk} className="cs-skill">{sk}</span>

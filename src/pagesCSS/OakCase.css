@@ -582,6 +582,34 @@
 
 .oc-result-stat__label { font-size: 12px; color: var(--oc-muted); }
 
+/* ── Accessibility ── */
+.oc-a11y-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.oc-a11y-item {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.68);
+  padding-left: 20px;
+  position: relative;
+}
+
+.oc-a11y-item::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--oak-accent, #90a590);
+  font-size: 12px;
+  top: 3px;
+}
+
 /* ── Skills ── */
 .oc-skills {
   display: flex;

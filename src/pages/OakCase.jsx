@@ -45,6 +45,7 @@ export default function OakCase() {
   const designSystem = t("oakCase", "designSystem");
   const iterations   = t("oakCase", "iterations");
   const resultStats  = t("oakCase", "resultStats");
+  const a11yPoints   = t("oakCase", "a11yPoints");
   const skills       = t("oakCase", "skills");
 
   return (
@@ -285,8 +286,19 @@ export default function OakCase() {
         </div>
       </section>
 
+      {/* ── ACCESSIBILITY ── */}
+      <section className="oc-section" ref={el => addRef(el, 7)} aria-label={t("oakCase", "a11yTitle")}>
+        <div className="oc-section__label">{t("oakCase", "a11yLabel")}</div>
+        <h2 className="oc-section__title">{t("oakCase", "a11yTitle")}</h2>
+        <ul className="oc-a11y-list" aria-label={t("oakCase", "a11yTitle")}>
+          {a11yPoints.map((point, i) => (
+            <li key={i} className="oc-a11y-item">{point}</li>
+          ))}
+        </ul>
+      </section>
+
       {/* ── SKILLS ── */}
-      <section className="oc-section" ref={el => addRef(el, 7)} aria-label="Skills">
+      <section className="oc-section" ref={el => addRef(el, 8)} aria-label="Skills">
         <div className="oc-skills" role="list">
           {skills.map(sk => (
             <span key={sk} className="oc-skill" role="listitem">{sk}</span>
