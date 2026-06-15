@@ -56,7 +56,8 @@ export default function AhrMotorCase() {
           <span className="cs-hero__dot" aria-hidden="true" />
           <span>Chas Academy</span>
         </div>
-        <h1 className="cs-hero__title">AHR-Motor</h1>
+        <h1 className="cs-hero__title">Byråanalys</h1>
+        <p className="cs-hero__subtitle">tidigare AHR-Motor</p>
         <p className="cs-hero__lead">{t("ahrMotor", "heroLead")}</p>
 
         <div className="cs-meta" role="list">

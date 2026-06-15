@@ -81,6 +81,16 @@
   transition: transform 0.2s;
 }
 
+.cs-hero__subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.30);
+  margin: 6px 0 0;
+}
+
 .cs-back:hover .cs-back__arrow { transform: translateX(-4px); }
 
 .cs-nav__tag {
