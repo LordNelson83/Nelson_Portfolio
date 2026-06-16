@@ -5,17 +5,26 @@ import nelsonPhoto from "../assets/images2/me.webp";
 import { useLang } from "../i18n/LangContext";
 
 /* ─── Work tiles ─────────────────────────────────────────── */
+// Byråanalys (caso real de Fortnox/Chas Academy, el más reciente y completo)
+// se destaca primero a ancho completo, para que un reclutador lo vea de
+// inmediato en lugar de tenerlo enterrado dentro del tile "Projekter".
+const FEATURED_TILE = {
+  num: "01", label: "Byråanalys", sub: "Fortnox · UX Research · Hi-Fi Prototyp",
+  tag: "Examensarbete 2025–2026", path: "/projekter/ahr-motor", accent: "#00a6b4",
+};
+
 const TILES = [
-  { num:"01", label:"Cross Media",  sub:"Print · Editorial · Branding",                      path:"/crossmedia/1",        accent:"#ffffff" },
-  { num:"02", label:"3D Print",     sub:"Shapr3D · Modelling · Production",                  path:"/threedprint/1",       accent:"#ffa205" },
-  { num:"03", label:"UX/UI Design", sub:"Research · Prototyping · System",                   path:"/uxuidesign/1",        accent:"#ffffff" },
-  { num:"04", label:"Projekter",    sub:"Tidningsmagasin · Gymplanerare · E-handelsprojekt",  path:"/grafiskproduktion/1", accent:"#ffa205" },
+  { num:"02", label:"UX/UI Design", sub:"Research · Prototyping · System",                   path:"/uxuidesign/1",        accent:"#ffffff" },
+  { num:"03", label:"Projekter",    sub:"Tidningsmagasin · Gymplanerare · E-handelsprojekt",  path:"/grafiskproduktion/1", accent:"#ffa205" },
+  { num:"04", label:"Cross Media",  sub:"Print · Editorial · Branding",                      path:"/crossmedia/1",        accent:"#ffffff" },
+  { num:"05", label:"3D Print",     sub:"Shapr3D · Modelling · Production",                  path:"/threedprint/1",       accent:"#ffa205" },
 ];
 
 export default function Home() {
   const { t } = useLang();
-  const heroRef  = useRef(null);
-  const tilesRef = useRef([]);
+  const heroRef    = useRef(null);
+  const tilesRef   = useRef([]);
+  const featuredRef = useRef(null);
 
   /* parallax foto */
   useEffect(() => {
@@ -28,12 +37,17 @@ export default function Home() {
 
   /* IntersectionObserver tiles */
   useEffect(() => {
+    // rootMargin negativo activa la animación antes de que el tile llegue
+    // al borde inferior de la pantalla, evitando que quede invisible
+    // a medio camino durante un scroll rápido.
     const obs = new IntersectionObserver(
       (entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add("tile--visible")),
-      { threshold: 0.15 }
+      { threshold: 0.01, rootMargin: "0px 0px -10% 0px" }
     );
-    tilesRef.current.forEach(el => el && obs.observe(el));
-    return () => obs.disconnect();
+    const targets = [featuredRef.current, ...tilesRef.current].filter(Boolean);
+    targets.forEach(el => obs.observe(el));
+    const fallback = setTimeout(() => targets.forEach(el => el.classList.add("tile--visible")), 1200);
+    return () => { obs.disconnect(); clearTimeout(fallback); };
   }, []);
 
   return (
@@ -106,12 +120,36 @@ export default function Home() {
         </div>
 
         <ul className="home-work__grid" role="list">
+
+          {/* Tile destacado — Byråanalys, el proyecto más reciente y completo */}
+          <li
+            className="tile tile--featured"
+            ref={featuredRef}
+            style={{ "--tile-accent": FEATURED_TILE.accent, "--delay": "0s" }}
+          >
+            <Link to={FEATURED_TILE.path} className="tile__link tile__link--featured">
+              <div className="tile__featured-left">
+                <span className="tile__number" aria-hidden="true">{FEATURED_TILE.num}</span>
+                <div className="tile__featured-texts">
+                  <span className="tile__label">{FEATURED_TILE.label}</span>
+                  <span className="tile__sub">{FEATURED_TILE.sub}</span>
+                </div>
+              </div>
+              <div className="tile__featured-right">
+                <span className="tile__featured-tag">{FEATURED_TILE.tag}</span>
+                <span className="tile__featured-cta">
+                  Läs case study <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </Link>
+          </li>
+
           {TILES.map((tile, i) => (
             <li
               key={tile.label}
               className="tile"
               ref={el => tilesRef.current[i] = el}
-              style={{ "--tile-accent": tile.accent, "--delay": `${i * 0.1}s` }}
+              style={{ "--tile-accent": tile.accent, "--delay": `${(i + 1) * 0.1}s` }}
             >
               <Link to={tile.path} className="tile__link">
                 <span className="tile__number" aria-hidden="true">{tile.num}</span>

@@ -58,14 +58,17 @@ export default function Projekter() {
   const oak        = pk.oak        || {};
 
   useEffect(() => {
+    // rootMargin negativo activa la animación antes de que la sección llegue
+    // al borde inferior de la pantalla, así un scroll rápido no la deja a
+    // medio camino con opacity: 0 (efecto "pantalla en negro").
     const obs = new IntersectionObserver(
       (e) => e.forEach(en => en.isIntersecting && en.target.classList.add("is-visible")),
-      { threshold: 0.06 }
+      { threshold: 0.01, rootMargin: "0px 0px -10% 0px" }
     );
-    [heroRef.current, ahrRef.current, ...statsRef.current, ...projRefs.current]
-      .filter(Boolean)
-      .forEach(el => obs.observe(el));
-    return () => obs.disconnect();
+    const targets = [heroRef.current, ahrRef.current, ...statsRef.current, ...projRefs.current].filter(Boolean);
+    targets.forEach(el => obs.observe(el));
+    const fallback = setTimeout(() => targets.forEach(el => el.classList.add("is-visible")), 1200);
+    return () => { obs.disconnect(); clearTimeout(fallback); };
   }, []);
 
   useEffect(() => {

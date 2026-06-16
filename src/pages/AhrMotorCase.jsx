@@ -19,12 +19,20 @@ export default function AhrMotorCase() {
   const sectRefs = useRef([]);
 
   useEffect(() => {
+    // rootMargin negativo activa la animación antes de que la sección llegue
+    // al borde inferior de la pantalla, así un scroll rápido no la deja a
+    // medio camino con opacity: 0 (efecto "pantalla en negro").
     const obs = new IntersectionObserver(
       (entries) => entries.forEach(e => e.isIntersecting && e.target.classList.add("cs-visible")),
-      { threshold: 0.07 }
+      { threshold: 0.01, rootMargin: "0px 0px -10% 0px" }
     );
-    [heroRef.current, ...sectRefs.current].filter(Boolean).forEach(el => obs.observe(el));
-    return () => obs.disconnect();
+    const targets = [heroRef.current, ...sectRefs.current].filter(Boolean);
+    targets.forEach(el => obs.observe(el));
+    // Red de seguridad: si por cualquier motivo el observer no dispara
+    // (navegación directa, hash, fast back/forward), forzamos visibilidad
+    // tras un instante para que nada quede invisible permanentemente.
+    const fallback = setTimeout(() => targets.forEach(el => el.classList.add("cs-visible")), 1200);
+    return () => { obs.disconnect(); clearTimeout(fallback); };
   }, []);
 
   const addRef = (el, i) => { sectRefs.current[i] = el; };
