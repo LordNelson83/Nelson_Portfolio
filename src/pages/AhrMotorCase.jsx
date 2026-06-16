@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../pagesCSS/AhrMotorCase.css";
 import { useLang } from "../i18n/LangContext";
@@ -28,6 +28,28 @@ export default function AhrMotorCase() {
   }, []);
 
   const addRef = (el, i) => { sectRefs.current[i] = el; };
+
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+  const isOpen = lightboxIndex !== null;
+
+  const closeLightbox = () => setLightboxIndex(null);
+  const showPrev = () => setLightboxIndex(i => (i - 1 + IMGS.length) % IMGS.length);
+  const showNext = () => setLightboxIndex(i => (i + 1) % IMGS.length);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showPrev();
+      if (e.key === "ArrowRight") showNext();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   const meta         = t("ahrMotor", "meta");
   const processSteps = t("ahrMotor", "processSteps");
@@ -163,12 +185,20 @@ export default function AhrMotorCase() {
         <div className="cs-images">
           {IMGS.map((src, i) => (
             <div key={i} className="cs-image-wrap">
-              <img
-                src={src}
-                alt={imgAlts[i]}
-                className="cs-image"
-                loading="lazy"
-              />
+              <button
+                type="button"
+                className="cs-image-btn"
+                onClick={() => setLightboxIndex(i)}
+                aria-label={`${imgAlts[i]} — förstora bild`}
+              >
+                <img
+                  src={src}
+                  alt={imgAlts[i]}
+                  className="cs-image"
+                  loading="lazy"
+                />
+                <span className="cs-image-btn__zoom" aria-hidden="true">⛶</span>
+              </button>
               <p className="cs-image__caption">{imgCaptions[i]}</p>
             </div>
           ))}
@@ -259,6 +289,58 @@ export default function AhrMotorCase() {
         <p className="cs-cta__text">{t("ahrMotor", "ctaText")}</p>
         <Link to="/kontakta" className="cs-cta__btn">{t("ahrMotor", "ctaBtn")}</Link>
       </section>
+
+      {/* ── LIGHTBOX ── */}
+      {isOpen && (
+        <div
+          className="cs-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={imgAlts[lightboxIndex]}
+          onClick={closeLightbox}
+        >
+          <button
+            type="button"
+            className="cs-lightbox__close"
+            onClick={closeLightbox}
+            aria-label="Stäng förstorad bild"
+          >
+            ×
+          </button>
+
+          <button
+            type="button"
+            className="cs-lightbox__nav cs-lightbox__nav--prev"
+            onClick={(e) => { e.stopPropagation(); showPrev(); }}
+            aria-label="Föregående bild"
+          >
+            ‹
+          </button>
+
+          <figure className="cs-lightbox__figure" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={IMGS[lightboxIndex]}
+              alt={imgAlts[lightboxIndex]}
+              className="cs-lightbox__img"
+            />
+            <figcaption className="cs-lightbox__caption">
+              {imgCaptions[lightboxIndex]}
+              <span className="cs-lightbox__counter">
+                {lightboxIndex + 1} / {IMGS.length}
+              </span>
+            </figcaption>
+          </figure>
+
+          <button
+            type="button"
+            className="cs-lightbox__nav cs-lightbox__nav--next"
+            onClick={(e) => { e.stopPropagation(); showNext(); }}
+            aria-label="Nästa bild"
+          >
+            ›
+          </button>
+        </div>
+      )}
 
     </div>
   );
