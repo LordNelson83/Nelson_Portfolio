@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../pagesCSS/Home.css";
-import nelsonPhoto from "../assets/images2/me.png";
+import nelsonPhoto from "../assets/images2/me.webp";
 import { useLang } from "../i18n/LangContext";
 
 /* ─── Work tiles ─────────────────────────────────────────── */

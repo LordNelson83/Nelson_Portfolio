@@ -3,21 +3,21 @@ import "../pagesCSS/OmMig.css";
 import { useLang } from "../i18n/LangContext";
 
 /* ── Imágenes locales ── */
-import Acrobat      from "../assets/images2/Acrobat.png";
-import Indesign     from "../assets/images2/Indesign.png";
-import Photoshop    from "../assets/images2/Photoshop.png";
-import Illustrator  from "../assets/images2/Illustrator.png";
-import FigmaIcon    from "../assets/images2/Figma.png";
-import CSS          from "../assets/images2/CSS.png";
-import Javascript   from "../assets/images2/Javascript.png";
-import HTML         from "../assets/images2/HTLM.png";
-import ReactIcon    from "../assets/images2/React.png";
-import Github       from "../assets/images2/Github.png";
-import Mailchimp    from "../assets/images2/Mailchimp.png";
-import MsNetlify    from "../assets/images2/microsoft_netlify.png";
-import Shapr3d      from "../assets/images2/Shapr3d.png";
-import ClaudeIcon   from "../assets/images2/Claude.png";
-import GeminiIcon   from "../assets/images2/Gemini.png";
+import Acrobat      from "../assets/images2/Acrobat.webp";
+import Indesign     from "../assets/images2/Indesign.webp";
+import Photoshop    from "../assets/images2/Photoshop.webp";
+import Illustrator  from "../assets/images2/Illustrator.webp";
+import FigmaIcon    from "../assets/images2/Figma.webp";
+import CSS          from "../assets/images2/CSS.webp";
+import Javascript   from "../assets/images2/Javascript.webp";
+import HTML         from "../assets/images2/HTLM.webp";
+import ReactIcon    from "../assets/images2/React.webp";
+import Github       from "../assets/images2/Github.webp";
+import Mailchimp    from "../assets/images2/Mailchimp.webp";
+import MsNetlify    from "../assets/images2/microsoft_netlify.webp";
+import Shapr3d      from "../assets/images2/Shapr3d.webp";
+import ClaudeIcon   from "../assets/images2/Claude.webp";
+import GeminiIcon   from "../assets/images2/Gemini.webp";
 
 const DIPLOM_PDF = "/diplom-ixnfb-jnquj-295287-6380-xpc2.pdf";
 

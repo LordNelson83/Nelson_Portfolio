@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import "../pagesCSS/ThreeDPrint.css";
 import { useLang } from "../i18n/LangContext";
 
-import img1 from "../assets/images/3dprint1.png";
-import img2 from "../assets/images/3dprint2.png";
-import img3 from "../assets/images/3dprint3.png";
-import img4 from "../assets/images/3dprint4.png";
-import img5 from "../assets/images/3dprint5.png";
-import bgPrint from "../assets/images/3dprinting.png";
+import img1 from "../assets/images/3dprint1.webp";
+import img2 from "../assets/images/3dprint2.webp";
+import img3 from "../assets/images/3dprint3.webp";
+import img4 from "../assets/images/3dprint4.webp";
+import img5 from "../assets/images/3dprint5.webp";
+import bgPrint from "../assets/images/3dprinting.webp";
 
 const IMG_SRCS = [img1, img2, img3, img4, img5];
 const IMG_ALTS = [

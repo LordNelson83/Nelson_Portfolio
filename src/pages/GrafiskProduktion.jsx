@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../pagesCSS/crossMedia.css";
 import { useLang } from "../i18n/LangContext";
-import magasin from "../assets/images/magasin.png";
-import oak from "../assets/images/oak.png";
-import oakui from "../assets/images/oak-ui.png";
+import magasin from "../assets/images/magasin.webp";
+import oak from "../assets/images/oak.webp";
+import oakui from "../assets/images/oak-ui.webp";
 
 const IMAGES_BY_INDEX = [
   [magasin],

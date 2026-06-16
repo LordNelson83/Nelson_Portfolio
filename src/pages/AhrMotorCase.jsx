@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import "../pagesCSS/AhrMotorCase.css";
 import { useLang } from "../i18n/LangContext";
 
-import ahr1Img from "../assets/images/ahr_1.png";
-import ahr2Img from "../assets/images/ahr_2.png";
-import ahr3Img from "../assets/images/ahr_3.png";
-import ahr4Img from "../assets/images/ahr_4.png";
-import ahr5Img from "../assets/images/ahr_5.png";
-import ahr6Img from "../assets/images/ahr_6.png";
-import ahr7Img from "../assets/images/ahr_7.png";
+import ahr1Img from "../assets/images/ahr_1.webp";
+import ahr2Img from "../assets/images/ahr_2.webp";
+import ahr3Img from "../assets/images/ahr_3.webp";
+import ahr4Img from "../assets/images/ahr_4.webp";
+import ahr5Img from "../assets/images/ahr_5.webp";
+import ahr6Img from "../assets/images/ahr_6.webp";
+import ahr7Img from "../assets/images/ahr_7.webp";
 
 const IMGS = [ahr1Img, ahr2Img, ahr3Img, ahr4Img, ahr5Img, ahr6Img, ahr7Img];
 

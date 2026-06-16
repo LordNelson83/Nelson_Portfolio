@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../pagesCSS/crossMedia.css";
 import { useLang } from "../i18n/LangContext";
 
-import imgMagasin from "../assets/images/magasin.png";
+import imgMagasin from "../assets/images/magasin.webp";
 
 export default function CrossMedia() {
   const { t } = useLang();

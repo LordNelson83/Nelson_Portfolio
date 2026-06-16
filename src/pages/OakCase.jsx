@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import "../pagesCSS/OakCase.css";
 import { useLang } from "../i18n/LangContext";
 
-import oak1Img from "../assets/images/oak_1.png";
-import oak2Img from "../assets/images/oak_2.png";
-import oak3Img from "../assets/images/oak_3.png";
-import oak4Img from "../assets/images/oak_4.png";
-import oak5Img from "../assets/images/oak_5.png";
+import oak1Img from "../assets/images/oak_1.webp";
+import oak2Img from "../assets/images/oak_2.webp";
+import oak3Img from "../assets/images/oak_3.webp";
+import oak4Img from "../assets/images/oak_4.webp";
+import oak5Img from "../assets/images/oak_5.webp";
 
 const IMGS = [oak1Img, oak2Img, oak3Img, oak4Img, oak5Img];
 

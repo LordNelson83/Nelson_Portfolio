@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import nptLogo    from "../assets/images2/npt.png";
+import nptLogo    from "../assets/images2/npt.webp";
 import { useLang } from "../i18n/LangContext";
 
 /*

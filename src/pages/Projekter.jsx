@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import "../pagesCSS/Projekter.css";
 import { useLang } from "../i18n/LangContext";
 
-import oakImg     from "../assets/images/oak.png";
-import oakUiImg   from "../assets/images/oak-ui.png";
-import magasinImg from "../assets/images/magasin.png";
-import soleniaImg from "../assets/images/solenia.png";
+import oakImg     from "../assets/images/oak.webp";
+import oakUiImg   from "../assets/images/oak-ui.webp";
+import magasinImg from "../assets/images/magasin.webp";
+import soleniaImg from "../assets/images/solenia.webp";
 
-import ahr1Img from "../assets/images/ahr_1.png";
-import ahr2Img from "../assets/images/ahr_2.png";
-import ahr3Img from "../assets/images/ahr_3.png";
+import ahr1Img from "../assets/images/ahr_1.webp";
+import ahr2Img from "../assets/images/ahr_2.webp";
+import ahr3Img from "../assets/images/ahr_3.webp";
 
-import oak1Img from "../assets/images/oak_1.png";
-import oak2Img from "../assets/images/oak_2.png";
-import oak3Img from "../assets/images/oak_3.png";
-import oak4Img from "../assets/images/oak_4.png";
-import oak5Img from "../assets/images/oak_5.png";
+import oak1Img from "../assets/images/oak_1.webp";
+import oak2Img from "../assets/images/oak_2.webp";
+import oak3Img from "../assets/images/oak_3.webp";
+import oak4Img from "../assets/images/oak_4.webp";
+import oak5Img from "../assets/images/oak_5.webp";
 
 const AHR_IMGS = [ahr1Img, ahr2Img, ahr3Img];
 const OAK_IMGS = [oak1Img, oak2Img, oak3Img, oak4Img, oak5Img];
