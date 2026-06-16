@@ -109,13 +109,13 @@ export default function Projekter() {
         {/* 01 AHR-Motor */}
         <section className="pk-project pk-project--ahr" ref={ahrRef}
           style={{ "--accent": AHR_ACCENT }}
-          aria-label="Projekt 01 — AHR-Motor, Fortnox och Chas Academy">
+          aria-label="Projekt 01 — Byråanalys, Fortnox och Chas Academy">
 
           <div className="pk-project__header">
             <span className="pk-project__num" aria-hidden="true">01</span>
             <div className="pk-project__meta">
               <p className="pk-project__school">Fortnox · Chas Academy</p>
-              <h2 className="pk-project__title">AHR-Motor</h2>
+              <h2 className="pk-project__title">Byråanalys</h2>
               <div className="pk-project__row">
                 <span className="pk-project__period">2025–2026</span>
                 <span className="pk-project__tag pk-project__tag--wip">
@@ -190,7 +190,7 @@ export default function Projekter() {
               </div>
 
               <div className="pk-skills" role="list" aria-label={pk.skillsLabel}>
-                {["UX Research", "POM", "OST", "Figma", "Teresa Torres", "Marty Cagan", "Fortnox"].map(sk => (
+                {(t("ahrMotor", "skills") || ["UX Research", "POM", "OST", "Figma", "Teresa Torres", "Marty Cagan", "Fortnox"]).map(sk => (
                   <span key={sk} className="pk-skill" role="listitem">{sk}</span>
                 ))}
               </div>

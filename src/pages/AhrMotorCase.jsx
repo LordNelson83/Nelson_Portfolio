@@ -42,7 +42,7 @@ export default function AhrMotorCase() {
 
       {/* ── BACK ── */}
       <nav className="cs-nav">
-        <Link to="/projekter" className="cs-back">
+        <Link to="/grafiskproduktion/1" className="cs-back">
           <span className="cs-back__arrow">←</span>
           <span>{t("ahrMotor", "back")}</span>
         </Link>
