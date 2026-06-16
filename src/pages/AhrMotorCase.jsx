@@ -35,6 +35,8 @@ export default function AhrMotorCase() {
   const statusSteps  = t("ahrMotor", "statusSteps");
   const a11yPoints   = t("ahrMotor", "a11yPoints");
   const skills       = t("ahrMotor", "skills");
+  const pivotDiscarded = t("ahrMotor", "pivotDiscarded");
+  const pivotKept      = t("ahrMotor", "pivotKept");
 
   return (
     <div className="cs-page">
@@ -189,8 +191,33 @@ export default function AhrMotorCase() {
         </div>
       </section>
 
+      {/* ── PIVOT · Vad vi valde bort ── */}
+      <section className="cs-section cs-section--pivot" ref={el => addRef(el, 6)}>
+        <div className="cs-section__label">{t("ahrMotor", "pivotLabel")}</div>
+        <h2 className="cs-section__title">{t("ahrMotor", "pivotTitle")}</h2>
+        <p className="cs-text cs-text--intro">{t("ahrMotor", "pivotIntro")}</p>
+
+        <div className="cs-pivot">
+          <div className="cs-pivot__card cs-pivot__card--discarded">
+            <p className="cs-pivot__card-label">{pivotDiscarded?.label}</p>
+            <h3 className="cs-pivot__card-title">{pivotDiscarded?.title}</h3>
+            <p className="cs-pivot__card-desc">{pivotDiscarded?.desc}</p>
+            <p className="cs-pivot__card-reason">{pivotDiscarded?.reason}</p>
+          </div>
+          <div className="cs-pivot__arrow" aria-hidden="true">→</div>
+          <div className="cs-pivot__card cs-pivot__card--kept">
+            <p className="cs-pivot__card-label">{pivotKept?.label}</p>
+            <h3 className="cs-pivot__card-title">{pivotKept?.title}</h3>
+            <p className="cs-pivot__card-desc">{pivotKept?.desc}</p>
+            <p className="cs-pivot__card-reason">{pivotKept?.reason}</p>
+          </div>
+        </div>
+
+        <p className="cs-pivot__note">{t("ahrMotor", "pivotNote")}</p>
+      </section>
+
       {/* ── STATUS ── */}
-      <section className="cs-section cs-section--wip" ref={el => addRef(el, 6)}>
+      <section className="cs-section cs-section--wip" ref={el => addRef(el, 7)}>
         <div className="cs-section__label">{t("ahrMotor", "statusLabel")}</div>
         <h2 className="cs-section__title">{t("ahrMotor", "statusTitle")}</h2>
         <div className="cs-wip-steps">
@@ -204,7 +231,7 @@ export default function AhrMotorCase() {
       </section>
 
       {/* ── ACCESSIBILITY ── */}
-      <section className="cs-section" ref={el => addRef(el, 7)}>
+      <section className="cs-section" ref={el => addRef(el, 8)}>
         <div className="cs-section__label">{t("ahrMotor", "a11yLabel")}</div>
         <h2 className="cs-section__title">{t("ahrMotor", "a11yTitle")}</h2>
         <ul className="cs-a11y-list" aria-label={t("ahrMotor", "a11yTitle")}>
@@ -215,7 +242,7 @@ export default function AhrMotorCase() {
       </section>
 
       {/* ── SKILLS ── */}
-      <section className="cs-section" ref={el => addRef(el, 8)}>
+      <section className="cs-section" ref={el => addRef(el, 9)}>
         <div className="cs-skills">
           {skills.map(sk => (
             <span key={sk} className="cs-skill">{sk}</span>
