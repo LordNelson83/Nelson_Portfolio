@@ -258,10 +258,11 @@ export default function AhrMotorCase() {
         <p className="cs-pivot__note">{t("ahrMotor", "pivotNote")}</p>
       </section>
 
-      {/* ── STATUS ── */}
-      <section className="cs-section cs-section--wip" ref={el => addRef(el, 7)}>
+      {/* ── STATUS · Arkiverat ── */}
+      <section className="cs-section cs-section--archived" ref={el => addRef(el, 7)}>
         <div className="cs-section__label">{t("ahrMotor", "statusLabel")}</div>
         <h2 className="cs-section__title">{t("ahrMotor", "statusTitle")}</h2>
+        <p className="cs-archived-note">{t("ahrMotor", "statusArchivedNote")}</p>
         <div className="cs-wip-steps">
           {statusSteps.map((s, i) => (
             <div key={i} className={`cs-wip-step${s.done ? " cs-wip-step--done" : ""}${s.active ? " cs-wip-step--active" : ""}`}>

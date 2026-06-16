@@ -768,9 +768,20 @@
   font-style: italic;
 }
 
-/* ── WIP steps ── */
-.cs-section--wip {
-  background: rgba(0, 166, 180, 0.03);
+/* ── Archived status ── */
+.cs-section--archived {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.cs-archived-note {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--cs-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--cs-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: -0.5rem 0 1.5rem;
 }
 
 .cs-wip-steps {
@@ -790,7 +801,6 @@
 }
 
 .cs-wip-step--done { color: #ddd; }
-.cs-wip-step--active { color: var(--cs-accent); }
 
 .cs-wip-step__dot {
   width: 10px;
@@ -804,17 +814,6 @@
 .cs-wip-step--done .cs-wip-step__dot {
   background: var(--cs-accent);
   border-color: var(--cs-accent);
-}
-
-.cs-wip-step--active .cs-wip-step__dot {
-  background: transparent;
-  border-color: var(--cs-accent);
-  animation: pulse 1.4s ease infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 166, 180, 0.4); }
-  50% { box-shadow: 0 0 0 5px rgba(0, 166, 180, 0); }
 }
 
 /* ── Accessibility ── */
