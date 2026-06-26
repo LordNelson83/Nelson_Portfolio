@@ -20,7 +20,29 @@ const SOCIAL = (t) => [
 ];
 
 export default function Kontakta() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
+
+  // Mapa idioma → archivo PDF en /public
+  // href usa encodeURIComponent para manejar la ñ sin problemas cross-browser.
+  // download es el nombre que verá el usuario al guardar el archivo.
+  const CV_FILES = {
+    sv: {
+      href:     "/CV_Nelson_Pena.pdf",
+      download: "CV_Nelson_Pena.pdf",
+      label:    "CV · Nelson Peña · Svenska",
+    },
+    en: {
+      href:     "/Nelson_Pena_CV_English.pdf",
+      download: "Nelson_Pena_CV_English.pdf",
+      label:    "CV · Nelson Peña · English",
+    },
+    es: {
+      href:     "/Nelson_Pena_CV_Espa%C3%B1ol.pdf",
+      download: "Nelson_Pena_CV_Español.pdf",
+      label:    "CV · Nelson Peña · Español",
+    },
+  };
+  const cv = CV_FILES[lang] ?? CV_FILES.sv;
 
   const heroRef   = useRef(null);
   const shapeRef  = useRef(null);
@@ -104,17 +126,17 @@ export default function Kontakta() {
             </div>
           </div>
 
-          {/* CTA principal — descargar CV */}
+          {/* CTA principal — descargar CV (idioma activo) */}
           <a
-            href="/CV_Nelson_Pena.pdf"
-            download="CV_Nelson_Pena.pdf"
+            href={cv.href}
+            download={cv.download}
             className="kt-cv-btn"
-            aria-label={t("contact", "cvBtn")}
+            aria-label={`${t("contact", "cvBtn")} — ${cv.label}`}
           >
             <span className="kt-cv-btn__icon" aria-hidden="true">↓</span>
             <div className="kt-cv-btn__texts">
               <span className="kt-cv-btn__label">{t("contact", "cvBtn")}</span>
-              <span className="kt-cv-btn__sub">{t("contact", "cvBtnSub")}</span>
+              <span className="kt-cv-btn__sub">{cv.label}</span>
             </div>
             <div className="kt-cv-btn__bar" aria-hidden="true" />
           </a>
