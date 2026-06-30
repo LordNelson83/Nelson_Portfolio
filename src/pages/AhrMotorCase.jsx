@@ -68,6 +68,11 @@ export default function AhrMotorCase() {
   const teams        = t("ahrMotor", "teams");
   const statusSteps  = t("ahrMotor", "statusSteps");
   const a11yPoints   = t("ahrMotor", "a11yPoints");
+  const reflectionLabel = t("ahrMotor", "reflectionLabel");
+  const reflectionTitle = t("ahrMotor", "reflectionTitle");
+  const reflectionP1    = t("ahrMotor", "reflectionP1");
+  const reflectionP2    = t("ahrMotor", "reflectionP2");
+  const reflectionP3    = t("ahrMotor", "reflectionP3");
   const skills       = t("ahrMotor", "skills");
   const pivotDiscarded = t("ahrMotor", "pivotDiscarded");
   const pivotKept      = t("ahrMotor", "pivotKept");
@@ -282,6 +287,14 @@ export default function AhrMotorCase() {
             <li key={i} className="cs-a11y-item">{point}</li>
           ))}
         </ul>
+      </section>
+      {/* ── REFLECTION ── */}
+      <section className="cs-section" ref={el => addRef(el, 10)}>
+        <div className="cs-section__label">{reflectionLabel}</div>
+        <h2 className="cs-section__title">{reflectionTitle}</h2>
+        <p className="cs-text">{reflectionP1}</p>
+        <p className="cs-text">{reflectionP2}</p>
+        <p className="cs-text">{reflectionP3}</p>
       </section>
 
       {/* ── SKILLS ── */}

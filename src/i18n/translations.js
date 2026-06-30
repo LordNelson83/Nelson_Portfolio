@@ -1,4 +1,4 @@
-/* ══════════════════════════════════════════════════════════
+﻿/* ══════════════════════════════════════════════════════════
    TRANSLATIONS — sv · en · es
    Nelson Peña Portfolio 2026
    Páginas: nav · home · about · contact · crossmedia · threedprint · uxui · projekter
@@ -389,6 +389,11 @@ export const translations = {
         "Lönsamhetsstatus synlig inom tio sekunder · Onboarding på under två minuter",
         "Responsiv textskalning — layouten håller vid 200 % zoom utan horisontell scrollning",
       ],
+      reflectionLabel: "— Reflektion",
+      reflectionTitle: "Vad jag skulle gjort annorlunda",
+      reflectionP1: "Researchfasen kändes solid — sex djupintervjuer gav tydliga, samstämmiga mönster, och jag står fortfarande bakom de frågor jag ställde och de insikter de gav.",
+      reflectionP2: "Det jag skulle göra annorlunda handlar om designprocessen, inte researchen. Fortnox designsystem var under aktiv omstrukturering under hela projektet, med komponenter som saknades och inget tydligt UI-regelverk att luta sig mot. Jag fick improvisera kring hur komponenter skulle byggas och positioneras — och i efterhand var det just där jag skulle behövt mest vägledning. Med mer tid hade jag velat följa det nya designsystemet fullt ut, med riktiga tester och valideringsresultat, snarare än att bygga en egen tillfällig lösning. Det hade tagit längre tid, men hade sannolikt ökat chansen att Byråanalys gått vidare mot faktisk implementation hos Fortnox.",
+      reflectionP3: "Det här projektet lärde mig mer än vad jag hann omsätta i praktiken — och det är precis den typen av erfarenhet jag nu vill bygga vidare på tillsammans med ett mer erfaret team.",
       skills:   ["UX Research", "Djupintervjuer", "OST", "POM · Marty Cagan", "Continuous Discovery · Teresa Torres", "Figma", "Hi-Fi Prototyp", "WCAG 2.2", "Fortnox API"],
       ctaText:  "Nyfiken på projektet eller processen?",
       ctaBtn:   "Kontakta mig",
@@ -496,6 +501,11 @@ export const translations = {
         "Nästa-knapp inaktiveras med disabled-attribut och visuell state — inte enbart färgskillnad",
         "Alla produktbilder har beskrivande alt-text med mått och funktion",
       ],
+      reflectionLabel: "— Reflektion",
+      reflectionTitle: "Vad jag skulle gjort annorlunda",
+      reflectionP1: "Researchfasen kändes solid — sex djupintervjuer gav tydliga, samstämmiga mönster, och jag står fortfarande bakom de frågor jag ställde och de insikter de gav.",
+      reflectionP2: "Det jag skulle göra annorlunda handlar om designprocessen, inte researchen. Fortnox designsystem var under aktiv omstrukturering under hela projektet, med komponenter som saknades och inget tydligt UI-regelverk att luta sig mot. Jag fick improvisera kring hur komponenter skulle byggas och positioneras — och i efterhand var det just där jag skulle behövt mest vägledning. Med mer tid hade jag velat följa det nya designsystemet fullt ut, med riktiga tester och valideringsresultat, snarare än att bygga en egen tillfällig lösning. Det hade tagit längre tid, men hade sannolikt ökat chansen att Byråanalys gått vidare mot faktisk implementation hos Fortnox.",
+      reflectionP3: "Det här projektet lärde mig mer än vad jag hann omsätta i praktiken — och det är precis den typen av erfarenhet jag nu vill bygga vidare på tillsammans med ett mer erfaret team.",
       skills:  ["UX Research", "Djupintervjuer", "Beteendetyper", "Lo-Fi", "Hi-Fi", "Figma", "Maze", "Gerillatest", "Designsystem"],
       ctaText: "Vill du veta mer om projektet eller processen?",
       ctaBtn:  "Kontakta mig",
