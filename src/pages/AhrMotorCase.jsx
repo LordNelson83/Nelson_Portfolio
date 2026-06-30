@@ -114,18 +114,18 @@ export default function AhrMotorCase() {
         </div>
 
         <div className="cs-hero__line" aria-hidden="true" />
-      </header>
-
       {/* ── ROLE ── */}
-      <section className="cs-section">
-        <div className="cs-section__label">{roleLabel}</div>
+      <section className="cs-section" ref={el => addRef(el, 11)}>
+        <div className="cs-section__label">{t("ahrMotor", "roleLabel")}</div>
         <div className="cs-skills" style={{ marginBottom: "1rem" }}>
           {roleTags.map(tag => (
             <span key={tag} className="cs-skill">{tag}</span>
           ))}
         </div>
-        <p className="cs-text">{roleText}</p>
+        <p className="cs-text">{t("ahrMotor", "roleText")}</p>
       </section>
+      <div className="cs-hero__line" aria-hidden="true" />
+      </header>
 
       {/* ── PROBLEM ── */}
       <section className="cs-section" ref={el => addRef(el, 0)}>
