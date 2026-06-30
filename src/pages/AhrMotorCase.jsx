@@ -68,6 +68,9 @@ export default function AhrMotorCase() {
   const teams        = t("ahrMotor", "teams");
   const statusSteps  = t("ahrMotor", "statusSteps");
   const a11yPoints   = t("ahrMotor", "a11yPoints");
+  const roleLabel = t("ahrMotor", "roleLabel");
+  const roleTags  = t("ahrMotor", "roleTags");
+  const roleText  = t("ahrMotor", "roleText");
   const reflectionLabel = t("ahrMotor", "reflectionLabel");
   const reflectionTitle = t("ahrMotor", "reflectionTitle");
   const reflectionP1    = t("ahrMotor", "reflectionP1");
@@ -112,6 +115,17 @@ export default function AhrMotorCase() {
 
         <div className="cs-hero__line" aria-hidden="true" />
       </header>
+
+      {/* ── ROLE ── */}
+      <section className="cs-section">
+        <div className="cs-section__label">{roleLabel}</div>
+        <div className="cs-skills" style={{ marginBottom: "1rem" }}>
+          {roleTags.map(tag => (
+            <span key={tag} className="cs-skill">{tag}</span>
+          ))}
+        </div>
+        <p className="cs-text">{roleText}</p>
+      </section>
 
       {/* ── PROBLEM ── */}
       <section className="cs-section" ref={el => addRef(el, 0)}>
