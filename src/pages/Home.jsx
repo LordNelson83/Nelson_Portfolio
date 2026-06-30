@@ -10,8 +10,7 @@ import { useLang } from "../i18n/LangContext";
 // inmediato en lugar de tenerlo enterrado dentro del tile "Projekter".
 const FEATURED_TILE = {
   num: "01", label: "Byråanalys", sub: "Fortnox · UX Research · Hi-Fi Prototyp",
-  tag: "Examensarbete 2025–2026", path: "/projekter/ahr-motor", accent: "#00a6b4",
-};
+tag: "Examensarbete 2025–2026", path: "/projekter/byraanalys", accent: "#00a6b4",};
 
 const TILES = [
   { num:"02", label:"UX/UI Design", sub:"Research · Prototyping · System",                   path:"/uxuidesign/1",        accent:"#ffffff" },

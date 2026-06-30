@@ -205,7 +205,7 @@ export default function Projekter() {
                   <span className="pk-link__icon" aria-hidden="true">↗</span>
                   <div className="pk-link__bar" aria-hidden="true" />
                 </a>
-                <Link to="/projekter/ahr-motor" className="pk-link">
+                  <Link to="/projekter/byraanalys" className="pk-link">
                   <span className="pk-link__label">{pk.ahrCaseLink}</span>
                   <span className="pk-link__icon" aria-hidden="true">→</span>
                   <div className="pk-link__bar" aria-hidden="true" />

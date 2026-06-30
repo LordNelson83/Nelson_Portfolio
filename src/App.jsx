@@ -1,4 +1,4 @@
-import { useRoutes, useLocation } from "react-router-dom";
+import { useRoutes, useLocation, Navigate } from "react-router-dom";
 import "./App.css";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
@@ -32,8 +32,9 @@ const ROUTES = [
   { path: "/grafiskproduktion/:id",  element: <GrafiskProduktion /> },
   { path: "/threedprint/:id",        element: <ThreeDPrint /> },
   { path: "/uxuidesign/:id",         element: <UxUiDesign /> },
-  { path: "/projekter/ahr-motor",    element: <AhrMotorCase /> },
+  {path: "/projekter/byraanalys",    element: <AhrMotorCase /> },
   { path: "/projekter/oak-case",     element: <OakCase /> },
+  
 ];
 
 /* ─── App ────────────────────────────────────────────────── */
