@@ -1,0 +1,34 @@
+---
+import { getLangPaths, useTranslations, LANGUAGES } from "../../i18n/utils";
+
+export function getStaticPaths() {
+  return getLangPaths();
+}
+
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t("home", "title")} — Nelson Peña</title>
+  </head>
+  <body>
+    <h1>{t("home", "title")}</h1>
+    <p>{t("home", "heroDesc")}</p>
+
+    <hr />
+
+    <p>Idioma actual: <strong>{lang}</strong></p>
+
+    <nav>
+      {LANGUAGES.map((code) => (
+        <a href={`/${code}/`} style="margin-right: 1rem;">
+          {code.toUpperCase()}
+        </a>
+      ))}
+    </nav>
+  </body>
+</html>

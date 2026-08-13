@@ -32,7 +32,8 @@ const ROUTES = [
   { path: "/grafiskproduktion/:id",  element: <GrafiskProduktion /> },
   { path: "/threedprint/:id",        element: <ThreeDPrint /> },
   { path: "/uxuidesign/:id",         element: <UxUiDesign /> },
-  {path: "/projekter/byraanalys",    element: <AhrMotorCase /> },
+  {path: "/projekter/byraanalys",   element: <AhrMotorCase /> },
+  { path: "/projekter/ahr-motor",    element: <Navigate to="/projekter/byraanalys" replace /> },
   { path: "/projekter/oak-case",     element: <OakCase /> },
   
 ];
